@@ -53,7 +53,9 @@
       <li><strong>Runna</strong> was the closest, but it&#39;s app-first and heavier than I wanted.</li>
       <li><strong>Garmin</strong> had the structure — but the wrong ecosystem for me, a complex setup, and a clunky phone-to-watch hand-off (you download a plan, then install it separately).</li>
     </ul>
-    <p>The gap was clear: <strong>Garmin-grade structure with Apple-native smoothness.</strong> That&#39;s RunPlan — a plan that sits on a real calendar, syncs straight to the watch, and starts the right workout with one tap.</p>
+    <p>The gap was clear:</p>
+    <blockquote class="pull">Garmin-grade structure with Apple-native smoothness.</blockquote>
+    <p>That&#39;s RunPlan — a plan that sits on a real calendar, syncs straight to the watch, and starts the right workout with one tap.</p>
   </section>
 
   <section>
@@ -123,7 +125,8 @@
       <div class="ln"><b>Why:</b> don&#39;t fight the standard runners already trust — sit on top of it.</div>
     </div>
 
-    <p style="margin-top:22px"><strong>What I left out:</strong> no social feed, no community, no marketplace, no accounts, no ads. Scoping <em>out</em> was as much of the work as scoping in.</p>
+    <p style="margin-top:22px"><strong>What I left out:</strong> no social feed, no community, no marketplace, no accounts, no ads.</p>
+    <blockquote class="pull">Scoping out was as much of the work as scoping in.</blockquote>
 
     <figure class="fig"><img src="img/rp-nrc-vs-runplan.png" alt="Calendar view vs day-numbered list" loading="lazy"><figcaption>Decision 1 — a real calendar (right) instead of abstract "Day 1 / Day 2" lists (left)</figcaption></figure>
       <div class="figrow">
@@ -136,6 +139,16 @@
   <section>
     <h2>Designing for the wrist (watchOS)</h2>
     <p>The watch is where the run starts, so it drove the core interactions. The hardest part of the whole product was the very thing that made me start it: a <strong>seamless Apple&nbsp;Watch ↔ iPhone connection</strong>, so the plan, the live run and your progress always agree. That invisible plumbing is what makes RunPlan feel effortless — and it&#39;s what I couldn&#39;t find anywhere else.</p>
+    <div class="flow">
+      <div class="node"><b>RunPlan</b>the plan &amp; structure</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Apple Watch</b>run it, live guidance</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Apple Fitness</b>tracks the run</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Progress</b>syncs back to the plan</div>
+    </div>
+    <p class="flowcap">One seamless loop: RunPlan owns the plan, the watch runs it, Apple Fitness tracks, and progress syncs straight back.</p>
     <figure class="fig"><img src="img/rp-on-watch.jpg" alt="RunPlan on Apple Watch outdoors" loading="lazy"><figcaption>RunPlan guiding an easy run — on the wrist, where the run actually starts</figcaption></figure>
     <div class="todo"><span class="h">✍️ Optional</span> Want to go deeper on watch craft? Add a couple of lines on glanceability on a 40mm screen, the states you designed (pre-run, interval, rest, complete), or haptics.</div>
   </section>
@@ -144,6 +157,17 @@
     <h2>How we ship — two people, AI-native</h2>
     <p>My co-founder owns the algorithms and heavy logic. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship design changes straight into the code with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal). When iOS&nbsp;26 brought Liquid Glass, I redesigned the whole app to it in code.</p>
     <p>We release about once a month and re-prioritise by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. And because it&#39;s a running app, I test it for real — on simulators and out on actual runs, checking pace, mileage and that the interval guidance is clear on the wrist. No handoff between design and code means two people ship like a bigger team.</p>
+    <div class="flow">
+      <div class="node"><b>Idea</b>re-prioritised by impact</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Design</b>in Figma</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Build</b>in code, with AI</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Test</b>simulator + real runs</div>
+      <span class="arrow">&rarr;</span>
+      <div class="node"><b>Release</b>~ monthly</div>
+    </div>
   </section>
 
   <section>
