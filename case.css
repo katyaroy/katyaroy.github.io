@@ -8,7 +8,7 @@
 html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 body{font-family:'Noto Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-wrap:break-word}
 a{color:inherit}
-.wrap{max-width:760px;margin:0 auto;padding:clamp(22px,5vw,48px) clamp(20px,5vw,32px) 96px}
+.wrap{max-width:980px;margin:0 auto;padding:clamp(22px,5vw,48px) clamp(20px,5vw,40px) 96px}
 
 /* nav */
 .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(26px,5vh,48px);font-size:14px}
@@ -30,9 +30,9 @@ h1{font-weight:800;font-size:clamp(30px,5.2vw,46px);line-height:1.05;letter-spac
 section{margin-top:clamp(34px,6vh,56px)}
 h2{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 h3{font-size:clamp(18px,2.2vw,21px);font-weight:700;letter-spacing:-.01em;margin:28px 0 6px}
-p{font-size:16.5px;color:#33333b;margin-top:13px;max-width:68ch}
+p{font-size:16.5px;color:#33333b;margin-top:13px;max-width:80ch}
 ul{margin-top:13px;list-style:none}
-li{font-size:16.5px;color:#33333b;margin-top:11px;padding-left:22px;position:relative;max-width:68ch}
+li{font-size:16.5px;color:#33333b;margin-top:11px;padding-left:22px;position:relative;max-width:80ch}
 li::before{content:"";position:absolute;left:3px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 strong{font-weight:700;color:var(--ink)}
 em{font-style:italic;color:var(--muted)}
@@ -52,7 +52,7 @@ em{font-style:italic;color:var(--muted)}
 
 /* fill-in (needs her data) — yellow, pops in both themes */
 .fill{background:#FFE08A;color:#3a2c00;border-radius:3px;padding:1px 5px;font-weight:600;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.todo{background:#FFF6D6;border:1px solid #E9CD6E;border-left:4px solid #E0B83C;border-radius:12px;padding:13px 16px;margin-top:16px;font-size:14.5px;line-height:1.5;color:#5b4912;max-width:68ch}
+.todo{background:#FFF6D6;border:1px solid #E9CD6E;border-left:4px solid #E0B83C;border-radius:12px;padding:13px 16px;margin-top:16px;font-size:14.5px;line-height:1.5;color:#5b4912;max-width:80ch}
 .todo b{color:#7a6212}
 .todo .h{display:block;font-weight:700;margin-bottom:3px;color:#7a6212}
 @media (prefers-color-scheme:dark){
