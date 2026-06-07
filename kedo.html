@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KEDO — Case study · Ekaterina Roy</title>
+<meta name="description" content="KEDO case study — enterprise HR e-signatures. 70+ companies onboarded in 5 months." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="nav">
+    <a class="home" href="index.html">&larr; Ekaterina Roy</a>
+    <a href="https://katyaroy.tilda.ws/kedo" target="_blank" rel="noopener">Original write-up &#8599;</a>
+  </div>
+
+  <span class="tag">B2B SaaS · Web</span>
+  <h1>KEDO — enterprise HR document signing, as simple as email</h1>
+  <p class="sub">A legally-valid e-signature platform for distributed teams — a flagship launch that onboarded 70+ companies in its first 5 months.</p>
+
+  <dl class="meta">
+    <div><dt>My role</dt><dd>UX/UI Designer — research, user flows, UI &amp; design-system work <span class="fill">[confirm exact scope]</span></dd></div>
+    <div><dt>Team</dt><dd>With a business analyst, the in-house HR team &amp; frontend engineers</dd></div>
+    <div><dt>Timeline</dt><dd>2021</dd></div>
+    <div><dt>Context</dt><dd>B2B SaaS for HR electronic document workflow</dd></div>
+  </dl>
+
+  <section>
+    <h2>Overview</h2>
+    <p>KEDO lets employers and employees exchange and sign HR documents remotely — replacing paper while staying legally compliant for signing and archival. It was a flagship product launch, and the design challenge was to make a heavily regulated process feel as simple as sending an email.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">70+</div><div class="l">enterprise companies onboarded in 5 months</div></div>
+      <div class="stat"><div class="n"><span class="fill">[metric]</span></div><div class="l">e.g. time-to-sign reduced / NPS / docs processed</div></div>
+    </div>
+    <div class="todo"><span class="h">✍️ Fill in &amp; check</span> Add one more concrete number if you have it (time saved per document, documents processed, NPS, retention). Also: were the named enterprise clients (e.g. <span class="fill">Essity, Weigandt Consulting</span>) shown publicly in the original deck? If yes, we can add logos; if under NDA, we keep them out.</div>
+  </section>
+
+  <section>
+    <h2>The problem</h2>
+    <p>Companies with distributed teams had no fast, legal way to sign and manage HR documents remotely. Paper meant cost, delay and storage overhead — but any digital replacement had to satisfy strict legal requirements for <strong>signing and archival</strong>. The product had to make a compliance-heavy process feel effortless to people who are not lawyers.</p>
+  </section>
+
+  <section>
+    <h2>Research &amp; discovery</h2>
+    <p>I built this on real input, not assumptions, working closely with a business analyst and our HR team:</p>
+    <ul>
+      <li><strong>Market &amp; competitor analysis</strong> (with the analyst) — mapped pain points, document types and what actually drives adoption of this kind of service.</li>
+      <li><strong>User research</strong> — interviews and surveys with <strong>4 HR professionals and 4 employees</strong>, plus broader online surveys, to understand real workflows on both sides of a document.</li>
+      <li><strong>Continuous stakeholder loop</strong> — balanced legal and business constraints with user needs through constant communication.</li>
+    </ul>
+    <div class="shot"><span class="ic">🖼</span><b>Add a research artifact:</b> a pains/journey diagram or the document-type map. <span class="fill">Drop the image in and I&#39;ll place it.</span></div>
+  </section>
+
+  <section>
+    <h2>Goals</h2>
+    <ul>
+      <li>Make signing a legally-binding document feel like one safe, familiar step.</li>
+      <li>Drive org-wide adoption — the real metric is companies onboarded, not screens shipped.</li>
+      <li>Work equally well on desktop and mobile.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key design decisions</h2>
+
+    <div class="dec">
+      <h3>1. A legally-valid e-signature in one confirmation, not a legal maze</h3>
+      <div class="ln"><b>Problem:</b> e-signature is intimidating and legally loaded — the fastest way to lose a user.</div>
+      <div class="ln"><b>Decision:</b> "Create certificate" generates the agreement; the user confirms with a single SMS code.</div>
+      <div class="ln"><b>Why:</b> reduce a compliance-heavy, scary action to one trusted, familiar step.</div>
+    </div>
+
+    <div class="dec">
+      <h3>2. Borrow the mental model of email</h3>
+      <div class="ln"><b>Problem:</b> enterprise HR tools feel unfamiliar and slow adoption.</div>
+      <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email-client patterns — inbox, statuses, actions — across desktop and mobile.</div>
+      <div class="ln"><b>Why:</b> familiarity removes the learning curve, which is the real barrier to org-wide rollout.</div>
+    </div>
+
+    <div class="dec">
+      <h3>3. Two-tier notifications — informed, not noisy</h3>
+      <div class="ln"><b>Decision:</b> non-intrusive snackbars for action confirmations + a centralized, configurable Notification Center for system alerts and document-status updates.</div>
+      <div class="ln"><b>Why:</b> document status is high-stakes in HR; people need to trust they&#39;ll be told what&#39;s happening without being spammed.</div>
+    </div>
+
+    <div class="dec">
+      <h3>4. A guided send-document flow</h3>
+      <div class="ln"><b>Decision:</b> upload &rarr; name &rarr; select type &rarr; review auto-configured routing &rarr; sign via SMS &rarr; receive status — a multi-step compliance process presented as one linear, safe path.</div>
+    </div>
+
+    <div class="dec">
+      <h3>5. Designed on (and extended) the design system</h3>
+      <div class="ln"><b>Decision:</b> worked within the product&#39;s guidelines and design system to prototype faster and keep consistency <span class="fill">[and added mobile guidelines / reduced UX-debt backlog — confirm this belongs to KEDO]</span>.</div>
+    </div>
+
+    <div class="shot"><span class="ic">🖼</span><b>Add screens:</b> the email-style dashboard · the e-signature flow · the send-document flow · the notification center · the mobile view.</div>
+  </section>
+
+  <section>
+    <h2>Validation &rarr; iteration</h2>
+    <p>At MVP I ran <strong>usability testing with internal users</strong>. Sending a document tested well, but <strong>search performance scored poorly</strong> — so it became its own redesign track. The point: the test changed the product, not just confirmed it.</p>
+    <div class="todo"><span class="h">💡 Improvement idea</span> If you have it, add the before/after of the search redesign as a mini-section — "test found weak search → I redesigned it → result" is exactly the kind of closed loop interviewers probe for.</div>
+  </section>
+
+  <section>
+    <h2>Outcome</h2>
+    <ul>
+      <li><strong>70+ companies adopted KEDO in the first 5 months</strong> after launch.</li>
+      <li>Named enterprise deployments: <span class="fill">[Essity, Weigandt Consulting — if public]</span>.</li>
+      <li><span class="fill">[Add: time-to-sign reduced, documents processed, NPS, retention]</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <div class="todo"><span class="h">✍️ Your input — 2&ndash;4 lines</span> What&#39;s different about designing a regulated B2B product vs consumer? What the weak-search finding taught you about how enterprise users actually work? You can also mention here that you <span class="fill">mentored junior designers</span> — leadership is a plus.</div>
+  </section>
+
+  <div class="cfoot">
+    <a href="index.html">&larr; All case studies</a>
+    <a href="autoship.html">Next: Autoship &#8594;</a>
+  </div>
+
+</main>
+</body>
+</html>

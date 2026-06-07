@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RunPlan — Case study · Ekaterina Roy</title>
+<meta name="description" content="RunPlan case study — watch-first marathon training. Co-founder & product designer." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="nav">
+    <a class="home" href="index.html">&larr; Ekaterina Roy</a>
+    <a href="https://www.runplan.app/" target="_blank" rel="noopener">Live on the App&nbsp;Store &#8599;</a>
+  </div>
+
+  <span class="tag">iOS + watchOS · Consumer mobile</span>
+  <h1>RunPlan — structured marathon training, designed watch-first</h1>
+  <p class="sub">A running coach on your wrist: structured plans that tell you exactly what to run today — and why — without accounts, ads, or noise.</p>
+
+  <dl class="meta">
+    <div><dt>My role</dt><dd>Co-Founder &amp; Product Designer — research, UX, UI, product strategy &amp; the marketing site</dd></div>
+    <div><dt>Team</dt><dd>2-person indie team, AI-native</dd></div>
+    <div><dt>Timeline</dt><dd>2025 &ndash; present</dd></div>
+    <div><dt>Platform</dt><dd>iOS &amp; watchOS</dd></div>
+  </dl>
+
+  <section>
+    <h2>Overview</h2>
+    <p>While training for the Amsterdam Marathon I couldn&#39;t find an app that simply told me what to run each day and synced cleanly to my Apple Watch — so I co-founded and designed <strong>RunPlan</strong>. I own the entire product design end-to-end and we ship fast as a two-person, AI-native team. I validated the MVP on my own marathon, then we launched publicly with 5K, 10K and half-marathon plans.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">85%</div><div class="l">plan adherence on my own marathon (MVP test)</div></div>
+      <div class="stat"><div class="n">iOS + watchOS</div><div class="l">shipped to the App Store</div></div>
+      <div class="stat"><div class="n"><span class="fill">[add number]</span></div><div class="l">downloads / rating / retention</div></div>
+    </div>
+    <div class="todo"><span class="h">✍️ Fill in &amp; improve</span> Add 1&ndash;2 real outcome numbers here (downloads, App Store rating, week-1 retention, plans completed). Even a small or qualitative number ("400+ runners started a plan") makes the whole case land harder with hiring managers.</div>
+  </section>
+
+  <section>
+    <h2>The problem</h2>
+    <p>I started with a ChatGPT-generated training plan. Solid on paper, useless in practice — it was just text: it couldn&#39;t sync to my watch, couldn&#39;t track a workout, and couldn&#39;t tell me what <em>today</em> actually was.</p>
+    <p>So I tested the market — major brands and indie apps alike — and kept hitting the same three walls: <strong>forced sign-ups, unreliable Apple Watch sync, and interfaces that buried the one thing a runner needs</strong>: "what do I run today, and why?"</p>
+  </section>
+
+  <section>
+    <h2>Research — competitive teardown</h2>
+    <p>I mapped where each leading app breaks down at a specific point in the runner&#39;s real journey:</p>
+    <ul>
+      <li><strong>Nike Run Club</strong> — "Day 1 / Day 2" logic detached from a real calendar. Constant cognitive load: <em>"It&#39;s Wednesday — am I on Day 3 or 4? Did I miss yesterday or was it a rest day?"</em></li>
+      <li><strong>Runkeeper</strong> — login friction and aggressive paywalls; plan structure and basic analytics locked behind premium; frequent watch-sync failures.</li>
+      <li><strong>Runna</strong> — genuinely good features, but ~&euro;20/mo for an ecosystem (coaches, community, events) most runners don&#39;t want.</li>
+      <li><strong>Apple Workouts</strong> — accurate, stable, effortless to track — but it only <em>tracks</em>. No structure, no plan, no "why".</li>
+    </ul>
+    <p><strong>The insight:</strong> the market was split between <em>trackers with no brain</em> (Apple) and <em>platforms with too much overhead</em> (everyone else). Nobody was simply the structured plan that lives on your wrist.</p>
+    <div class="todo"><span class="h">💡 Improvement idea</span> Interviewers love evidence of talking to users, not just competitors. If you spoke to any other runners — even informally — add a line: <span class="fill">"I also talked to N runners training for races and heard the same frustration: …"</span>. If not, it&#39;s fine to frame this as founder + market research.</div>
+  </section>
+
+  <section>
+    <h2>Goals &amp; principles</h2>
+    <ul>
+      <li><strong>Kill decision fatigue</strong> — make "what do I run today" a one-glance answer.</li>
+      <li><strong>Watch-first</strong> — the plan should live where you start the run.</li>
+      <li><strong>Privacy-first</strong> — no accounts, no ads, data stays on the device.</li>
+      <li><strong>Single-purpose</strong> — a tool, not another ecosystem demanding attention.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key design decisions</h2>
+    <p>I framed RunPlan around a few decisions, each tied to a real behavioural problem — not a feature list.</p>
+
+    <div class="dec">
+      <h3>1. Anchor the habit to the calendar, not to "Day N"</h3>
+      <div class="ln"><b>Problem:</b> abstract day-numbering forces a daily negotiation and leaks adherence.</div>
+      <div class="ln"><b>Decision:</b> workouts are anchored to real weekdays — "Tuesday = intervals".</div>
+      <div class="ln"><b>Why:</b> it converts a high-effort daily <em>choice</em> into an automatic <em>habit</em> — you stop deciding and start preparing.</div>
+      <div class="ln"><b>Trade-off:</b> less "do any day whenever" flexibility — a deliberate trade for habit formation.</div>
+    </div>
+
+    <div class="dec">
+      <h3>2. Make the "why" visible to keep people in the plan</h3>
+      <div class="ln"><b>Problem:</b> runners quit mid-plan when a workout feels arbitrary.</div>
+      <div class="ln"><b>Decision:</b> expose the macro-structure — Foundation &rarr; Strength &rarr; Speed &rarr; Taper — and show exactly where you are.</div>
+      <div class="ln"><b>Why:</b> understanding the arc builds competence and autonomy, which is what actually drives adherence.</div>
+    </div>
+
+    <div class="dec">
+      <h3>3. Bake training science in, so the user doesn&#39;t have to know it</h3>
+      <div class="ln"><b>Problem:</b> beginners assume "more hard running = faster" and overtrain.</div>
+      <div class="ln"><b>Decision:</b> automatic periodization — a 3-week build followed by an intentional recovery week (methodology grounded in Daniels, Higdon, Pfitzinger).</div>
+      <div class="ln"><b>Trade-off:</b> sometimes the app tells a motivated runner to ease off — counter-intuitive, but correct.</div>
+    </div>
+
+    <div class="dec">
+      <h3>4. Be the brain for Apple Watch — augment, don&#39;t replace</h3>
+      <div class="ln"><b>Problem:</b> apps that replace Apple&#39;s tracking sync badly and duplicate data.</div>
+      <div class="ln"><b>Decision:</b> RunPlan owns the plan and structure; tracking hands off to Apple Fitness, no duplicate data.</div>
+      <div class="ln"><b>Why:</b> don&#39;t fight the platform standard runners already trust — sit on top of it.</div>
+    </div>
+
+    <p style="margin-top:22px"><strong>What I deliberately left out:</strong> no social feed, no coaching community, no events marketplace, no accounts, no ads. Scoping <em>out</em> was as much of the product work as scoping in.</p>
+
+    <div class="shot"><span class="ic">🖼</span><b>Add screenshots:</b> the calendar/week view · the phase roadmap · a "today&#39;s workout" screen. <span class="fill">Drop images into the folder and I&#39;ll place them here.</span></div>
+  </section>
+
+  <section>
+    <h2>Designing for the wrist (watchOS)</h2>
+    <p>The watch is where the run actually starts, so it drove the core interaction design.</p>
+    <div class="todo"><span class="h">✍️ Your input needed — this is a strong differentiator</span> Watch design is hard and interviewers love it. Add 3&ndash;5 lines on: <span class="fill">how you designed for a 40mm screen + glanceability (mid-run, one look)</span>; <span class="fill">the states you designed (pre-run, during interval, rest, complete)</span>; <span class="fill">what you cut for the watch vs the phone, and why</span>; any <span class="fill">complication / always-on / haptics</span> decisions.</div>
+    <div class="shot"><span class="ic">⌚️</span><b>Add 3&ndash;4 Apple Watch screens</b>, labelled by state.</div>
+  </section>
+
+  <section>
+    <h2>How we ship as a team of two</h2>
+    <p>RunPlan is built and maintained by two people, which makes process and tooling part of the design.</p>
+    <div class="todo"><span class="h">✍️ Your input needed — your #1 selling point in 2026</span> Make the AI-native workflow concrete: <span class="fill">which AI tools you use and for what</span> (prototyping, copy, analytics setup, code, assets); <span class="fill">what would normally need a 5-person team that you two do with AI</span>; one example end-to-end: <span class="fill">"idea → shipped feature in X days"</span>.</div>
+  </section>
+
+  <section>
+    <h2>Outcome</h2>
+    <ul>
+      <li><strong>Validated on myself first:</strong> completed 85% of the plan and finished the Amsterdam Marathon confidently — <em>despite</em> missed sessions, which proved the "flexible-but-structured" model works.</li>
+      <li><strong>Shipped publicly</strong> on the App Store with 5K, 10K and half-marathon plans; no sign-ups, no ads.</li>
+      <li><span class="fill">[Add: downloads, App Store rating, retention, or 1&ndash;2 real user quotes]</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <div class="todo"><span class="h">✍️ Your input — 2&ndash;4 honest lines</span> What surprised you between MVP and launch? One thing you&#39;d design differently now? The growth roadmap in a sentence? Reflection shows seniority — interviewers always ask "what would you do differently?".</div>
+  </section>
+
+  <div class="cfoot">
+    <a href="index.html">&larr; All case studies</a>
+    <a href="kedo.html">Next: KEDO &#8594;</a>
+  </div>
+
+</main>
+</body>
+</html>
