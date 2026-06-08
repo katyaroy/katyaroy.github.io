@@ -26,39 +26,39 @@
 
   <span class="tag">B2B SaaS · Web</span>
   <h1>KEDO — enterprise HR document signing, as simple as email</h1>
-  <p class="sub">A legally-valid e-signature platform for distributed teams — a flagship launch that onboarded 70+ companies in its first 5 months.</p>
+  <p class="sub">A legally-valid e-signature platform for HR documents — the flagship launch I designed, live to 70+ companies in its first five months.</p>
 
   <dl class="meta">
-    <div><dt>My role</dt><dd>UX/UI Designer — research, user flows, UI &amp; design-system work <span class="fill">[confirm exact scope]</span></dd></div>
-    <div><dt>Team</dt><dd>With a business analyst, the in-house HR team &amp; frontend engineers</dd></div>
-    <div><dt>Timeline</dt><dd>2021</dd></div>
-    <div><dt>Context</dt><dd>B2B SaaS for HR electronic document workflow</dd></div>
+    <div><dt>My role</dt><dd>Product Designer — the only designer in a cross-functional team (PM, product owner, analysts, frontend). I owned the design end-to-end.</dd></div>
+    <div><dt>Team</dt><dd>Cross-functional — PM, product owner, business analysts &amp; frontend engineers. I was the sole designer.</dd></div>
+    <div><dt>Timeline</dt><dd>Design 2021 &middot; launched 2022</dd></div>
+    <div><dt>Context</dt><dd>Enterprise B2B SaaS for HR document workflow</dd></div>
   </dl>
 
   <section>
     <h2>Overview</h2>
-    <p>KEDO lets employers and employees exchange and sign HR documents remotely — replacing paper while staying legally compliant for signing and archival. It was a flagship product launch, and the design challenge was to make a heavily regulated process feel as simple as sending an email.</p>
+    <p>KEDO lets companies and employees exchange and sign HR documents remotely — replacing paper while staying legally compliant for signing and archiving. It was a flagship launch, and the design challenge was to make a heavily regulated process feel as simple as sending an email. I was the only designer on it, end-to-end, in a cross-functional team.</p>
     <div class="stats">
-      <div class="stat"><div class="n">70+</div><div class="l">enterprise companies onboarded in 5 months</div></div>
-      <div class="stat"><div class="n"><span class="fill">[metric]</span></div><div class="l">e.g. time-to-sign reduced / NPS / docs processed</div></div>
+      <div class="stat"><div class="n">70+</div><div class="l">companies onboarded in the first 5 months</div></div>
+      <div class="stat"><div class="n">~1,800</div><div class="l">employees onboarded in the same period</div></div>
     </div>
-    <div class="todo"><span class="h">✍️ Fill in &amp; check</span> Add one more concrete number if you have it (time saved per document, documents processed, NPS, retention). Also: were the named enterprise clients (e.g. <span class="fill">Essity, Weigandt Consulting</span>) shown publicly in the original deck? If yes, we can add logos; if under NDA, we keep them out.</div>
   </section>
 
   <section>
     <h2>The problem</h2>
-    <p>Companies with distributed teams had no fast, legal way to sign and manage HR documents remotely. Paper meant cost, delay and storage overhead — but any digital replacement had to satisfy strict legal requirements for <strong>signing and archival</strong>. The product had to make a compliance-heavy process feel effortless to people who are not lawyers.</p>
+    <p>Companies with distributed teams had no fast, legal way to sign and manage HR documents remotely. Paper meant cost, delay and storage overhead — but any digital replacement had to satisfy strict legal requirements for <strong>signing and archiving</strong>. The product had to make a compliance-heavy process feel effortless to people who aren&#39;t lawyers — across the full range of HR paperwork: hiring and termination, leave, policy sign-offs, contract changes, business travel, and more.</p>
   </section>
 
   <section>
     <h2>Research &amp; discovery</h2>
-    <p>I built this on real input, not assumptions, working closely with a business analyst and our HR team:</p>
+    <p>I built this on real input, not assumptions, working closely with the business analyst and HR team:</p>
     <ul>
-      <li><strong>Market &amp; competitor analysis</strong> (with the analyst) — mapped pain points, document types and what actually drives adoption of this kind of service.</li>
-      <li><strong>User research</strong> — interviews and surveys with <strong>4 HR professionals and 4 employees</strong>, plus broader online surveys, to understand real workflows on both sides of a document.</li>
-      <li><strong>Continuous stakeholder loop</strong> — balanced legal and business constraints with user needs through constant communication.</li>
+      <li><strong>Market &amp; competitor analysis</strong> (with the analyst) — mapped pain points, document types, and what actually drives adoption of a service like this.</li>
+      <li><strong>User research</strong> — interviews and surveys with <strong>4 HR professionals and 4 employees</strong>, to understand real workflows on both sides of a document.</li>
+      <li><strong>A continuous stakeholder loop</strong> — balancing legal and business constraints against user needs.</li>
     </ul>
-    <figure class="fig"><img src="img/kedo-market.png" alt="HR and EDI market research" loading="lazy"><figcaption>Market &amp; HR-process research — adoption drivers, barriers, and the most-needed document types</figcaption></figure>  </section>
+    <figure class="fig"><img src="img/kedo-market.png" alt="HR and EDI market research" loading="lazy"><figcaption>Market &amp; HR-process research — adoption drivers, barriers, and the most-needed document types</figcaption></figure>
+  </section>
 
   <section>
     <h2>Goals</h2>
@@ -73,33 +73,34 @@
     <h2>Key design decisions</h2>
 
     <div class="dec">
-      <h3>1. A legally-valid e-signature in one confirmation, not a legal maze</h3>
+      <h3>1. A legally-valid signature in one confirmation, not a legal maze</h3>
       <div class="ln"><b>Problem:</b> e-signature is intimidating and legally loaded — the fastest way to lose a user.</div>
       <div class="ln"><b>Decision:</b> "Create certificate" generates the agreement; the user confirms with a single SMS code.</div>
-      <div class="ln"><b>Why:</b> reduce a compliance-heavy, scary action to one trusted, familiar step.</div>
+      <div class="ln"><b>Why:</b> turn a scary, compliance-heavy action into one trusted, familiar step.</div>
     </div>
 
     <div class="dec">
       <h3>2. Borrow the mental model of email</h3>
-      <div class="ln"><b>Problem:</b> enterprise HR tools feel unfamiliar and slow adoption.</div>
-      <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email-client patterns — inbox, statuses, actions — across desktop and mobile.</div>
-      <div class="ln"><b>Why:</b> familiarity removes the learning curve, which is the real barrier to org-wide rollout.</div>
+      <div class="ln"><b>Problem:</b> enterprise HR tools feel unfamiliar, which slows adoption.</div>
+      <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email — inbox, statuses, actions — across desktop and mobile.</div>
+      <div class="ln"><b>Why:</b> familiarity removes the learning curve, the real barrier to org-wide rollout.</div>
     </div>
 
     <div class="dec">
       <h3>3. Two-tier notifications — informed, not noisy</h3>
-      <div class="ln"><b>Decision:</b> non-intrusive snackbars for action confirmations + a centralized, configurable Notification Center for system alerts and document-status updates.</div>
+      <div class="ln"><b>Decision:</b> light snackbars for action confirmations, plus a configurable Notification Center for system alerts and document-status updates.</div>
       <div class="ln"><b>Why:</b> document status is high-stakes in HR; people need to trust they&#39;ll be told what&#39;s happening without being spammed.</div>
     </div>
 
     <div class="dec">
       <h3>4. A guided send-document flow</h3>
-      <div class="ln"><b>Decision:</b> upload &rarr; name &rarr; select type &rarr; review auto-configured routing &rarr; sign via SMS &rarr; receive status — a multi-step compliance process presented as one linear, safe path.</div>
+      <div class="ln"><b>Decision:</b> upload &rarr; name &rarr; pick type &rarr; review auto-configured routing &rarr; sign via SMS &rarr; track status — a multi-step legal process shown as one linear, safe path.</div>
     </div>
 
     <div class="dec">
-      <h3>5. Designed on (and extended) the design system</h3>
-      <div class="ln"><b>Decision:</b> worked within the product&#39;s guidelines and design system to prototype faster and keep consistency <span class="fill">[and added mobile guidelines / reduced UX-debt backlog — confirm this belongs to KEDO]</span>.</div>
+      <h3>5. Built on (and extended) the design system</h3>
+      <div class="ln"><b>Decision:</b> I worked within the company&#39;s design system. Its mobile guidelines were underdeveloped, so I adapted components for mobile and maintained the component library.</div>
+      <div class="ln"><b>Why:</b> consistency at speed — and a mobile experience that didn&#39;t feel like an afterthought.</div>
     </div>
 
     <div class="figrow">
@@ -112,22 +113,25 @@
 
   <section>
     <h2>Validation &rarr; iteration</h2>
-    <p>At MVP I ran <strong>usability testing with internal users</strong>. Sending a document tested well, but <strong>search performance scored poorly</strong> — so it became its own redesign track. The point: the test changed the product, not just confirmed it.</p>
-    <div class="todo"><span class="h">💡 Improvement idea</span> If you have it, add the before/after of the search redesign as a mini-section — "test found weak search → I redesigned it → result" is exactly the kind of closed loop interviewers probe for.</div>
+    <p>At MVP I ran <strong>usability testing with internal users</strong>. Sending a document tested well — but <strong>search scored poorly</strong>. So it became its own redesign track: a focused project on how people actually find documents. The test changed the product, not just confirmed it. <em>(I later broke that work out into its own case study.)</em></p>
   </section>
 
   <section>
     <h2>Outcome</h2>
     <ul>
-      <li><strong>70+ companies adopted KEDO in the first 5 months</strong> after launch.</li>
-      <li>Named enterprise deployments: <span class="fill">[Essity, Weigandt Consulting — if public]</span>.</li>
-      <li><span class="fill">[Add: time-to-sign reduced, documents processed, NPS, retention]</span></li>
+      <li><strong>70+ companies and ~1,800 employees</strong> adopted KEDO in its first five months after launch.</li>
+      <li>It shipped as a flagship product — and is still on the market today.</li>
+      <li>The email mental model and one-tap signing made a regulated process clear enough for non-experts to adopt org-wide.</li>
     </ul>
   </section>
 
   <section>
     <h2>What I learned</h2>
-    <div class="todo"><span class="h">✍️ Your input — 2&ndash;4 lines</span> What&#39;s different about designing a regulated B2B product vs consumer? What the weak-search finding taught you about how enterprise users actually work? You can also mention here that you <span class="fill">mentored junior designers</span> — leadership is a plus.</div>
+    <ul>
+      <li><strong>In regulated B2B, trust is the design.</strong> Making a legally-binding action feel safe and simple mattered more than any feature — the product lived or died on whether people trusted one click.</li>
+      <li><strong>A usability test is only useful if it can change the product.</strong> The weak-search finding became its own redesign — I treat test results as a mandate, not a checkbox.</li>
+      <li><strong>Being the only designer in a cross-functional team is a leadership role.</strong> I had to make the design case to PM, product owner, analysts and engineers and bring them along — not just hand off screens.</li>
+    </ul>
   </section>
 
   <div class="cfoot">
