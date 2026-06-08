@@ -102,9 +102,6 @@ em{font-style:italic;color:var(--muted)}
 .figrow .fig{margin-top:0}
 @media (max-width:600px){.figrow{grid-template-columns:1fr;gap:18px}}
 
-/* pull quote */
-.pull{font-size:clamp(20px,3vw,27px);font-weight:700;line-height:1.28;letter-spacing:-.015em;color:var(--ink);border-left:3px solid var(--accent);padding:2px 0 2px 20px;margin:clamp(26px,4.5vh,42px) 0;max-width:30ch}
-
 /* flow diagram */
 .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:20px}
 .flow .node{flex:1 1 140px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-size:14px;color:#33333b;line-height:1.35}
