@@ -44,7 +44,7 @@ h1{font-weight:800;font-size:clamp(30px,5.2vw,46px);line-height:1.05;letter-spac
 .sub{font-size:clamp(17px,2.1vw,20px);color:var(--muted);margin-top:16px;max-width:46ch;line-height:1.45}
 
 /* meta */
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px 26px;margin:clamp(26px,4vh,38px) 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px 26px;margin:clamp(20px,3vh,32px) 0 clamp(26px,4vh,38px);padding:0 0 22px;border-bottom:1px solid var(--line)}
 .meta dt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .meta dd{font-size:14.5px;margin-top:6px;line-height:1.4}
 
