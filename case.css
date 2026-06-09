@@ -121,13 +121,13 @@ em{font-style:italic;color:var(--muted)}
 .cover.flat{height:auto;padding:clamp(22px,4vh,44px) 0}
 .cover.flat .cover-shot{position:relative;left:auto;top:auto;transform:none;width:min(92vw,940px);margin:0 auto}
 /* compo cover — desktop + phone composition on a blue field */
-.cover.compo{background:linear-gradient(115deg,#21408c 0%,#2e51a6 55%,#3c63c0 100%);height:clamp(320px,48vh,470px)}
+.cover.compo{background:color-mix(in srgb,var(--accent) 10%,var(--bg));height:clamp(320px,48vh,470px)}
 .compo-inner{position:relative;height:100%;max-width:1180px;margin:0 auto}
 .cover.compo .desk{position:absolute;left:clamp(10px,3vw,44px);top:clamp(30px,7vh,64px);width:min(66%,760px);border-radius:12px;box-shadow:0 34px 70px -34px rgba(0,0,0,.55);z-index:1}
 .cover.compo .phone{position:absolute;right:clamp(10px,4vw,72px);bottom:clamp(-34px,-4vh,-12px);width:clamp(118px,17vw,205px);filter:drop-shadow(0 26px 44px rgba(0,0,0,.45));z-index:2}
 .cover.compo::before,.cover.compo::after{content:"";position:absolute;border-radius:50%;filter:blur(46px);z-index:0;pointer-events:none}
-.cover.compo::before{width:340px;height:340px;background:radial-gradient(circle,#7d9bf0,transparent 70%);top:-130px;right:8%;opacity:.5}
-.cover.compo::after{width:300px;height:300px;background:radial-gradient(circle,#2b4bb0,transparent 70%);bottom:-140px;left:3%;opacity:.55}
+.cover.compo::before{width:340px;height:340px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,var(--bg)),transparent 70%);top:-130px;right:8%;opacity:.65}
+.cover.compo::after{width:300px;height:300px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,var(--bg)),transparent 70%);bottom:-140px;left:3%;opacity:.6}
 @media (max-width:600px){.cover.compo{height:clamp(220px,40vh,300px)}.cover.compo .desk{width:74%;top:18px;left:8px}.cover.compo .phone{width:90px;right:8px;bottom:-18px}}
 
 /* wide 3-up gallery with click-to-zoom */
