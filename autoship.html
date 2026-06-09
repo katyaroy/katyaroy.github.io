@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=2">
+<link rel="stylesheet" href="case.css?v=3">
 </head>
 <body>
 <main class="wrap">
@@ -33,7 +33,7 @@
       <img class="b b2" src="img/autoship-14.png" alt="" loading="lazy">
     </div>
     <div class="cover-inner">
-      <figure class="cover-main"><img src="img/autoship-cover.png" alt="Autoship promoted across the shop homepage" loading="lazy"></figure>
+      <figure class="cover-main"><img src="img/autoship-cover.png" alt="Autoship promoted across the shop homepage"></figure>
     </div>
   </div>
 
@@ -148,20 +148,26 @@
 (function(){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var cov=document.querySelector('.cover[data-parallax]');if(!cov)return;
-  var bs=[].slice.call(cov.querySelectorAll('.cover-bg .b'));if(!bs.length)return;
+  var win=cov.querySelector('.cover-main');
+  var main=win?win.querySelector('img'):null;
+  var bs=[].slice.call(cov.querySelectorAll('.cover-bg .b'));
   var ticking=false;
   function upd(){
     var r=cov.getBoundingClientRect();
-    var center=r.top + r.height/2 - window.innerHeight/2;
-    for(var i=0;i<bs.length;i++){
-      var rate=(i%2?-0.08:0.08);
-      bs[i].style.transform='translate3d(0,'+(center*rate).toFixed(1)+'px,0)';
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    var p=(vh - r.top)/(vh + r.height); p=Math.max(0,Math.min(1,p));
+    if(main&&win){
+      var over=main.offsetHeight - win.clientHeight;
+      if(over>0) main.style.transform='translateY('+(-p*over).toFixed(1)+'px)';
     }
+    var c=r.top + r.height/2 - vh/2;
+    for(var i=0;i<bs.length;i++){ bs[i].style.transform='translate3d(0,'+(c*(i%2?-0.05:0.05)).toFixed(1)+'px,0)'; }
     ticking=false;
   }
   function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll,{passive:true});
+  if(main){ if(main.complete) upd(); main.addEventListener('load',upd); }
   upd();
 })();
 </script>
