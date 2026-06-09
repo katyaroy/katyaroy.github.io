@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document Search — Case study · Ekaterina Roy</title>
+<meta name="description" content="Document Search — redesigning enterprise search after a failed usability test. Part of KEDO." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="topbar">
+    <a class="id" href="index.html">
+      <div class="name">Ekaterina Roy</div>
+      <div class="eyebrow">Product Designer &amp; Co-Founder</div>
+    </a>
+    <div class="status">
+      <div class="loc">Amsterdam, NL</div>
+      <div class="avail"><span class="dot"></span><span class="txt">Open to product design roles — contract, fractional, or founding&#8209;designer, remote</span></div>
+    </div>
+  </div>
+
+  <span class="tag">B2B SaaS · Search redesign</span>
+  <h1>Document Search — redesigning a search that failed its first test</h1>
+  <p class="sub">A focused redesign inside KEDO. Usability testing showed the first search returned nothing and frustrated people — so I rebuilt how they find a document.</p>
+
+  <dl class="meta">
+    <div><dt>My role</dt><dd>Product Designer — I led the search redesign end-to-end (sole designer, same KEDO team).</dd></div>
+    <div><dt>Team</dt><dd>Cross-functional — PM, product owner, analysts &amp; frontend engineers</dd></div>
+    <div><dt>Timeline</dt><dd>Part of KEDO &middot; 2021&ndash;2022</dd></div>
+    <div><dt>Context</dt><dd>A focused redesign within the <a href="kedo.html" style="color:var(--accent);text-decoration:none">KEDO platform &#8599;</a></dd></div>
+  </dl>
+
+  <section>
+    <h2>Overview</h2>
+    <p>When I usability-tested KEDO&#39;s MVP, one thing scored badly: search. People couldn&#39;t find documents they knew existed. Rather than patch it, I broke search out into its own redesign and rebuilt how people find a document from scratch. This is that deep-dive — the full product is the <a href="kedo.html" style="color:var(--accent);text-decoration:none">KEDO case &#8599;</a>.</p>
+  </section>
+
+  <section>
+    <h2>The problem</h2>
+    <p>People didn&#39;t remember which folder a document lived in. They searched the way they think — by <strong>who sent it</strong>, or <strong>what it&#39;s called</strong>. The first version fought that instinct instead of following it.</p>
+  </section>
+
+  <section>
+    <h2>What the first launch got wrong</h2>
+    <p>The first search had three problems that compounded:</p>
+    <ul>
+      <li><strong>Two separate searches</strong> — one for incoming, one for sent — so you had to guess where to look first.</li>
+      <li><strong>Filters that hid</strong> — the options were mutually exclusive and took an extra click to even see.</li>
+      <li><strong>The result: dead ends</strong> — empty result screens, and people who gave up.</li>
+    </ul>
+    <p>A usability test caught it early — which is exactly what a test is for.</p>
+  </section>
+
+  <section>
+    <h2>The redesign</h2>
+    <p>I rebuilt search around one idea: <strong>meet people where their memory is.</strong> A few changes did most of the work.</p>
+
+    <p><strong>One search, filters in plain sight.</strong> I merged incoming and sent into a single search across every document, and brought the filters — name, sender, date — into view without an extra click.</p>
+    <figure class="fig"><img src="img/ds-search.png" alt="Redesigned document search landing" loading="lazy"><figcaption>One prominent search across all documents — no more guessing inbox vs sent</figcaption></figure>
+    <figure class="fig"><img src="img/ds-filters.png" alt="Visible search filters" loading="lazy"><figcaption>Name, sender and date filters — available without an extra click</figcaption></figure>
+
+    <p><strong>Search as you type.</strong> Instant suggestions surface the document before you finish typing.</p>
+    <figure class="fig"><img src="img/ds-typeahead.png" alt="Type-ahead search suggestions" loading="lazy"><figcaption>Instant suggestions as you type, with a quick path to all results</figcaption></figure>
+
+    <p><strong>Show the match — and the way out.</strong> Each result highlights the query and shows a result count and the document&#39;s folder location, so you trust what you found. A prominent &quot;create a new document&quot; button turns a dead end into a next step.</p>
+    <figure class="fig"><img src="img/ds-results.png" alt="Search results with highlighted matches" loading="lazy"><figcaption>Highlighted matches, a result count, and where each document lives</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Outcome</h2>
+    <p>The redesign did what the first one couldn&#39;t: <strong>people found their documents.</strong> In testing, users said the search felt transparent — they could see what matched and where it lived — and the prominent search bar and create button made the whole page faster to move through.</p>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <p>The real lesson wasn&#39;t about search. It was that <strong>a usability test is only worth running if you&#39;re willing to let it rewrite the design.</strong> Here it turned a quiet failure into the clearest single improvement in the product.</p>
+  </section>
+
+  <div class="cfoot">
+    <a href="index.html">&larr; All case studies</a>
+    <a href="kedo.html">Read the full KEDO case &#8594;</a>
+  </div>
+
+</main>
+</body>
+</html>
