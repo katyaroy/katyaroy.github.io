@@ -57,7 +57,7 @@
       <li><strong>User research</strong> — interviews and surveys with <strong>4 HR professionals and 4 employees</strong>, to understand real workflows on both sides of a document.</li>
       <li><strong>A continuous stakeholder loop</strong> — balancing legal and business constraints against user needs.</li>
     </ul>
-    <figure class="fig"><img src="img/kedo-market.png" alt="HR and EDI market research" loading="lazy"><figcaption>Market &amp; HR-process research — adoption drivers, barriers, and the most-needed document types</figcaption></figure>
+    <figure class="fig"><img class="zoomable" src="img/kedo-market.png" alt="HR and EDI market research" loading="lazy"><figcaption>Market &amp; HR-process research — adoption drivers, barriers, and the most-needed document types</figcaption></figure>
   </section>
 
   <section>
@@ -77,6 +77,7 @@
       <div class="ln"><b>Problem:</b> e-signature is intimidating and legally loaded — the fastest way to lose a user.</div>
       <div class="ln"><b>Decision:</b> "Create certificate" generates the agreement; the user confirms with a single SMS code.</div>
       <div class="ln"><b>Why:</b> turn a scary, compliance-heavy action into one trusted, familiar step.</div>
+      <div class="ln"><b>Trade-off:</b> SMS ties signing to a phone number — a deliberate trade for a channel people already trust.</div>
     </div>
 
     <div class="dec">
@@ -84,31 +85,34 @@
       <div class="ln"><b>Problem:</b> enterprise HR tools feel unfamiliar, which slows adoption.</div>
       <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email — inbox, statuses, actions — across desktop and mobile.</div>
       <div class="ln"><b>Why:</b> familiarity removes the learning curve, the real barrier to org-wide rollout.</div>
+      <div class="ln"><b>Trade-off:</b> borrowing email patterns limits how distinctive the UI can be — worth it, since familiarity is what drives adoption.</div>
     </div>
 
     <div class="dec">
       <h3>3. Two-tier notifications — informed, not noisy</h3>
       <div class="ln"><b>Decision:</b> light snackbars for action confirmations, plus a configurable Notification Center for system alerts and document-status updates.</div>
       <div class="ln"><b>Why:</b> document status is high-stakes in HR; people need to trust they&#39;ll be told what&#39;s happening without being spammed.</div>
+      <div class="ln"><b>Trade-off:</b> two notification systems to maintain — justified by how high-stakes document status is in HR.</div>
     </div>
 
     <div class="dec">
       <h3>4. A guided send-document flow</h3>
       <div class="ln"><b>Decision:</b> upload &rarr; name &rarr; pick type &rarr; review auto-configured routing &rarr; sign via SMS &rarr; track status — a multi-step legal process shown as one linear, safe path.</div>
+      <div class="ln"><b>Why:</b> a single linear path turns a multi-step legal process into one safe sequence anyone can follow.</div>
+      <div class="ln"><b>Trade-off:</b> less flexibility for power users — accepted, because clarity matters more for an occasional, high-stakes task.</div>
     </div>
 
     <div class="dec">
       <h3>5. Built on (and extended) the design system</h3>
       <div class="ln"><b>Decision:</b> I worked within the company&#39;s design system. Its mobile guidelines were underdeveloped, so I adapted components for mobile and maintained the component library.</div>
       <div class="ln"><b>Why:</b> consistency at speed — and a mobile experience that didn&#39;t feel like an afterthought.</div>
+      <div class="ln"><b>Trade-off:</b> working inside the system limits bespoke flourishes — the right call for consistency and speed at enterprise scale.</div>
     </div>
 
-    <div class="figrow">
-        <figure class="fig"><img src="img/kedo-sms.png" alt="SMS e-signature confirmation" loading="lazy"><figcaption>Decision 1 — signing with a single SMS code</figcaption></figure>
-        <figure class="fig"><img src="img/kedo-notif.png" alt="Notification center" loading="lazy"><figcaption>Decision 3 — two-tier notifications &amp; document status</figcaption></figure>
-      </div>
-      <figure class="fig"><img src="img/kedo-dashboard.png" alt="Email-style document dashboard" loading="lazy"><figcaption>Decision 2 — an Inbox / Sent dashboard borrowed from email</figcaption></figure>
-      <figure class="fig"><img src="img/kedo-4.png" alt="Main document flow" loading="lazy"><figcaption>Decision 4 — the send-document flow, mapped end to end</figcaption></figure>
+    <figure class="fig"><img class="zoomable" src="img/kedo-sms.png" alt="SMS e-signature confirmation" loading="lazy"><figcaption>Decision 1 — signing with a single SMS code</figcaption></figure>
+    <figure class="fig"><img class="zoomable" src="img/kedo-dashboard.png" alt="Email-style document dashboard" loading="lazy"><figcaption>Decision 2 — an Inbox / Sent dashboard borrowed from email</figcaption></figure>
+    <figure class="fig"><img class="zoomable" src="img/kedo-notif.png" alt="Notification center" loading="lazy"><figcaption>Decision 3 — two-tier notifications &amp; document status</figcaption></figure>
+    <figure class="fig"><img class="zoomable" src="img/kedo-4.png" alt="Main document flow" loading="lazy"><figcaption>Decision 4 — the send-document flow, mapped end to end</figcaption></figure>
   </section>
 
   <section>
@@ -140,5 +144,17 @@
   </div>
 
 </main>
+<script>
+(function(){
+  var z=[].slice.call(document.querySelectorAll('.zoomable')); if(!z.length)return;
+  var lb=document.createElement('div'); lb.className='lb';
+  var im=document.createElement('img'); im.alt=''; lb.appendChild(im);
+  document.body.appendChild(lb);
+  function close(){ lb.classList.remove('open'); im.src=''; }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  z.forEach(function(el){ el.addEventListener('click',function(){ im.src=el.getAttribute('data-full')||el.src; lb.classList.add('open'); }); });
+})();
+</script>
 </body>
 </html>
