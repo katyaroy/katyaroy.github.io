@@ -111,8 +111,8 @@ em{font-style:italic;color:var(--muted)}
 .cover-bg .b{position:absolute;width:min(46%,420px);border-radius:22px;filter:blur(24px) saturate(.6);opacity:.3;will-change:transform}
 .cover-bg .b1{top:-8%;left:-5%}
 .cover-bg .b2{bottom:-12%;right:-5%}
-.cover-inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
-.cover-main{max-width:720px;margin:0 auto}
+.cover-inner{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(18px,4vw,36px)}
+.cover-main{max-width:none}
 .cover-main img{width:100%;display:block;border-radius:16px;box-shadow:0 30px 70px -34px rgba(0,0,0,.42);background:var(--card)}
 @media (max-width:600px){.cover-bg .b{filter:blur(16px) saturate(.6);opacity:.28}}
 
