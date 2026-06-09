@@ -27,7 +27,15 @@
   <span class="tag">E-commerce · Web</span>
   <h1>Autoship — recurring delivery</h1>
   <p class="sub">A new way to shop — delivered to a Russian market that didn&#39;t know it yet.</p>
-  <figure class="fig"><img src="img/autoship-4.png" alt="Autoship across the Petshop experience" loading="lazy"><figcaption>Autoship woven across the shop — banner, product cards, cart &amp; checkout</figcaption></figure>
+  <div class="cover" data-parallax>
+    <div class="cover-bg" aria-hidden="true">
+      <img class="b b1" src="img/autoship-3.png" alt="" loading="lazy">
+      <img class="b b2" src="img/autoship-14.png" alt="" loading="lazy">
+    </div>
+    <div class="cover-inner">
+      <figure class="cover-main"><img src="img/autoship-4.png" alt="Autoship woven across the shop — banner, product cards, cart &amp; checkout" loading="lazy"></figure>
+    </div>
+  </div>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer — one of the in-house design team on Autoship. I owned the education touchpoints (banners, the explanation page) and the checkout; research and testing were shared across the team.</dd></div>
@@ -136,5 +144,26 @@
   </div>
 
 </main>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var cov=document.querySelector('.cover[data-parallax]');if(!cov)return;
+  var bs=[].slice.call(cov.querySelectorAll('.cover-bg .b'));if(!bs.length)return;
+  var ticking=false;
+  function upd(){
+    var r=cov.getBoundingClientRect();
+    var center=r.top + r.height/2 - window.innerHeight/2;
+    for(var i=0;i<bs.length;i++){
+      var rate=(i%2?-0.08:0.08);
+      bs[i].style.transform='translate3d(0,'+(center*rate).toFixed(1)+'px,0)';
+    }
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  upd();
+})();
+</script>
 </body>
 </html>
