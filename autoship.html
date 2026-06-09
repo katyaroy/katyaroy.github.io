@@ -152,7 +152,7 @@
   function upd(){
     var r=cov.getBoundingClientRect();
     var vh=window.innerHeight||document.documentElement.clientHeight;
-    var p=(vh*0.18 - r.top)/Math.max(1,r.height); p=Math.max(0,Math.min(1,p));
+    var p=(vh*0.18 - r.top)/Math.max(1,r.height + vh*0.55); p=Math.max(0,Math.min(1,p));
     if(main){
       var over=main.offsetTop + main.offsetHeight - cov.clientHeight;
       if(over>0) main.style.transform='translateX(-50%) translateY('+(-p*over).toFixed(1)+'px)';
