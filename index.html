@@ -164,6 +164,12 @@
   .case:hover .btn{transform:translateY(-1px);filter:brightness(1.07)}
   .case .btn:active{transform:translateY(0) scale(.98)}
 
+  /* b&w by default, colour on hover (hover devices only) */
+  @media (hover:hover){
+    .case .media img,.portrait .pic img{filter:grayscale(1);transition:filter .4s ease}
+    .case:hover .media img,.portrait:hover .pic img{filter:grayscale(0)}
+  }
+
   /* footer */
   .foot{
     display:flex;justify-content:space-between;align-items:center;
