@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=5">
+<link rel="stylesheet" href="case.css?v=6">
 </head>
 <body>
 <main class="wrap">
@@ -60,10 +60,12 @@
       <li>Studied <strong>US retailers</strong> where subscription already worked — with the explicit caution that <em>what works abroad may not transfer here.</em></li>
       <li><strong>Corridor-tested</strong> prototypes to check the purchase flow and the new terminology read clearly.</li>
     </ul>
-    <div class="figrow">
-      <figure class="fig"><img src="img/autoship-13.png" alt="Target audience segments" loading="lazy"><figcaption>Audience segments, from research</figcaption></figure>
-      <figure class="fig"><img src="img/autoship-8.png" alt="Pain points map" loading="lazy"><figcaption>Pain points, mapped from interviews</figcaption></figure>
+    <div class="gallery3">
+      <figure><img class="zoomable" src="img/autoship-audience.svg" alt="Target audience segments" loading="lazy"><figcaption>Target audience — segments &amp; motivations</figcaption></figure>
+      <figure><img class="zoomable" src="img/autoship-journey.svg" alt="Customer journey stages" loading="lazy"><figcaption>Customer journey — awareness to advocacy</figcaption></figure>
+      <figure><img class="zoomable" src="img/autoship-goals.svg" alt="Goals, pain points and opportunities" loading="lazy"><figcaption>Goals, pain points &amp; opportunities</figcaption></figure>
     </div>
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px">Click any board to view it full-size</p>
   </section>
 
   <section>
@@ -167,6 +169,16 @@
   window.addEventListener('resize',onScroll,{passive:true});
   if(main){ if(main.complete) upd(); main.addEventListener('load',upd); }
   upd();
+})();
+(function(){
+  var z=[].slice.call(document.querySelectorAll('.zoomable')); if(!z.length)return;
+  var lb=document.createElement('div'); lb.className='lb';
+  var im=document.createElement('img'); im.alt=''; lb.appendChild(im);
+  document.body.appendChild(lb);
+  function close(){ lb.classList.remove('open'); im.src=''; }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  z.forEach(function(el){ el.addEventListener('click',function(){ im.src=el.getAttribute('data-full')||el.src; lb.classList.add('open'); }); });
 })();
 </script>
 </body>
