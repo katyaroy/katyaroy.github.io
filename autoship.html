@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=3">
+<link rel="stylesheet" href="case.css?v=4">
 </head>
 <body>
 <main class="wrap">
@@ -32,9 +32,7 @@
       <img class="b b1" src="img/autoship-3.png" alt="" loading="lazy">
       <img class="b b2" src="img/autoship-14.png" alt="" loading="lazy">
     </div>
-    <div class="cover-inner">
-      <figure class="cover-main"><img src="img/autoship-cover.png" alt="Autoship promoted across the shop homepage"></figure>
-    </div>
+    <img class="cover-shot" src="img/autoship-cover.png" alt="Autoship promoted across the shop homepage">
   </div>
 
   <dl class="meta">
@@ -148,17 +146,16 @@
 (function(){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var cov=document.querySelector('.cover[data-parallax]');if(!cov)return;
-  var win=cov.querySelector('.cover-main');
-  var main=win?win.querySelector('img'):null;
+  var main=cov.querySelector('.cover-shot');
   var bs=[].slice.call(cov.querySelectorAll('.cover-bg .b'));
   var ticking=false;
   function upd(){
     var r=cov.getBoundingClientRect();
     var vh=window.innerHeight||document.documentElement.clientHeight;
     var p=(vh - r.top)/(vh + r.height); p=Math.max(0,Math.min(1,p));
-    if(main&&win){
-      var over=main.offsetHeight - win.clientHeight;
-      if(over>0) main.style.transform='translateY('+(-p*over).toFixed(1)+'px)';
+    if(main){
+      var over=main.offsetHeight - cov.clientHeight;
+      if(over>0) main.style.transform='translateX(-50%) translateY('+(-p*over).toFixed(1)+'px)';
     }
     var c=r.top + r.height/2 - vh/2;
     for(var i=0;i<bs.length;i++){ bs[i].style.transform='translate3d(0,'+(c*(i%2?-0.05:0.05)).toFixed(1)+'px,0)'; }
