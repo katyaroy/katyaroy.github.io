@@ -27,6 +27,13 @@
   <span class="tag">B2B SaaS · Web</span>
   <h1>KEDO — enterprise HR document signing, as simple as email</h1>
   <p class="sub">A legally-valid e-signature platform for HR documents — the flagship launch I designed, live to 70+ companies in its first five months.</p>
+  <div class="cover" data-parallax>
+    <div class="cover-bg" aria-hidden="true">
+      <img class="b b1" src="img/kedo-market.png" alt="" loading="lazy">
+      <img class="b b2" src="img/kedo-sms.png" alt="" loading="lazy">
+    </div>
+    <img class="cover-shot" src="img/kedo-dashboard.png" alt="KEDO email-style document dashboard">
+  </div>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer — the only designer in a cross-functional team (PM, product owner, analysts, frontend). I owned the design end-to-end.</dd></div>
@@ -145,6 +152,31 @@
 
 </main>
 <script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var cov=document.querySelector('.cover[data-parallax]');if(!cov)return;
+  var main=cov.querySelector('.cover-shot');
+  var bs=[].slice.call(cov.querySelectorAll('.cover-bg .b'));
+  var ticking=false, r0=null;
+  function upd(){
+    var r=cov.getBoundingClientRect();
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    if(r0===null) r0=r.top;
+    var p=(r0 - r.top)/(vh*1.7); p=Math.max(0,Math.min(1,p));
+    if(main){
+      var over=main.offsetTop + main.offsetHeight - cov.clientHeight;
+      if(over>0) main.style.transform='translateX(-50%) translateY('+(-p*over).toFixed(1)+'px)';
+    }
+    var c=r.top + r.height/2 - vh/2;
+    for(var i=0;i<bs.length;i++){ bs[i].style.transform='translate3d(0,'+(c*(i%2?-0.035:0.035)).toFixed(1)+'px,0)'; }
+    ticking=false;
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(upd); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  if(main){ if(main.complete) upd(); main.addEventListener('load',upd); }
+  upd();
+})();
 (function(){
   var z=[].slice.call(document.querySelectorAll('.zoomable')); if(!z.length)return;
   var lb=document.createElement('div'); lb.className='lb';
