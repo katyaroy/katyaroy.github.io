@@ -108,13 +108,13 @@ em{font-style:italic;color:var(--muted)}
 /* case cover — full-bleed hero with parallax + blurred depth */
 .cover{position:relative;left:50%;transform:translateX(-50%);width:100vw;margin-top:clamp(24px,4vh,42px);background:color-mix(in srgb,var(--accent) 10%,var(--bg));overflow:hidden;padding:clamp(38px,6vh,78px) 0}
 .cover-bg{position:absolute;inset:-12% 0;z-index:0;pointer-events:none}
-.cover-bg .b{position:absolute;width:min(48%,440px);border-radius:22px;filter:blur(16px);opacity:.45;will-change:transform}
+.cover-bg .b{position:absolute;width:min(46%,420px);border-radius:22px;filter:blur(24px) saturate(.6);opacity:.3;will-change:transform}
 .cover-bg .b1{top:-8%;left:-5%}
 .cover-bg .b2{bottom:-12%;right:-5%}
 .cover-inner{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 .cover-main{max-width:720px;margin:0 auto}
 .cover-main img{width:100%;display:block;border-radius:16px;box-shadow:0 30px 70px -34px rgba(0,0,0,.42);background:var(--card)}
-@media (max-width:600px){.cover-bg .b{filter:blur(11px);opacity:.4}}
+@media (max-width:600px){.cover-bg .b{filter:blur(16px) saturate(.6);opacity:.28}}
 
 /* flow diagram */
 .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:20px}
