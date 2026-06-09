@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=4">
+<link rel="stylesheet" href="case.css?v=5">
 </head>
 <body>
 <main class="wrap">
@@ -152,9 +152,9 @@
   function upd(){
     var r=cov.getBoundingClientRect();
     var vh=window.innerHeight||document.documentElement.clientHeight;
-    var p=(vh - r.top)/(vh + r.height); p=Math.max(0,Math.min(1,p));
+    var p=(vh*0.18 - r.top)/Math.max(1,r.height); p=Math.max(0,Math.min(1,p));
     if(main){
-      var over=main.offsetHeight - cov.clientHeight;
+      var over=main.offsetTop + main.offsetHeight - cov.clientHeight;
       if(over>0) main.style.transform='translateX(-50%) translateY('+(-p*over).toFixed(1)+'px)';
     }
     var c=r.top + r.height/2 - vh/2;
