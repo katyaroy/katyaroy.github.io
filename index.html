@@ -131,33 +131,37 @@
     font-size:12px;font-weight:600;letter-spacing:0.16em;
     text-transform:uppercase;color:var(--muted);
   }
-  .cases{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:clamp(10px,1.4vw,14px);
-  }
+  .cases{display:flex;flex-direction:column;gap:clamp(14px,2vw,20px)}
   .case{
-    display:flex;flex-direction:column;
+    display:flex;flex-direction:row;align-items:stretch;
     background:var(--card);
     border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);
-    border-radius:clamp(28px,3vw,44px);
-    padding:clamp(20px,2vw,28px);
+    border-radius:clamp(28px,3vw,40px);
+    overflow:hidden;
     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-    min-height:132px;
+    min-height:clamp(190px,23vw,230px);
   }
   .case:hover,.case:focus-visible{
     transform:translateY(-3px);
-    box-shadow:0 14px 32px -12px color-mix(in srgb,var(--accent) 18%,transparent);
+    box-shadow:0 18px 40px -16px color-mix(in srgb,var(--accent) 22%,transparent);
     border-color:color-mix(in srgb,var(--accent) 45%,transparent);
     outline:none;
   }
-  .case .thumb{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;display:block;margin-bottom:14px;background:color-mix(in srgb,var(--accent) 6%,var(--card))}
-  .case .tag{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.01em}
-  .case h3{font-family:'Noto Sans',sans-serif;font-size:clamp(16px,1.5vw,18px);font-weight:600;margin-top:7px;letter-spacing:-0.01em}
-  .case p{font-size:14px;line-height:1.5;color:var(--muted);margin-top:7px;flex:1}
-  .case .go{font-size:13px;font-weight:600;margin-top:12px;display:inline-flex;align-items:center;gap:6px}
-  .case .go .arw{transition:transform .16s ease}
-  .case:hover .go .arw{transform:translateX(3px)}
+  .case .media{flex:0 0 44%;background:color-mix(in srgb,var(--accent) 7%,var(--card));overflow:hidden}
+  .case .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .case .body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(22px,3vw,40px)}
+  .case .tag{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+  .case h3{font-family:'Noto Sans',sans-serif;font-size:clamp(26px,3.4vw,40px);font-weight:800;margin-top:8px;letter-spacing:-0.02em;line-height:1.05}
+  .case p{font-size:clamp(14px,1.5vw,16px);line-height:1.5;color:var(--muted);margin-top:10px;max-width:42ch}
+  .case .btn{
+    align-self:flex-start;margin-top:clamp(16px,2vw,22px);
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 20px;border-radius:999px;
+    background:var(--accent);color:#fff;
+    font-size:14px;font-weight:600;letter-spacing:0.01em;
+    transition:gap .16s ease;
+  }
+  .case:hover .btn{gap:12px}
 
   /* footer */
   .foot{
@@ -193,12 +197,12 @@
 
     .stats{justify-content:flex-start;width:100%}
 
-    .cases{grid-template-columns:1fr}
-    .case{min-height:0}
+    .case{flex-direction:column;min-height:0}
+    .case .media{flex:none;aspect-ratio:16/9}
   }
   @media (prefers-color-scheme:dark){
     :root{--bg:#121214;--ink:#F3F1EC;--muted:#9A9AA3;--line:#2A2A2E;--card:#1A1A1D;--accent:#D98792;}
-    .about{color:#C8C8CF}.now{color:#C8C8CF}
+    .about{color:#C8C8CF}.now{color:#C8C8CF}.case .btn{color:#17171A}
   }
 </style>
 </head>
@@ -242,25 +246,31 @@
       <div class="worklabel">Case studies</div>
       <div class="cases">
       <a class="case" href="runplan.html">
-        <img class="thumb" src="img/rp-on-watch.jpg" alt="" loading="lazy">
-        <span class="tag">iOS + watchOS</span>
-        <h3>RunPlan</h3>
-        <p>Marathon training reimagined watch-first — exactly what to run today, in one glance.</p>
-        <span class="go">Read case <span class="arw">&rarr;</span></span>
+        <div class="media"><img src="img/rp-on-watch.jpg" alt="" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">iOS + watchOS</span>
+          <h3>RunPlan</h3>
+          <p>Marathon training reimagined watch-first — exactly what to run today, in one glance.</p>
+          <span class="btn">Read case <span class="arw">&rarr;</span></span>
+        </div>
       </a>
       <a class="case" href="kedo.html">
-        <img class="thumb" src="img/kedo-market.png" alt="" loading="lazy">
-        <span class="tag">B2B SaaS</span>
-        <h3>KEDO</h3>
-        <p>HR document signing made as simple as email — 70+ enterprise clients in 5 months.</p>
-        <span class="go">Read case <span class="arw">&rarr;</span></span>
+        <div class="media"><img src="img/kedo-market.png" alt="" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">B2B SaaS</span>
+          <h3>KEDO</h3>
+          <p>HR document signing made as simple as email — 70+ enterprise clients in 5 months.</p>
+          <span class="btn">Read case <span class="arw">&rarr;</span></span>
+        </div>
       </a>
       <a class="case" href="autoship.html">
-        <img class="thumb" src="img/autoship-13.png" alt="" loading="lazy">
-        <span class="tag">E-commerce</span>
-        <h3>Autoship</h3>
-        <p>Subscription delivery, new to the market — launched without confusing customers, and orders grew.</p>
-        <span class="go">Read case <span class="arw">&rarr;</span></span>
+        <div class="media"><img src="img/autoship-13.png" alt="" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">E-commerce</span>
+          <h3>Autoship</h3>
+          <p>Subscription delivery, new to the market — launched without confusing customers, and orders grew.</p>
+          <span class="btn">Read case <span class="arw">&rarr;</span></span>
+        </div>
       </a>
     </div>
     </div>
