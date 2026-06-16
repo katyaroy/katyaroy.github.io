@@ -50,26 +50,22 @@
   </section>
 
   <section>
-    <h2>Why I built RunPlan</h2>
-    <p>As an Apple&nbsp;Watch user, I wanted one thing: a calendar-based plan that lived on my wrist and told me what to run today. Nothing did it well.</p>
+    <h2>Why I built RunPlan — a personal pain</h2>
+    <p>RunPlan started as <strong>my own problem.</strong> Training for the Amsterdam Marathon, I asked ChatGPT for a plan and got a wall of text I couldn&#39;t actually run with — no calendar, nothing on my wrist. So I tried every running app I could find, and each failed me in its own way:</p>
     <ul>
-      <li><strong>Apple&#39;s apps</strong> tracked my runs but gave me no plan.</li>
-      <li><strong>Runna</strong> was the closest, but it&#39;s app-first and heavier than I wanted.</li>
-      <li><strong>Garmin</strong> had the structure — but the wrong ecosystem for me, a complex setup, and a clunky phone-to-watch hand-off (you download a plan, then install it separately).</li>
+      <li><strong>ChatGPT</strong> — a plan as plain text; nothing synced to my Apple&nbsp;Watch.</li>
+      <li><strong>Nike Run Club</strong> — "Day&nbsp;1, Day&nbsp;2" logic. Every week: <em>"it&#39;s Wednesday — am I on Day&nbsp;3 or 4?"</em></li>
+      <li><strong>Runkeeper</strong> — logins, paywalls hiding the plan, flaky watch sync.</li>
+      <li><strong>Runna</strong> — genuinely good, but a whole ecosystem and subscription. I wanted a simple tool, not another platform.</li>
+      <li><strong>Apple Workouts</strong> — effortless tracking, but no plan and no "why".</li>
     </ul>
-    <p>The gap was clear: <strong>Garmin-grade structure with Apple-native smoothness.</strong> That&#39;s RunPlan — a plan that sits on a real calendar, syncs straight to the watch, and starts the right workout with one tap.</p>
+    <p>Nobody offered the one thing I wanted: <strong>a calendar-based plan that lives on your wrist and tells you what to run today.</strong> So I built it. That&#39;s the through-line of this case — <strong>a personal pain, turned into a product.</strong></p>
   </section>
 
   <section>
-    <h2>Research — competitive teardown</h2>
-    <p>I mapped where each leading app fails the runner. They hit the same three walls: forced sign-ups, flaky Apple&nbsp;Watch sync, and interfaces that bury the one question that matters — "what do I run today?"</p>
-    <ul>
-      <li><strong>Nike Run Club</strong> — "Day&nbsp;1 / Day&nbsp;2" logic, detached from a real calendar. Every week: <em>"Am I on Day&nbsp;3 or 4? Did I miss one?"</em></li>
-      <li><strong>Runkeeper</strong> — sign-up friction and paywalls; plan and analytics locked behind premium; watch sync often fails.</li>
-      <li><strong>Runna</strong> — genuinely good, but ~&euro;20/mo for an ecosystem (coaches, community, events) most runners don&#39;t want.</li>
-      <li><strong>Apple Workouts</strong> — stable and effortless, but it only <em>tracks</em>. No plan, no "why".</li>
-    </ul>
-    <p><strong>The insight:</strong> the market split in two — <em>trackers with no brain</em> (Apple) and <em>platforms with too much overhead</em> (everyone else). Nobody was just the plan that lives on your wrist.</p>
+    <h2>Research — turning frustration into a teardown</h2>
+    <p>I turned that frustration into a structured teardown — mapping not just <em>what</em> annoyed me, but <em>why</em> each app fails the runner. The same three walls came up everywhere: <strong>forced sign-ups, flaky Apple&nbsp;Watch sync, and interfaces that bury the one question that matters — "what do I run today?"</strong></p>
+    <p><strong>The insight:</strong> the market had split in two — <em>trackers with no brain</em> (Apple: stable and effortless, but no plan) and <em>platforms with too much overhead</em> (Runna, Garmin, Nike: real structure, but ecosystems, subscriptions and day-numbering). Nobody was simply <strong>the plan that lives on your wrist.</strong></p>
     <div class="figrow">
       <figure class="fig"><img src="img/rp-mismatch-calendar.png" alt="Day-numbering cognitive load" loading="lazy"><figcaption>"Day 3 or 4? Did I miss one?" — the cognitive load of day-numbered plans</figcaption></figure>
       <figure class="fig"><img src="img/rp-feature-fatigue.png" alt="Feature fatigue" loading="lazy"><figcaption>Feature fatigue — coaching, community, shop, chat all piled on the run</figcaption></figure>
@@ -153,24 +149,38 @@
     </div>
     <p class="flowcap">One seamless loop: RunPlan owns the plan, the watch runs it, Apple Fitness tracks, and progress syncs straight back.</p>
     <figure class="fig"><img src="img/rp-on-watch.jpg" alt="RunPlan on Apple Watch outdoors" loading="lazy"><figcaption>RunPlan guiding an easy run — on the wrist, where the run actually starts</figcaption></figure>
-    <div class="todo"><span class="h">✍️ Optional</span> Want to go deeper on watch craft? Add a couple of lines on glanceability on a 40mm screen, the states you designed (pre-run, interval, rest, complete), or haptics.</div>
+    <p><strong>The hardest design problem: a coach has a lot to say, and the watch has room for almost none.</strong> On a 40mm screen, every view has to answer one question at a glance — so I built each state around a single job: the run ahead, the interval you&#39;re in, the rest, the finish. Everything else is one tap away, not on screen.</p>
+    <p><strong>Feedback you feel, not read.</strong> You shouldn&#39;t have to stare at your wrist mid-run, so RunPlan speaks through <strong>haptics</strong>: a distinct tap when the workout starts, when an interval changes, and when you pass a milestone. You feel the plan and keep running.</p>
+    <p>Getting this right was genuinely hard — Apple&nbsp;Watch UI is, in our experience, <em>pathologically</em> harder than iPhone: the simulator lies, a build takes minutes, and a 4&nbsp;px misalignment only shows on the real device. So I designed against the watch itself, on real runs — the human eye on the wrist was the only reliable test.</p>
+  </section>
+
+  <section>
+    <h2>Constraints &amp; scope</h2>
+    <p>I kept the boundaries deliberate:</p>
+    <ul>
+      <li><strong>One platform — Apple&nbsp;Watch.</strong> Not Garmin, not Android. Going deep on a single ecosystem beat going shallow on three.</li>
+      <li><strong>Sync is the backbone.</strong> The plan only matters if it reliably reaches the wrist, so the watch&#8596;iPhone sync got more engineering than any single screen.</li>
+      <li><strong>Build on Apple&#39;s ecosystem, don&#39;t fight it.</strong> RunPlan is the brain; Apple&nbsp;Health and Workouts record the run — less to maintain, and it sits inside tools runners already trust.</li>
+    </ul>
   </section>
 
   <section>
     <h2>How we ship — two people, AI-native</h2>
     <p>My co-founder owns the algorithms and heavy logic. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship design changes straight into the code with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal). When iOS&nbsp;26 brought Liquid Glass, I redesigned the whole app to it in code.</p>
-    <p>We release about once a month and re-prioritise by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. And because it&#39;s a running app, I test it for real — on simulators and out on actual runs, checking pace, mileage and that the interval guidance is clear on the wrist. No handoff between design and code means two people ship like a bigger team.</p>
+    <p>We release about once a month and re-prioritise by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. No handoff between design and code means two people ship like a bigger team.</p>
+    <p>Day to day it&#39;s a tight loop — <strong>idea &rarr; build in code &rarr; test on a real run &rarr; debug &rarr; repeat</strong> — and <em>what</em> we test matters more than how much. About <strong>100 unit tests</strong> on the plan engine earn their keep; <strong>~25 UI tests caught zero real bugs</strong> — on a watch, the only reliable test is me running with it. One performance bug hid for months until we found it by bisecting the UI piece by piece. At this size, debugging <em>is</em> part of the design work.</p>
     <div class="flow">
       <div class="node"><b>Idea</b>re-prioritised by impact</div>
       <span class="arrow">&rarr;</span>
-      <div class="node"><b>Design</b>in Figma</div>
-      <span class="arrow">&rarr;</span>
-      <div class="node"><b>Build</b>in code, with AI</div>
+      <div class="node"><b>Build</b>Figma, then code with AI</div>
       <span class="arrow">&rarr;</span>
       <div class="node"><b>Test</b>simulator + real runs</div>
       <span class="arrow">&rarr;</span>
+      <div class="node"><b>Debug</b>fix on the device</div>
+      <span class="arrow">&#8635;</span>
       <div class="node"><b>Release</b>~ monthly</div>
     </div>
+    <p class="flowcap">A tight build&ndash;test&ndash;debug loop on real runs — and back around, about once a month.</p>
   </section>
 
   <section>
