@@ -76,8 +76,28 @@
   </section>
 
   <section>
+    <h2>Constraints we chose — and why they help</h2>
+    <p>Before any feature, I drew a few hard lines. Each one narrows the product on purpose — and each one pays off:</p>
+    <div class="dec">
+      <h3>Apple Watch only</h3>
+      <div class="ln"><b>Constraint:</b> one platform — no Garmin, no Android.</div>
+      <div class="ln"><b>Why it helps:</b> it lets a tiny team build one deep, genuinely native experience instead of a watered-down cross-platform one — and the watch is where running actually happens.</div>
+    </div>
+    <div class="dec">
+      <h3>No accounts, no login</h3>
+      <div class="ln"><b>Constraint:</b> no sign-up, no profile — you open it and run.</div>
+      <div class="ln"><b>Why it helps:</b> a sign-up wall before any value is exactly where people bounce (I bounce too). Skip it and you&#39;re running in seconds, with nothing to distrust and nothing to forget.</div>
+    </div>
+    <div class="dec">
+      <h3>No social layer</h3>
+      <div class="ln"><b>Constraint:</b> no feed, no community, no sharing built in.</div>
+      <div class="ln"><b>Why it helps:</b> Strava and others already own sharing and community. Every run still syncs to Apple&nbsp;Fitness, so you can share from there if you want — which frees RunPlan to be great at the one thing it does.</div>
+    </div>
+  </section>
+
+  <section>
     <h2>Key design decisions</h2>
-    <p>Each decision answers a real behaviour problem — not a feature request, and each follows from a principle: <strong>kill decision fatigue, watch-first, privacy-first, single-purpose.</strong></p>
+    <p>With those boundaries set, three decisions did the heavy lifting — each answering a real behaviour problem, not a feature request.</p>
 
     <div class="dec">
       <h3>1. Kill decision fatigue — anchor the plan to a real calendar</h3>
@@ -88,56 +108,24 @@
     </div>
 
     <div class="dec">
-      <h3>2. Make the "why" visible</h3>
-      <div class="ln"><b>Problem:</b> runners quit when a workout feels arbitrary.</div>
-      <div class="ln"><b>Decision:</b> show the arc — Foundation &rarr; Strength &rarr; Speed &rarr; Taper — and where you are in it.</div>
-      <div class="ln"><b>Why:</b> seeing the arc keeps people motivated and in the plan.</div>
-    </div>
-
-    <div class="dec">
-      <h3>3. Bake the training science in</h3>
-      <div class="ln"><b>Problem:</b> beginners think "more hard running = faster" and overtrain.</div>
-      <div class="ln"><b>Decision:</b> automatic periodization — a 3-week build, then a recovery week (Daniels, Higdon, Pfitzinger).</div>
-      <div class="ln"><b>Trade-off:</b> sometimes it tells a keen runner to ease off — counter-intuitive, but right.</div>
-    </div>
-
-    <div class="dec">
-      <h3>4. Augment Apple Watch, don&#39;t replace it</h3>
+      <h3>2. Augment Apple Watch, don&#39;t replace it</h3>
       <div class="ln"><b>Problem:</b> apps that replace Apple&#39;s tracking sync badly and duplicate data.</div>
       <div class="ln"><b>Decision:</b> RunPlan owns the plan; tracking hands off to Apple Fitness.</div>
       <div class="ln"><b>Why:</b> don&#39;t fight the standard runners already trust — sit on top of it.</div>
     </div>
 
     <div class="dec">
-      <h3>5. Privacy-first — no accounts, no ads</h3>
-      <div class="ln"><b>Problem:</b> accounts, paywalls and data-harvesting are friction and a trust tax — part of what put me off other apps.</div>
-      <div class="ln"><b>Decision:</b> no accounts, no ads; your data stays on the device.</div>
-      <div class="ln"><b>Why:</b> nothing stands between you and your first run — and nothing to distrust.</div>
-      <div class="ln"><b>Trade-off:</b> no cloud backup or cross-device history — a deliberate trade for privacy and a zero-friction start.</div>
-    </div>
-
-    <div class="dec">
-      <h3>6. Single-purpose — a tool, not an ecosystem</h3>
-      <div class="ln"><b>Problem:</b> rivals kept piling on coaching, community and shops until the run itself got buried.</div>
-      <div class="ln"><b>Decision:</b> do one thing well — the plan on your wrist — and deliberately leave the rest out (no social feed, no marketplace).</div>
-      <div class="ln"><b>Why:</b> focus <em>is</em> the product; it&#39;s what keeps RunPlan simple where others overwhelm.</div>
-      <div class="ln"><b>Trade-off:</b> no social or content loops that drive retention — accepted to stay a tool, not a platform.</div>
-    </div>
-
-    <div class="dec">
-      <h3>7. Watch-first — the plan lives on your wrist</h3>
+      <h3>3. Watch-first — the plan lives on your wrist</h3>
       <div class="ln"><b>Problem:</b> most running apps are phone-first, so the plan isn&#39;t there at the one moment you need it — standing outside, about to run.</div>
       <div class="ln"><b>Decision:</b> design watch-first — the next workout, its "why", and one-tap start all live on the wrist; the phone is for setup, not the run.</div>
       <div class="ln"><b>Why:</b> that&#39;s where the run actually begins — if the plan isn&#39;t on the watch, you&#39;re back to holding it in your head.</div>
       <div class="ln"><b>Trade-off:</b> a 40&nbsp;mm screen forces ruthless editing — every view shows one thing, and richer detail waits for the phone.</div>
     </div>
 
-    <figure class="fig"><img src="img/rp-nrc-vs-runplan.png" alt="Calendar view vs day-numbered list" loading="lazy"><figcaption>Decision 1 — a real calendar (right) instead of abstract "Day 1 / Day 2" lists (left)</figcaption></figure>
-      <div class="figrow">
-        <figure class="fig"><img src="img/rp-phase-roadmap.png" alt="Training phase roadmap" loading="lazy"><figcaption>Decision 2 — visible phases: Foundation → Strength → Speed → Taper</figcaption></figure>
-        <figure class="fig"><img src="img/rp-training-cycle.png" alt="Training load cycle" loading="lazy"><figcaption>Decision 3 — automatic 3-week build + recovery week</figcaption></figure>
-      </div>
-      <figure class="fig center"><img src="img/rp-apple-sync.png" alt="Apple Fitness sync" loading="lazy"><figcaption>Decision 4 — RunPlan owns the plan; tracking hands off to Apple Fitness</figcaption></figure>
+    <div class="figrow">
+      <figure class="fig"><img src="img/rp-nrc-vs-runplan.png" alt="Calendar view vs day-numbered list" loading="lazy"><figcaption>Decision 1 — a real calendar instead of abstract "Day 1 / Day 2" lists</figcaption></figure>
+      <figure class="fig"><img src="img/rp-apple-sync.png" alt="Apple Fitness sync" loading="lazy"><figcaption>Decision 2 — RunPlan owns the plan; tracking hands off to Apple Fitness</figcaption></figure>
+    </div>
   </section>
 
   <section>
@@ -157,16 +145,6 @@
     <p><strong>The hardest design problem: a coach has a lot to say, and the watch has room for almost none.</strong> On a 40mm screen, every view has to answer one question at a glance — so I built each state around a single job: the run ahead, the interval you&#39;re in, the rest, the finish. Everything else is one tap away, not on screen.</p>
     <p><strong>Feedback you feel, not read</strong> — the direct fix for the pain that started the whole project. With the stock tracker I had to keep glancing at the watch to pace my intervals; RunPlan speaks through <strong>haptics</strong> instead: a distinct tap when the workout starts, when an interval changes, and when you pass a milestone. You feel the plan and keep running — eyes on the road, not the wrist.</p>
     <p>Getting this right was genuinely hard — Apple&nbsp;Watch UI is, in our experience, <em>pathologically</em> harder than iPhone: the simulator lies, a build takes minutes, and a 4&nbsp;px misalignment only shows on the real device. So I designed against the watch itself, on real runs — the human eye on the wrist was the only reliable test.</p>
-  </section>
-
-  <section>
-    <h2>Constraints &amp; scope</h2>
-    <p>I kept the boundaries deliberate:</p>
-    <ul>
-      <li><strong>One platform — Apple&nbsp;Watch.</strong> Not Garmin, not Android. Going deep on a single ecosystem beat going shallow on three.</li>
-      <li><strong>Sync is the backbone.</strong> The plan only matters if it reliably reaches the wrist, so the watch&#8596;iPhone sync got more engineering than any single screen.</li>
-      <li><strong>Build on Apple&#39;s ecosystem, don&#39;t fight it.</strong> RunPlan is the brain; Apple&nbsp;Health and Workouts record the run — less to maintain, and it sits inside tools runners already trust.</li>
-    </ul>
   </section>
 
   <section>
