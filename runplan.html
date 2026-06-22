@@ -120,21 +120,34 @@
 
   <section>
     <h2>Designing for the wrist (watchOS)</h2>
-    <p>The watch is where the run starts, so it drove the core interactions. The hardest part of the whole product was the very thing that made me start it: a <strong>seamless Apple&nbsp;Watch ↔ iPhone connection</strong>, so the plan, the live run and your progress always agree. That invisible plumbing is what makes RunPlan feel effortless — and it&#39;s what I couldn&#39;t find anywhere else.</p>
+    <p>Because the run happens on the wrist, the Apple&nbsp;Watch drove the entire UX. The foundation was an invisible loop between devices: RunPlan sets the plan, the Watch guides the live run, Apple&nbsp;Fitness tracks the data, and progress syncs back to the app. Making that loop feel seamless was the hardest technical part.</p>
     <div class="flow">
-      <div class="node"><b>RunPlan</b>the plan &amp; structure</div>
+      <div class="node"><b>RunPlan</b>sets the plan</div>
       <span class="arrow">&rarr;</span>
-      <div class="node"><b>Apple Watch</b>run it, live guidance</div>
+      <div class="node"><b>Apple Watch</b>guides the live run</div>
       <span class="arrow">&rarr;</span>
-      <div class="node"><b>Apple Fitness</b>tracks the run</div>
+      <div class="node"><b>Apple Fitness</b>tracks the data</div>
       <span class="arrow">&rarr;</span>
-      <div class="node"><b>Progress</b>syncs back to the plan</div>
+      <div class="node"><b>Progress</b>syncs back to the app</div>
     </div>
-    <p class="flowcap">One seamless loop: RunPlan owns the plan, the watch runs it, Apple Fitness tracks, and progress syncs straight back.</p>
-    <figure class="fig"><img src="img/rp-on-watch.jpg" alt="RunPlan on Apple Watch outdoors" loading="lazy"><figcaption>RunPlan guiding an easy run — on the wrist, where the run actually starts</figcaption></figure>
-    <p><strong>The hardest design problem: a coach has a lot to say, and the watch has room for almost none.</strong> On a 40mm screen, every view has to answer one question at a glance — so I built each state around a single job: the run ahead, the interval you&#39;re in, the rest, the finish. Everything else is one tap away, not on screen.</p>
-    <p><strong>Feedback you feel, not read</strong> — the direct fix for the pain that started the whole project. With the stock tracker I had to keep glancing at the watch to pace my intervals; RunPlan speaks through <strong>haptics</strong> instead: a distinct tap when the workout starts, when an interval changes, and when you pass a milestone. You feel the plan and keep running — eyes on the road, not the wrist.</p>
-    <p>Getting this right was genuinely hard — Apple&nbsp;Watch UI is, in our experience, <em>pathologically</em> harder than iPhone: the simulator lies, a build takes minutes, and a 4&nbsp;px misalignment only shows on the real device. So I designed against the watch itself, on real runs — the human eye on the wrist was the only reliable test.</p>
+    <p>To design an interface that works while someone is moving, I built it around three principles:</p>
+
+    <h3>1. Minimise cognitive load — one question per glance</h3>
+    <p>When you&#39;re running hard, doing math or reading busy screens is impossible. So I designed each screen to answer a single question at a glance. For interval training, I built the screen around a few clear cues:</p>
+    <ul>
+      <li><strong>Time remaining:</strong> a dominant countdown tells you exactly how much longer to push — no mental math mid-stride.</li>
+      <li><strong>Visual target tracking:</strong> a bar shows whether you&#39;re hitting your target pace or heart rate — green when you&#39;re on target, red when you&#39;re not.</li>
+      <li><strong>Instant state recognition:</strong> the whole screen colour-codes your effort — yellow for active intervals, green for rest, white for warm-ups and cool-downs.</li>
+    </ul>
+    <p>The zone also reads from the marker&#39;s position, not colour alone — so it works for colour-blind runners too.</p>
+
+    <h3>2. Design for feel</h3>
+    <p>A big frustration with standard trackers is having to break your running form to look at your wrist. So I designed the experience around <strong>haptics</strong>, not just visuals — a distinct tap when a workout starts, when an interval changes, and when you hit a milestone. The result: you know where you are in the workout without looking down.</p>
+
+    <h3>3. Test on real runs</h3>
+    <p>The simulator only tells you whether the design fits the screen. To know the UX actually works for a runner, I tested everything on a real device, on actual runs — seeing the screens and feeling the haptics on a moving wrist was the only real test.</p>
+
+    <figure class="fig"><img src="img/rp-on-watch.jpg" alt="RunPlan on Apple Watch outdoors" loading="lazy"><figcaption>RunPlan guiding a run on the wrist — where the run actually happens</figcaption></figure>
   </section>
 
   <section>
