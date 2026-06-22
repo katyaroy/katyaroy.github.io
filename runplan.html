@@ -121,15 +121,7 @@
   <section>
     <h2>Designing for the wrist (watchOS)</h2>
     <p>Because the run happens on the wrist, the Apple&nbsp;Watch drove the entire UX. The foundation was an invisible loop between devices: RunPlan sets the plan, the Watch guides the live run, Apple&nbsp;Fitness tracks the data, and progress syncs back to the app. Making that loop feel seamless was the hardest technical part.</p>
-    <div class="flow">
-      <div class="node"><b>RunPlan</b>sets the plan</div>
-      <span class="arrow">&rarr;</span>
-      <div class="node"><b>Apple Watch</b>guides the live run</div>
-      <span class="arrow">&rarr;</span>
-      <div class="node"><b>Apple Fitness</b>tracks the data</div>
-      <span class="arrow">&rarr;</span>
-      <div class="node"><b>Progress</b>syncs back to the app</div>
-    </div>
+    <figure class="fig uniform"><img src="img/rp-device-loop.svg" alt="The device loop — RunPlan sets the plan, Apple Watch guides the live run, Apple Fitness tracks the data, progress syncs back to the app" loading="lazy"><figcaption>One seamless loop: RunPlan owns the plan, the watch runs it, Apple Fitness tracks, and progress syncs back.</figcaption></figure>
     <p>To design an interface that works while someone is moving, I built it around three principles:</p>
 
     <h3>1. Minimise cognitive load — one question per glance</h3>
