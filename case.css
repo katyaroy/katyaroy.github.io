@@ -109,6 +109,9 @@ em{font-style:italic;color:var(--muted)}
 .figrow{display:grid;grid-template-columns:1fr;gap:20px;margin-top:18px;align-items:start}
 .figrow .fig{margin-top:0}
 @media (max-width:600px){.figrow{grid-template-columns:1fr;gap:18px}}
+.figrow.cols2{grid-template-columns:1fr 1fr}
+.figrow.cols2 .fig img{max-width:100%}
+@media (max-width:600px){.figrow.cols2{grid-template-columns:1fr}}
 
 /* case cover — full-bleed hero with parallax + blurred depth */
 .cover{position:relative;left:50%;transform:translateX(-50%);width:100vw;margin:clamp(24px,4vh,42px) 0 clamp(32px,5vh,54px);background:color-mix(in srgb,var(--accent) 10%,var(--bg));overflow:hidden;height:clamp(330px,52vh,500px)}
