@@ -70,6 +70,7 @@ em{font-style:italic;color:var(--muted)}
 .dec h3{margin:0 0 4px}
 .dec .ln{font-size:15px;margin-top:8px;color:#33333b}
 .dec .ln b{color:var(--accent);font-weight:600}
+.dec.flat{border:none;border-radius:0;padding:0;background:none;margin-top:clamp(22px,3.2vh,34px)}
 .mine{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);border-radius:999px;padding:2px 8px;margin-left:9px;vertical-align:middle;white-space:nowrap}
 @media (prefers-color-scheme:dark){.dec .ln{color:#C8C8CF}}
 
