@@ -86,7 +86,7 @@
   <section>
     <h2>Key design decisions</h2>
 
-    <div class="dec">
+    <div class="dec flat">
       <h3>1. A legally-valid signature in one confirmation, not a legal maze</h3>
       <div class="ln"><b>Problem:</b> e-signature is intimidating and legally loaded — the fastest way to lose a user.</div>
       <div class="ln"><b>Decision:</b> "Create certificate" generates the agreement; the user confirms with a single SMS code.</div>
@@ -94,7 +94,7 @@
       <div class="ln"><b>Trade-off:</b> SMS ties signing to a phone number — a deliberate trade for a channel people already trust.</div>
     </div>
 
-    <div class="dec">
+    <div class="dec flat">
       <h3>2. Borrow the mental model of email</h3>
       <div class="ln"><b>Problem:</b> enterprise HR tools feel unfamiliar, which slows adoption.</div>
       <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email — inbox, statuses, actions — across desktop and mobile.</div>
@@ -102,21 +102,21 @@
       <div class="ln"><b>Trade-off:</b> borrowing email patterns limits how distinctive the UI can be — worth it, since familiarity is what drives adoption.</div>
     </div>
 
-    <div class="dec">
+    <div class="dec flat">
       <h3>3. Two-tier notifications — informed, not noisy</h3>
       <div class="ln"><b>Decision:</b> light snackbars for action confirmations, plus a configurable Notification Center for system alerts and document-status updates.</div>
       <div class="ln"><b>Why:</b> document status is high-stakes in HR; people need to trust they&#39;ll be told what&#39;s happening without being spammed.</div>
       <div class="ln"><b>Trade-off:</b> two notification systems to maintain — justified by how high-stakes document status is in HR.</div>
     </div>
 
-    <div class="dec">
+    <div class="dec flat">
       <h3>4. A guided send-document flow</h3>
       <div class="ln"><b>Decision:</b> upload &rarr; name &rarr; pick type &rarr; review auto-configured routing &rarr; sign via SMS &rarr; track status — a multi-step legal process shown as one linear, safe path.</div>
       <div class="ln"><b>Why:</b> a single linear path turns a multi-step legal process into one safe sequence anyone can follow.</div>
       <div class="ln"><b>Trade-off:</b> less flexibility for power users — accepted, because clarity matters more for an occasional, high-stakes task.</div>
     </div>
 
-    <div class="dec">
+    <div class="dec flat">
       <h3>5. Built on (and extended) the design system</h3>
       <div class="ln"><b>Decision:</b> I worked within the company&#39;s design system. Its mobile guidelines were underdeveloped, so I adapted components for mobile and maintained the component library.</div>
       <div class="ln"><b>Why:</b> consistency at speed — and a mobile experience that didn&#39;t feel like an afterthought.</div>
