@@ -70,8 +70,8 @@
     <h2>Constraints we chose — and why they help</h2>
     <p>To deliver the best core experience, I narrowed the product scope with three hard rules:</p>
     <ul>
-      <li><strong>Apple Watch only:</strong> prioritised context of use and app quality over broad market reach.</li>
-      <li><strong>No login:</strong> maximised time-to-value — removing the sign-up wall entirely eliminates the biggest early drop-off point.</li>
+      <li><strong>Apple Watch only:</strong> prioritized context of use and app quality over broad market reach.</li>
+      <li><strong>No login:</strong> maximized time-to-value — removing the sign-up wall entirely eliminates the biggest early drop-off point.</li>
       <li><strong>No social features:</strong> avoided feature bloat — we rely on Apple Fitness and Strava for sharing, keeping RunPlan purely focused on the workout.</li>
     </ul>
   </section>
@@ -101,7 +101,7 @@
       <h3>Embracing the ecosystem: playing nice with Apple Fitness</h3>
       <div class="ln"><b>Problem:</b> runners care deeply about their Apple Fitness history and Activity Rings. When a third-party app creates a data silo or syncs poorly, users get frustrated and abandon it.</div>
       <div class="ln"><b>Decision:</b> we built our own native watch tracker and an in-app Activity dashboard for deep post-run analytics. But we didn&#39;t stop there: every completed run syncs instantly to Apple Fitness. We even enrich that sync by passing along detailed interval splits and workout types, making the native Apple data smarter.</div>
-      <div class="ln"><b>Why:</b> users shouldn&#39;t have to choose between specialised analytics and their existing Apple history. By offering deep insights inside RunPlan while feeding rich, structured data back to Apple Health, we give runners the best of both worlds.</div>
+      <div class="ln"><b>Why:</b> users shouldn&#39;t have to choose between specialized analytics and their existing Apple history. By offering deep insights inside RunPlan while feeding rich, structured data back to Apple Health, we give runners the best of both worlds.</div>
       <div class="ln"><b>Trade-off:</b> building a custom tracker that flawlessly maps complex intervals to Apple&#39;s HealthKit rules is technically heavy and ties us strictly to their ecosystem. But doing it right is what makes the app feel premium and frictionless.</div>
     </div>
 
@@ -114,14 +114,14 @@
     <figure class="fig uniform"><img src="img/rp-device-loop.svg" alt="The device loop — RunPlan sets the plan, Apple Watch guides the live run, Apple Fitness tracks the data, progress syncs back to the app" loading="lazy"><figcaption>One seamless loop: RunPlan owns the plan, the watch runs it, Apple Fitness tracks, and progress syncs back.</figcaption></figure>
     <p>To design an interface that works while someone is moving, I built it around three principles:</p>
 
-    <h3>Minimise cognitive load — one question per glance</h3>
+    <h3>Minimize cognitive load — one question per glance</h3>
     <p>When you&#39;re running hard, doing math or reading busy screens is impossible. So I designed each screen to answer a single question at a glance. For interval training, I built the screen around a few clear cues:</p>
     <ul>
       <li><strong>Time remaining:</strong> a dominant countdown tells you exactly how much longer to push — no mental math mid-stride.</li>
       <li><strong>Visual target tracking:</strong> a bar shows whether you&#39;re hitting your target pace or heart rate — green when you&#39;re on target, red when you&#39;re not.</li>
-      <li><strong>Instant state recognition:</strong> the whole screen colour-codes your effort — yellow for active intervals, green for rest, white for warm-ups and cool-downs.</li>
+      <li><strong>Instant state recognition:</strong> the whole screen color-codes your effort — yellow for active intervals, green for rest, white for warm-ups and cool-downs.</li>
     </ul>
-    <p>The zone also reads from the marker&#39;s position, not colour alone — so it works for colour-blind runners too.</p>
+    <p>The zone also reads from the marker&#39;s position, not color alone — so it works for color-blind runners too.</p>
 
     <h3>Design for feel</h3>
     <p>A big frustration with standard trackers is having to break your running form to look at your wrist. So I designed the experience around <strong>haptics</strong>, not just visuals — a distinct tap when a workout starts, when an interval changes, and when you hit a milestone. The result: you know where you are in the workout without looking down.</p>
@@ -143,7 +143,7 @@
   <section>
     <h2>How we ship — two people, AI-native</h2>
     <p>My co-founder owns the algorithms and heavy logic. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship design changes straight into the code with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal). When iOS&nbsp;26 brought Liquid Glass, I redesigned the whole app to it in code.</p>
-    <p>We release about once a month and re-prioritise by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. No handoff between design and code means two people ship like a bigger team.</p>
+    <p>We release about once a month and re-prioritize by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. No handoff between design and code means two people ship like a bigger team.</p>
     <p>Day to day it&#39;s a tight loop — <strong>idea &rarr; build in code &rarr; test on a real run &rarr; debug &rarr; repeat.</strong> At this size, debugging <em>is</em> part of the design work.</p>
     <figure class="fig uniform"><img src="img/rp-ship-flow.svg" alt="The ship loop — idea, build, test on a real run, debug, release, repeating about monthly" loading="lazy"><figcaption>A tight build&ndash;test&ndash;debug loop on real runs — and back around, about once a month.</figcaption></figure>
   </section>
