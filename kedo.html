@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=30">
+<link rel="stylesheet" href="case.css?v=31">
 </head>
 <body>
 <main class="wrap">
@@ -95,7 +95,7 @@
     <h2>Key design decisions</h2>
 
     <div class="dec flat">
-      <h3>A legally-valid signature in one confirmation, not a legal maze</h3>
+      <h3>A legally-valid signature in one confirmation</h3>
       <div class="ln"><b>Problem:</b> e-signature is intimidating and legally loaded — the fastest way to lose a user.</div>
       <div class="ln"><b>Decision:</b> "Create certificate" generates the agreement; the user confirms with a single SMS code.</div>
       <div class="ln"><b>Why:</b> turn a scary, compliance-heavy action into one trusted, familiar step.</div>
@@ -108,6 +108,17 @@
       <div class="ln"><b>Decision:</b> a table-based, responsive interface that mirrors email — inbox, statuses, actions — across desktop and mobile.</div>
       <div class="ln"><b>Why:</b> familiarity removes the learning curve, the real barrier to org-wide rollout.</div>
       <div class="ln"><b>Trade-off:</b> borrowing email patterns limits how distinctive the UI can be — worth it, since familiarity is what drives adoption.</div>
+    </div>
+
+    <div class="hscroll">
+      <button class="hscroll-btn prev" aria-label="Previous screens">&#8249;</button>
+      <div class="hscroll-track">
+        <figure><img class="zoomable" src="img/kedo-email-1.svg" alt="Email-style document inbox — date, document and sender columns" loading="lazy"></figure>
+        <figure><img class="zoomable" src="img/kedo-email-2.svg" alt="Sent documents, in the same familiar list layout" loading="lazy"></figure>
+        <figure><img class="zoomable" src="img/kedo-email-3.svg" alt="Type and status filters on the document list" loading="lazy"></figure>
+        <figure><img class="zoomable" src="img/kedo-email-4.svg" alt="Selecting documents and row-level actions" loading="lazy"></figure>
+      </div>
+      <button class="hscroll-btn next" aria-label="Next screens">&#8250;</button>
     </div>
 
     <div class="dec flat">
@@ -201,6 +212,18 @@
   lb.addEventListener('click',close);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
   z.forEach(function(el){ el.addEventListener('click',function(){ im.src=el.getAttribute('data-full')||el.src; lb.classList.add('open'); }); });
+})();
+(function(){
+  var box=document.querySelector('.hscroll'); if(!box)return;
+  var track=box.querySelector('.hscroll-track');
+  var prev=box.querySelector('.hscroll-btn.prev'), next=box.querySelector('.hscroll-btn.next');
+  function step(){ var f=track.querySelector('figure'); return (f?f.getBoundingClientRect().width+16:track.clientWidth*0.7); }
+  function upd(){ prev.disabled=track.scrollLeft<=2; next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2; }
+  prev.addEventListener('click',function(){ track.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ track.scrollBy({left:step(),behavior:'smooth'}); });
+  track.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  upd();
 })();
 </script>
 </body>
