@@ -107,7 +107,10 @@ em{font-style:italic;color:var(--muted)}
 .fig.uniform{margin-top:clamp(30px,4.5vh,52px)}
 .leftfig .fig img{margin:0}
 .leftfig .fig figcaption{text-align:left}
-.leftfig .hscroll,.leftfig .wideshot{left:auto;transform:none;width:100%}
+.leftfig .wideshot{left:auto;transform:none;width:100%}
+.leftfig .hscroll{left:auto;transform:none;width:auto;margin-right:calc(50% - 50vw)}
+.leftfig .hscroll-track{padding-left:0;scroll-padding-left:0}
+.leftfig .hscroll-track figure{flex:0 0 calc(min(980px,100vw) - clamp(40px,10vw,80px));max-width:none}
 .zoomable{cursor:zoom-in;transition:transform .16s ease, box-shadow .16s ease}
 .zoomable:hover{transform:translateY(-3px);box-shadow:0 16px 36px -18px rgba(0,0,0,.3)}
 .painsum{border-left:3px solid var(--accent);padding:4px 0 4px 18px;margin:24px 0 4px;line-height:1.6;font-size:1.03em;max-width:66ch}
