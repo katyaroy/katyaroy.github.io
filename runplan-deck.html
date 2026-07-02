@@ -17,7 +17,7 @@ body{font-family:'Noto Sans',system-ui,sans-serif;background:var(--bg);color:var
 .slide.on{opacity:1;transform:none;pointer-events:auto}
 .kicker{font-size:clamp(12px,1.4vw,15px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 h1{font-weight:800;font-size:clamp(44px,9vw,110px);letter-spacing:-.03em;line-height:1;margin-top:14px}
-h2{font-weight:800;font-size:clamp(26px,4.6vw,54px);letter-spacing:-.025em;line-height:1.08;margin-top:12px;max-width:22ch}
+h2{font-weight:800;font-size:clamp(26px,4.6vw,54px);letter-spacing:-.025em;line-height:1.08;margin-top:12px;max-width:26ch;text-wrap:balance}
 .sub{font-size:clamp(16px,2.2vw,24px);color:var(--muted);margin-top:16px;max-width:40ch;line-height:1.4}
 .note{font-size:clamp(14px,1.8vw,20px);color:var(--muted);margin-top:clamp(14px,2.6vh,26px);max-width:56ch;line-height:1.45}
 .note b{color:var(--ink)}
@@ -25,8 +25,8 @@ h2{font-weight:800;font-size:clamp(26px,4.6vw,54px);letter-spacing:-.025em;line-
 .photo{box-shadow:0 24px 60px -30px rgba(0,0,0,.35)}
 .watchrow{display:flex;gap:clamp(8px,1.6vw,24px);justify-content:center;align-items:center;margin-top:clamp(22px,4.5vh,44px)}
 .watchrow img{width:clamp(88px,12vw,168px);height:auto}
-.bullets{margin-top:clamp(20px,4vh,38px);text-align:left;display:flex;flex-direction:column;gap:clamp(10px,2vh,18px);max-width:30ch}
-.bullets div{font-size:clamp(17px,2.6vw,28px);line-height:1.35;padding-left:26px;position:relative}
+.bullets{margin-top:clamp(20px,4vh,38px);text-align:left;display:flex;flex-direction:column;gap:clamp(10px,2vh,18px);width:min(680px,92vw)}
+.bullets div{font-size:clamp(16px,2.1vw,23px);line-height:1.35;padding-left:26px;position:relative;text-wrap:pretty}
 .bullets div::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
 .bullets b{font-weight:700}
 .bullets span{color:var(--muted)}
