@@ -16,11 +16,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',In
 h1{font-weight:800;font-size:clamp(38px,6.4vw,84px);letter-spacing:-.03em;line-height:1.02;margin-top:16px;text-wrap:balance}
 h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-height:1.08;margin-top:12px;max-width:26ch;text-wrap:balance}
 .sub{font-size:clamp(15px,2vw,21px);color:var(--muted);margin-top:16px;max-width:44ch;line-height:1.45}
-.note{font-size:clamp(14px,1.8vw,20px);color:var(--muted);margin-top:clamp(14px,2.6vh,26px);max-width:58ch;line-height:1.45}
+.note{font-size:clamp(14px,1.8vw,20px);color:var(--muted);margin-top:clamp(14px,2.6vh,26px);max-width:60ch;line-height:1.45}
 .note b{color:var(--ink)}
 .note .y{color:var(--accent);font-weight:700}
-.shot{margin-top:clamp(16px,3.2vh,32px);max-width:min(1100px,92vw);max-height:56vh;width:auto;height:auto}
-.rounded{border-radius:18px}
+.shot{margin-top:clamp(16px,3.2vh,32px);max-width:min(1100px,92vw);max-height:54vh;width:auto;height:auto}
+.light{background:#F4F1EC;border-radius:16px}
 .photo{border-radius:18px;box-shadow:0 30px 70px -35px rgba(0,0,0,.8)}
 /* cover */
 .cover-grid{display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,80px);width:100%;max-width:1200px}
@@ -40,10 +40,6 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
 .cards h3{font-size:clamp(19px,2.6vw,28px);font-weight:800;letter-spacing:-.01em}
 .cards h3 span{color:var(--accent)}
 .cards p{font-size:clamp(14px,1.7vw,18px);color:var(--muted);margin-top:8px;line-height:1.4}
-/* duo images */
-.duo{display:flex;gap:clamp(16px,3vw,44px);margin-top:clamp(18px,3.4vh,34px);align-items:center;justify-content:center;flex-wrap:wrap}
-.duo img{max-height:48vh;width:auto;max-width:min(44vw,520px)}
-.duo .ph{max-height:56vh}
 /* qr slide */
 .qrwrap{display:flex;align-items:center;gap:clamp(24px,5vw,72px);margin-top:clamp(20px,4vh,40px);flex-wrap:wrap;justify-content:center}
 .qrcard{background:#fff;border-radius:22px;padding:clamp(16px,2.6vh,26px)}
@@ -65,8 +61,7 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
   .cover-grid{flex-direction:column;gap:22px}
   .cover-left{text-align:center}
   .cover-hero{width:min(52vw,260px)}
-  .shot{max-height:44vh}
-  .duo img{max-width:80vw;max-height:36vh}
+  .shot{max-height:42vh}
   .byline{position:static;margin-top:24px}
 }
 @media print{
@@ -84,16 +79,16 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
     <div class="cover-left">
       <div class="logo">RunPlan</div>
       <h1>Running plans on your Apple&nbsp;Watch</h1>
-      <p class="sub">Simple and structured — a coach on your wrist that tells you what to run today, and why.</p>
+      <p class="sub">A two&#8209;person case study — from a personal pain to a live App&nbsp;Store product, designed and shipped by us alone.</p>
     </div>
     <img class="cover-hero" src="img/rp-deck-hero.svg" alt="RunPlan — completed workout on iPhone, live run on Apple Watch">
   </div>
   <div class="byline">Ekaterina Roy — Co&#8209;founder &amp; Product Designer &middot; runplan.app</div>
 </section>
 
-<!-- 2 · Why I built it -->
+<!-- 2 · The pains -->
 <section class="slide">
-  <div class="kicker">Why I built it</div>
+  <div class="kicker">Where it started</div>
   <h2>Training for my first marathon, the apps made it harder.</h2>
   <div class="bullets">
     <div><b>"Day 1, Day 2…"</b> — so what am I running <em>today</em>?</div>
@@ -104,53 +99,48 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
   <div class="gap">I wanted Garmin&#8209;grade structure with Apple&#8209;native smoothness. It didn&#39;t exist — so we built it.</div>
 </section>
 
-<!-- 3 · What it is -->
-<section class="slide">
-  <div class="kicker">The product</div>
-  <h2>A coach on your wrist</h2>
-  <img class="shot" src="img/rp-deck-watches.png" alt="Three Apple Watches — start a run, guided interval with HR zone, live pace and distance">
-  <p class="note"><b>One tap to start.</b> The watch guides every interval — pace, heart&#8209;rate zone, <span class="y">haptics</span> for each milestone. No phone mid&#8209;run.</p>
-</section>
-
-<!-- 4 · Pick a goal -->
-<section class="slide">
-  <div class="kicker">How it works</div>
-  <h2>Pick a goal — get a real plan</h2>
-  <div class="duo">
-    <img src="img/rp-deck-goals.png" alt="Goals: 5k, 10k, half-marathon, maintenance">
-    <img src="img/rp-deck-time.png" alt="Set your estimated 5km race time — target pace 04'40''">
-  </div>
-  <p class="note">From <b>5K to a full marathon</b> — pace&nbsp;&amp; heart&#8209;rate based, built on proven training methodology, anchored to a <b>real weekly calendar</b>.</p>
-</section>
-
-<!-- 5 · Phone side -->
-<section class="slide">
-  <div class="kicker">The app</div>
-  <h2>Structure on the phone, freedom on the run</h2>
-  <div class="duo">
-    <img class="ph" src="img/rp-deck-phone1.svg" alt="Plans screen — 5k Train Your Way, 6–8 weeks, pulse or pace">
-    <img class="ph" src="img/rp-deck-phone2.svg" alt="Activity screen — yearly distance chart">
-  </div>
-  <p class="note">Every plan explains its phases and every run&#39;s purpose — and progress syncs with <b>Apple&nbsp;Fitness</b>, not against it.</p>
-</section>
-
-<!-- 6 · Constraints -->
+<!-- 3 · The bet -->
 <section class="slide">
   <div class="kicker">The bet</div>
-  <h2>Three hard constraints</h2>
+  <h2>Scope as a feature: three hard constraints</h2>
   <div class="cards">
     <div><h3>Apple Watch <span>only</span></h3><p>Context of use and app quality over broad market reach.</p></div>
     <div><h3>No <span>login</span></h3><p>Value in the first minute — the sign-up wall is the biggest early drop-off.</p></div>
     <div><h3>No <span>social</span></h3><p>Apple Fitness &amp; Strava already do sharing. RunPlan stays a tool.</p></div>
   </div>
+  <p class="note">Two people can&#39;t outbuild Nike — but we can <b>out&#8209;focus</b> them.</p>
 </section>
 
-<!-- 7 · Ship -->
+<!-- 4 · What we built -->
 <section class="slide">
-  <div class="kicker">How we ship</div>
-  <h2>Two people. Monthly releases. AI&#8209;native.</h2>
+  <div class="kicker">What we built</div>
+  <h2>A coach on your wrist</h2>
+  <img class="shot" src="img/rp-deck-watches.png" alt="Three Apple Watches — start a run, guided interval with HR zone, live pace and distance">
+  <p class="note"><b>One tap to start.</b> The watch guides every interval — pace, heart&#8209;rate zone, <span class="y">haptics</span> at every milestone. No phone mid&#8209;run.</p>
+</section>
+
+<!-- 5 · Key decision -->
+<section class="slide">
+  <div class="kicker">Key product decision</div>
+  <h2>Anchor the plan to a real calendar</h2>
+  <img class="shot light" src="img/rp-calendar.svg" alt="Nike's day-numbered list vs RunPlan's real weekly calendar">
+  <p class="note"><b>Tuesdays are always intervals.</b> Removing the daily "when do I run?" decision turns a struggle into a habit — the trade&#8209;off is less flexibility, and we took it deliberately.</p>
+</section>
+
+<!-- 6 · The invisible hard parts -->
+<section class="slide">
+  <div class="kicker">The hard parts are invisible</div>
+  <h2>A "simple" running app hides a complex engine</h2>
+  <img class="shot light" src="img/rp-device-loop.svg" alt="The device loop — RunPlan sets the plan, Apple Watch guides the run, Apple Fitness tracks, progress syncs back">
+  <p class="note">My co&#8209;founder builds the <b>science&#8209;backed plan engine</b>; I translate the math into a human interface. The hardest work — <b>reliable watch&#8211;phone sync</b> — is exactly what makes it feel effortless.</p>
+</section>
+
+<!-- 7 · Process -->
+<section class="slide">
+  <div class="kicker">How we ship — two people, AI-native</div>
+  <h2>Idea → build → test on a real run → release</h2>
   <img class="shot photo" src="img/rp-watch-test.jpg" alt="RunPlan on two Apple Watches, out on a real run">
-  <p class="note">No handoff — <b>I ship design straight into code</b> (Claude&nbsp;Code, from the terminal). Every build is tested on a real run.</p>
+  <p class="note">No handoff: <b>I ship my designs straight into code</b> (Claude&nbsp;Code, from the terminal). Every build gets tested on an actual run — two watches, side by side. Releases roughly monthly.</p>
 </section>
 
 <!-- 8 · QR -->
@@ -161,7 +151,7 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
     <div class="qrcard"><img src="img/rp-qr.svg" alt="QR code — RunPlan on the App Store"></div>
     <div class="qrside">
       <div class="big">Scan to get RunPlan<br>on the App&nbsp;Store</div>
-      <p>~9% of App&nbsp;Store page visitors install the app — growing 100% organically.</p>
+      <p>Growing 100% organically — ~9% of App&nbsp;Store page visitors install the app.</p>
       <a href="https://apps.apple.com/us/app/run-plan-train-track/id6743841245" target="_blank" rel="noopener"><img src="img/rp-appstore-badge.svg" alt="Download on the App Store"></a>
     </div>
   </div>
