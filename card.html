@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#FCFBF9" />
+<title>Ekaterina Roy — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FCFBF9;--ink:#1A1A1E;--muted:#6E6E77;--accent:#6E1423;--card:#FFFFFF;--line:#E7E2DA}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Noto Sans',system-ui,sans-serif;background:
+  radial-gradient(120% 90% at 50% -10%, color-mix(in srgb,var(--accent) 9%,var(--bg)) 0%, var(--bg) 60%);
+  color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:clamp(24px,6vh,56px) 24px calc(clamp(24px,6vh,56px) + env(safe-area-inset-bottom));
+  gap:clamp(20px,4vh,34px)}
+.head{display:flex;flex-direction:column;align-items:center;gap:6px}
+.eyebrow{font-size:clamp(12px,3.4vw,15px);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font-weight:800;font-size:clamp(34px,10vw,60px);letter-spacing:-.03em;line-height:1.0}
+.role{font-size:clamp(15px,4.4vw,22px);color:var(--muted);margin-top:2px;line-height:1.35;max-width:22ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:clamp(18px,4.5vw,30px);
+  box-shadow:0 30px 70px -40px rgba(0,0,0,.45),0 2px 8px -4px rgba(0,0,0,.1)}
+.card img{display:block;width:clamp(200px,64vw,300px);height:auto}
+.scan{display:flex;flex-direction:column;align-items:center;gap:10px}
+.scan .prompt{font-size:clamp(16px,4.6vw,21px);font-weight:700}
+.scan .url{font-size:clamp(14px,3.8vw,17px);color:var(--muted);font-weight:600;letter-spacing:.01em}
+.avail{display:inline-flex;align-items:center;gap:9px;font-size:clamp(12px,3.2vw,14.5px);color:var(--muted);
+  max-width:34ch;line-height:1.35;margin-top:2px}
+.dot{flex:none;width:9px;height:9px;border-radius:50%;background:#2Fae63;box-shadow:0 0 0 0 rgba(47,174,99,.5);animation:pulse 2.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,174,99,.45)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141416;--ink:#F3F1EE;--muted:#A6A6AE;--accent:#E7A6AF;--card:#FFFFFF;--line:#2A2A2E}
+  .card img{filter:none}
+}
+/* landscape / short screens: two columns so nothing scrolls */
+@media (min-aspect-ratio:1/1) and (max-height:560px){
+  body{flex-direction:row;gap:clamp(24px,5vw,60px);flex-wrap:wrap}
+  .head{align-items:flex-end;text-align:right}
+  .scan{align-items:flex-start;text-align:left}
+}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="eyebrow">Product Designer &amp; Co&#8209;Founder</div>
+    <h1>Ekaterina&nbsp;Roy</h1>
+    <div class="role">Enterprise SaaS to the App&nbsp;Store — I design and ship end&#8209;to&#8209;end.</div>
+  </div>
+
+  <div class="card">
+    <img src="img/portfolio-qr.svg" alt="QR code to katyaroy.github.io" width="300" height="300">
+  </div>
+
+  <div class="scan">
+    <div class="prompt">Scan for my portfolio</div>
+    <div class="url">katyaroy.github.io</div>
+    <div class="avail"><span class="dot"></span>Open to product roles — contract, fractional or founding&#8209;designer, remote</div>
+  </div>
+</body>
+</html>
