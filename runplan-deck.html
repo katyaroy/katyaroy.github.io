@@ -22,11 +22,12 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
 .shot{margin-top:clamp(16px,3.2vh,32px);max-width:min(1100px,92vw);max-height:54vh;width:auto;height:auto}
 .light{background:#F4F1EC;border-radius:16px}
 .photo{border-radius:18px;box-shadow:0 30px 70px -35px rgba(0,0,0,.8)}
+.watchrow{display:flex;gap:clamp(8px,1.8vw,26px);justify-content:center;align-items:center;margin-top:clamp(22px,4.5vh,44px)}
+.watchrow img{width:clamp(64px,13vw,180px);height:auto}
 /* cover */
 .cover-grid{display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,80px);width:100%;max-width:1200px}
 .cover-left{text-align:left;max-width:560px}
-.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(18px,2.2vw,24px);letter-spacing:-.01em}
-.logo::before{content:"";width:.9em;height:.9em;border-radius:26%;background:var(--accent)}
+.logo-img{height:clamp(22px,2.8vw,32px);width:auto;display:block}
 .cover-hero{width:clamp(220px,30vw,420px);height:auto;flex:none}
 /* pain bullets */
 .bullets{margin-top:clamp(20px,4vh,38px);text-align:left;display:flex;flex-direction:column;gap:clamp(10px,2vh,18px);width:min(680px,92vw)}
@@ -60,6 +61,7 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
   .hint{display:none}
   .cover-grid{flex-direction:column;gap:22px}
   .cover-left{text-align:center}
+  .logo-img{margin:0 auto}
   .cover-hero{width:min(52vw,260px)}
   .shot{max-height:42vh}
   .byline{position:static;margin-top:24px}
@@ -77,7 +79,7 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
 <section class="slide on">
   <div class="cover-grid">
     <div class="cover-left">
-      <div class="logo">RunPlan</div>
+      <img class="logo-img" src="img/rp-logo.svg" alt="RunPlan">
       <h1>Running plans on your Apple&nbsp;Watch</h1>
       <p class="sub">A two&#8209;person case study — from a personal pain to a live App&nbsp;Store product, designed and shipped by us alone.</p>
     </div>
@@ -115,7 +117,13 @@ h2{font-weight:800;font-size:clamp(26px,4.4vw,52px);letter-spacing:-.025em;line-
 <section class="slide">
   <div class="kicker">What we built</div>
   <h2>A coach on your wrist</h2>
-  <img class="shot" src="img/rp-deck-watches.png" alt="Three Apple Watches — start a run, guided interval with HR zone, live pace and distance">
+  <div class="watchrow">
+    <img src="img/rp-watch-1.svg" alt="RunPlan on Apple Watch — today's run">
+    <img src="img/rp-watch-2.svg" alt="RunPlan on Apple Watch — plan overview">
+    <img src="img/rp-watch-3.svg" alt="RunPlan on Apple Watch — workout detail">
+    <img src="img/rp-watch-4.svg" alt="RunPlan on Apple Watch — calendar">
+    <img src="img/rp-watch-5.svg" alt="RunPlan on Apple Watch — activity">
+  </div>
   <p class="note"><b>One tap to start.</b> The watch guides every interval — pace, heart&#8209;rate zone, <span class="y">haptics</span> at every milestone. No phone mid&#8209;run.</p>
 </section>
 
