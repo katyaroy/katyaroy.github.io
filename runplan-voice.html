@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=42">
+<link rel="stylesheet" href="case.css?v=44">
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
 <script src="motion.js?v=2" defer></script>
 </head>
@@ -38,7 +38,7 @@
   <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
   <span class="tag">Deep dive · Interaction design</span>
   <h1>Voice Cues — what the watch says, and when</h1>
-  <p class="sub">A focused case inside RunPlan. Spoken cues tell a runner what comes next without a look at the wrist. My co-founder built the speech engine; I tuned the words, the timing and the sound on real runs.</p>
+  <p class="sub">Spoken cues tell a runner what comes next, so they don&#39;t have to look at their wrist. My co-founder built the speech engine, and I tuned the words, the timing and the sound on real runs.</p>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer — wording, timing and sound, shipped in Swift with AI.</dd></div>
@@ -49,7 +49,7 @@
 
   <section>
     <h2>Overview</h2>
-    <p>On an interval run the watch shows what to do and taps the wrist at every change. But a runner with music in their ears still has to look down to learn what comes next. Voice Cues say it instead: the next interval, how long it is and the target to hold. They shipped in November&nbsp;2026, in nine languages.</p>
+    <p>On an interval run the watch shows what to do and taps the wrist at every change, but a runner with music in their ears still has to look down to find out what comes next. Voice Cues say it out loud instead: the next interval, how long it is and the target to hold. They shipped in November&nbsp;2026 in nine languages.</p>
     <figure class="video">
       <video controls playsinline preload="none" poster="img/rp-voice-cues-poster.jpg" width="602" height="720">
         <source src="img/rp-voice-cues.mp4" type="video/mp4">
@@ -59,25 +59,25 @@
     </figure>
     <div class="stats">
       <div class="stat"><div class="n">9</div><div class="l">languages, each with its own timing</div></div>
-      <div class="stat"><div class="n">1&nbsp;s</div><div class="l">between the last word and the 3-2-1, whatever the line</div></div>
+      <div class="stat"><div class="n">1&nbsp;s</div><div class="l">between the last word and the 3&#8209;2&#8209;1, whatever the line</div></div>
       <div class="stat"><div class="n">17</div><div class="l">of my commits on the feature, September to November 2026</div></div>
     </div>
   </section>
 
   <section>
     <h2>The problem</h2>
-    <p>My co-founder built the first version in July: the watch could speak the next interval, the kilometer splits and the end of the run. On paper it was all there. On real runs it still felt wrong, in ways that never show up at a desk: it spoke at the wrong moment, it fought with the music, and in some languages it read the numbers strangely.</p>
-    <p>None of this is visible in Figma. It had to be designed by ear. My part: run with it, note what sounded wrong, then change the words, the timing and the sound in code.</p>
+    <p>My co-founder built the first version in July: the watch could speak the next interval, the kilometer splits and the end of the run. Everything was there on paper, but on real runs it still felt wrong in ways that never show up at a desk: it spoke at the wrong moment, it fought with the music, and in some languages it read the numbers strangely.</p>
+    <p>None of this is visible in Figma, so it had to be designed by ear. My part was to run with it, note what sounded wrong, and then change the words, the timing and the sound in code.</p>
   </section>
 
   <section>
     <h2>On the wrist, in the ears</h2>
-    <p>The screen and the voice share the work. The screen answers "where am I"; the voice says what is about to change, so there is no need to look.</p>
+    <p>The screen and the voice split the work: the screen answers "where am I", and the voice says what&#39;s about to change, so there&#39;s no need to look.</p>
     <div class="strip wrist">
       <figure><img src="img/rp-voice-s1.jpg" width="480" height="574" alt="Watch screen: warm-up ring at 02:59, next interval 1:00 at 4:30 per kilometer" loading="lazy"><figcaption><span>In the ears</span>"Starting workout." "Warm-up: 3&nbsp;minutes."</figcaption></figure>
       <figure><img src="img/rp-voice-s2.jpg" width="480" height="574" alt="Watch screen: warm-up ring at 01:38 with the next interval shown below" loading="lazy"><figcaption><span>In the ears</span>"Next: 1&nbsp;minute. Target, 4:30 per kilometer." It ends one second before the count.</figcaption></figure>
-      <figure><img src="img/rp-voice-s3.jpg" width="480" height="574" alt="Watch screen: a large yellow 3, the countdown before an interval" loading="lazy"><figcaption><span>In the ears</span>Three dings and a GO chime, modelled on the watch&#39;s own sounds.</figcaption></figure>
-      <figure><img src="img/rp-voice-s4.jpg" width="480" height="574" alt="Watch screen: TOO SLOW shown over the interval ring" loading="lazy"><figcaption><span>In the ears</span>Two rising pairs of notes. No words.</figcaption></figure>
+      <figure><img src="img/rp-voice-s3.jpg" width="480" height="574" alt="Watch screen: a large yellow 3, the countdown before an interval" loading="lazy"><figcaption><span>In the ears</span>Three dings and a GO chime, modeled on the watch&#39;s own sounds.</figcaption></figure>
+      <figure><img src="img/rp-voice-s4.jpg" width="480" height="574" alt="Watch screen: TOO SLOW shown over the interval ring" loading="lazy"><figcaption><span>In the ears</span>Two rising pairs of notes, no words.</figcaption></figure>
       <figure><img src="img/rp-voice-s5.jpg" width="480" height="574" alt="Watch screen: WORKOUT COMPLETED over the summary" loading="lazy"><figcaption><span>In the ears</span>"Workout complete."</figcaption></figure>
     </div>
   </section>
@@ -85,10 +85,10 @@
   <section>
     <h2>The rules I worked to</h2>
     <ul>
-      <li><strong>Say it when it helps.</strong> A hard interval is announced ahead, so there is time to get ready. Recovery and cool-down are said when they begin.</li>
-      <li><strong>Never talk over the countdown.</strong> Every line ends one second before the 3-2-1.</li>
-      <li><strong>The music is part of the interface.</strong> It dims once, for as short a time as possible, and never dips twice in a row.</li>
-      <li><strong>Quiet where words would nag.</strong> No pace alerts during warm-up and cool-down. Too fast or too slow is a tone, not a sentence. And the voice can be switched off mid-run, one swipe from the workout screen.</li>
+      <li><strong>Say each cue when it helps.</strong> A hard interval is announced ahead of time, so there&#39;s time to get ready, while recovery and cool-down are announced when they begin.</li>
+      <li><strong>Never talk over the countdown.</strong> Every line ends one second before the 3&#8209;2&#8209;1.</li>
+      <li><strong>Treat the music as part of the interface.</strong> It dims once, for as short a time as possible, and never dips twice in a row.</li>
+      <li><strong>Stay quiet where words would nag.</strong> There are no pace alerts during warm-up and cool-down, too fast or too slow gets a tone instead of a sentence, and the voice can be switched off mid-run, one swipe away from the workout screen.</li>
     </ul>
   </section>
 
@@ -99,13 +99,13 @@
       <thead><tr><th>Heard on a run</th><th>What I changed</th></tr></thead>
       <tbody>
         <tr><td data-h="Heard on a run">"Cool-down" came twelve seconds early. With the rep still going, it sounded like the run was over.</td><td data-h="What I changed">Recovery and cool-down are said once they have begun, just after the GO chime. Work intervals keep the early line.</td></tr>
-        <tr><td data-h="Heard on a run">The line about the next interval ended four to five seconds before the countdown. In the gap the music came back up, then dipped again.</td><td data-h="What I changed">Every line is timed to end one second before the 3-2-1. The music dims once and stays down through GO.</td></tr>
-        <tr><td data-h="Heard on a run">"4 minutes" for a rep of 3:30, "90 seconds" for 1:30. The countdown then came up to 30 seconds off what was said.</td><td data-h="What I changed">Lengths are said exactly: "3 minutes 30 seconds", "1 minute 30 seconds".</td></tr>
+        <tr><td data-h="Heard on a run">The line about the next interval ended four to five seconds before the countdown. In the gap the music came back up, then dipped again.</td><td data-h="What I changed">Every line is timed to end one second before the 3&#8209;2&#8209;1. The music dims once and stays down through GO.</td></tr>
+        <tr><td data-h="Heard on a run">"4 minutes" for a rep of 3:30, "90 seconds" for 1:30. The countdown then came as much as 30 seconds off from what was said.</td><td data-h="What I changed">Lengths are said exactly: "3 minutes 30 seconds", "1 minute 30 seconds".</td></tr>
         <tr><td data-h="Heard on a run">In Russian a pace of 5:20 came out as "five hours twenty minutes per kilometer". Dutch and French did the same.</td><td data-h="What I changed">Outside English the pace is spoken in words: "5 minutes 20 seconds per kilometer". English keeps "five twenty".</td></tr>
         <tr><td data-h="Heard on a run">With headphones in, "too fast" and "too slow" were only a tap on the wrist. Saying them out loud had been too much.</td><td data-h="What I changed">A short tone instead: two falling pairs of notes when too fast, two rising when too slow, in time with the taps.</td></tr>
-        <tr><td data-h="Heard on a run">In the ears the 3-2-1 was a flat beep, unlike the wrist, and the louder voice sounded distorted.</td><td data-h="What I changed">Dings modelled on the watch&#39;s own sounds, and speech made as loud without the distortion.</td></tr>
+        <tr><td data-h="Heard on a run">In the ears the 3&#8209;2&#8209;1 was a flat beep, unlike the wrist, and the louder voice sounded distorted.</td><td data-h="What I changed">Dings modeled on the watch&#39;s own sounds, and speech that&#39;s just as loud without the distortion.</td></tr>
         <tr><td data-h="Heard on a run">In Easy + Strides the strides began unannounced.</td><td data-h="What I changed">"Strides: 4 times 15 seconds", then "Next: stride 2, 15 seconds" before each one. The recoveries between them stay quiet.</td></tr>
-        <tr><td data-h="Heard on a run">Tapping End said "Workout complete", as if the plan had run out.</td><td data-h="What I changed">End now says "Saving workout." Pause and resume are spoken too.</td></tr>
+        <tr><td data-h="Heard on a run">Tapping "End" said "Workout complete", as if the plan had run out.</td><td data-h="What I changed">"End" now says "Saving workout." Pause and resume are spoken too.</td></tr>
       </tbody>
     </table>
 
@@ -135,7 +135,7 @@
       <ul class="legend">
         <li style="--c:var(--s2)">Spoken line</li>
         <li style="--c:var(--s1)">Music dimmed</li>
-        <li style="--c:var(--vi)">3-2-1 dings, then GO</li>
+        <li style="--c:var(--vi)">3&#8209;2&#8209;1 dings, then GO</li>
       </ul>
       <p class="vnote">Timings from the build notes of 4 November 2026. The "Before" row is approximate.</p>
     </figure>
@@ -143,32 +143,32 @@
 
   <section>
     <h2>Nine languages, nine timings</h2>
-    <p>The same line takes a different time in every language. With a pace in it, it runs from 3.6 to 6 seconds, and Russian and French are the longest. A fixed lead cannot fit them all, so it is the end of the line that gets timed. The iPhone measures the audio it has rendered. The watch estimates the length per language, fitted to 427 measured lines in each: it lands within about half a second.</p>
+    <p>The same line takes a different amount of time in every language: with a pace in it, it runs from 3.6 to 6 seconds, and Russian and French are the longest. A fixed lead time can&#39;t fit them all, so it&#39;s the end of the line that gets timed. The iPhone measures the audio it has rendered, while the watch estimates the length per language from a fit to 427 measured lines in each, and it lands within about half a second.</p>
     <p>Even "three minutes thirty seconds" is put together differently: with a space in Russian, with "and" in Spanish, Italian and Portuguese, with nothing in Japanese.</p>
   </section>
 
   <section>
     <h2>Testing where the bugs live</h2>
-    <p>Some problems only happened outdoors: at home every cue reached the headphones, on a run some did not. My co-founder had added a cue journal on the iPhone. I added the watch&#39;s side, so after a workout one screen in debug builds shows both devices in time order: which one spoke each cue, where the sound went and how fast the iPhone answered.</p>
-    <p>It showed the cause after one run. At the start the watch asked the iPhone who was listening while the iPhone app was still waking up, got no answer and spoke on the wrist. Now it asks again. On the next outdoor run both workout starts reached the AirPods.</p>
+    <p>Some problems only happened outdoors: at home every cue reached the headphones, but on a run some didn&#39;t. My co-founder had already added a cue journal on the iPhone, and I added the watch&#39;s side, so after a workout one screen in debug builds shows both devices in time order — which one spoke each cue, where the sound went and how fast the iPhone answered.</p>
+    <p>It showed the cause after a single run: at the start, the watch asked the iPhone who was listening while the iPhone app was still waking up, got no answer and spoke on the wrist. Now it asks again, and on the next outdoor run both workout starts reached the AirPods.</p>
   </section>
 
   <section>
     <h2>Naming it</h2>
-    <p>In our release notes the feature was first called Voice Coaching. I renamed it Voice Cues, the same words as the toggle on the watch: the voice says what comes next, it doesn&#39;t coach. A name is a promise too.</p>
+    <p>In our release notes the feature was first called "Voice Coaching". I renamed it "Voice Cues", the same words as the toggle on the watch, because the voice only says what comes next and "coaching" would promise more than it does.</p>
   </section>
 
   <section>
     <h2>Status</h2>
-    <p>Voice Cues lead the release notes of the update that shipped on 24&nbsp;November 2026, so there are no usage numbers yet. Each watch run now records whether the cues were on. The first thing I will read is how many runs use them.</p>
+    <p>Voice Cues lead the release notes of the update that shipped on 24&nbsp;November 2026, so there are no usage numbers yet. Each watch run now records whether the cues were on, and the first thing I&#39;ll look at is how many runs use them.</p>
   </section>
 
   <section>
     <h2>What I learned</h2>
     <ul>
-      <li><strong>Voice can&#39;t be designed at a desk.</strong> On screen every line looked right. All the problems were in time: too early, too late, too long, on top of something else.</li>
-      <li><strong>Silence is a design decision.</strong> Several of these changes made the voice say less, or say it later.</li>
-      <li><strong>Every language is its own interface.</strong> Numbers, plurals and length change the timing, not only the words.</li>
+      <li><strong>Voice has to be tested on a run.</strong> On screen every line looked right, and all the problems turned out to be about timing: too early, too late, too long, or on top of something else.</li>
+      <li><strong>Saying less was often the fix.</strong> Several of these changes made the voice say less, or say it later.</li>
+      <li><strong>Each language needs its own timing.</strong> Numbers, plurals and length change how long a line takes as well as the words in it.</li>
     </ul>
   </section>
 

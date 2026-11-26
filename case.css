@@ -430,6 +430,68 @@ html:not(.anim) .progress{display:none}
 .shots + .cap{text-align:left;margin:14px 0 0;max-width:640px}
 @media (max-width:560px){.shots{grid-template-columns:minmax(0,300px)}}
 
+/* ===== one text column, one grid =====
+   Running text has one width whatever its font size: the lead, paragraphs, lists, decision lines, notes and charts.
+   (Widths in ch grew and shrank with the font size, so a 20px lead and a 12.5px note came out different.)
+   Everything else takes the full page width and stands on four columns with one gap:
+   the facts under the cover, the numbers, table columns, pairs of cards and pairs of pictures. */
+/* 622.908px is 66 characters of the 16.5px body text: the width paragraphs had all along, so none of them re-flows */
+:root{--measure:622.908px;--gap:26px}
+p,li,.sub,.painsum,.todo,.tl,.dec .ln,.dec h3,section>h3,.viz,.shots + .cap{max-width:var(--measure)}
+.meta,.stats,.stats.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap);max-width:none}
+@media (max-width:720px){.meta,.stats,.stats.four{grid-template-columns:1fr 1fr}}
+.states{max-width:none}
+.states td:first-child,.states td:nth-child(2),.states.kpi td:nth-child(2){width:25.72%}
+.states.kpi td:first-child,.states.two td:first-child{width:51.44%}
+.states.two td:nth-child(2){width:auto}
+.deep,.figrow.cols2,.ba{max-width:none;column-gap:var(--gap)}
+@media (min-width:601px){.deep{row-gap:var(--gap)}}
+/* four steps in a row stand on the same four columns, the arrow in the gap */
+@media (min-width:601px){.flow.tight{display:grid;grid-template-columns:repeat(3,minmax(0,1fr) var(--gap)) minmax(0,1fr);gap:0}.flow.tight .arrow{justify-self:center}}
+/* narrower lines: no single word left alone on the last one */
+.dec .ln,.states td,.tl li{text-wrap:pretty}
+
+/* ===== one type scale, one text colour =====
+   Seven sizes, each with one job (before: up to seventeen on a page).
+     62 / 36 / 24 / 20   the page title, the big numbers, headings and card titles, the lead under the title
+     16.5  body          every piece of running text: paragraphs, lists, decision lines, the facts under the cover,
+                         tables, timelines, flow steps, card descriptions
+     13    small         everything under or inside a picture or a chart, source notes, labels of numbers,
+                         and every uppercase label (section labels in the accent colour, all the others grey)
+     11    micro         the text inside pills
+   Running text has one colour, --text. Bold and italic no longer change it. Grey is for small text and the lead.
+   The site header is left as it is, because it has to match the home page. */
+:root{--fs-body:16.5px;--fs-small:13px;--fs-micro:11px;--text:#33333b}
+@media (prefers-color-scheme:dark){:root{--text:#C8C8CF}}
+
+/* body */
+p,li,.painsum,.dec .ln,.meta dd,.states,.tl li,.tl .when b,.flow .node,.flow .node b,.dcard .d,.deep.three .dcard .d,.dcard .more,.viz h3{font-size:var(--fs-body)}
+p,li,.dec .ln,.meta dd,.flow .node,.dcard .d,.tl .when b,
+.states td,.states td:first-child,.states td:nth-child(2),.states.kpi td:nth-child(2),.states.kpi td:nth-child(3),.states.two td:nth-child(2){color:var(--text)}
+strong,em,.states .ui,.states td:nth-child(2) .ui{color:inherit}
+.meta dd,.states,.tl li,.flow .node,.dcard .d{line-height:1.45}
+/* a flow step: its name in bold, then its text, like the bold lead of a list item */
+.flow .node b{letter-spacing:0;text-transform:none;margin-bottom:3px}
+
+/* small */
+.fig figcaption,.hscroll-track figcaption,.gallery3 figcaption,.gallery2 figcaption,.wideshot figcaption,.video figcaption,.strip.wrist figcaption,
+.cap,.flow + .flowcap,.statnote,.stat .l,.tl .when,
+.viz .vsub,.viz .vnote,.viz .grp i,.funnel li,.legend li,.seg div,.timing .trow > p,.timing .axis,
+[data-tip]:hover::after,[data-tip]:focus-visible::after,
+.crumb,.cfoot a,.cfoot a:last-child{font-size:var(--fs-small)}
+code{font-size:var(--fs-small)}
+.strip.wrist figcaption{color:var(--muted)}
+
+/* uppercase labels: one size, one weight, one spacing */
+h2,.meta dt,.states th,.states td[data-h]::before,.tile b,.ba span,.shots figcaption,.strip.wrist figcaption span,.timing .trow > b,.viz .grp{font-size:var(--fs-small);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+/* pills */
+.tag,.dcard .k,.mine{font-size:var(--fs-micro);letter-spacing:.1em}
+
+/* three cards in a row and four flow steps in a row need room for body-size text: below 920px they stack, as on a phone */
+@media (max-width:920px){.deep.three{grid-template-columns:1fr;gap:10px}}
+@media (min-width:601px) and (max-width:920px){.flow.tight{display:flex;flex-direction:column;gap:6px}.flow.tight .node{flex:0 0 auto}.flow.tight .arrow{transform:rotate(90deg)}}
+
 /* ===== v41: display type =====
    Instrument Sans in its condensed bold cut for the lines that are read first: page titles, card titles and the big numbers.
    Noto Sans stays for labels, running text and everything inside charts and product pictures. */
@@ -439,5 +501,5 @@ h1{font-family:var(--display);font-stretch:80%;font-weight:700;font-size:clamp(4
 .stat .n{font-family:var(--display);font-stretch:82%;font-weight:700;font-size:clamp(26px,3.8vw,36px);letter-spacing:-.02em;line-height:1.05}
 .stat .l{margin-top:8px}
 .dcard b{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:clamp(20px,2.3vw,24px);line-height:1.14;letter-spacing:-.012em;text-wrap:balance}
-.deep.three .dcard b{font-size:19px}
+.deep.three .dcard b{font-size:20px}
 p,li,.sub,.dcard .d{text-wrap:pretty}

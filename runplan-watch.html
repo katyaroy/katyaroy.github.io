@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=42">
+<link rel="stylesheet" href="case.css?v=44">
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
 <script src="motion.js?v=2" defer></script>
 <style>.funnel .val{min-width:5ch}.funnel .val b{margin-right:0}</style>
@@ -39,7 +39,7 @@
   <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
   <span class="tag">Deep dive · Data &rarr; design</span>
   <h1>Four out of five never reach the watch</h1>
-  <p class="sub">A focused case inside RunPlan. Our funnel looked healthy until I lined up the events: most people who build a plan never start it on the Apple&nbsp;Watch. I found out why and rebuilt the hand-off.</p>
+  <p class="sub">RunPlan&#39;s funnel looked healthy until I lined up the events and saw that most people who build a plan never start it on the Apple&nbsp;Watch. I found out why and rebuilt the hand-off.</p>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer &amp; Co-Founder — the analysis, the flow, the wording and the SwiftUI build.</dd></div>
@@ -50,7 +50,7 @@
 
   <section>
     <h2>Overview</h2>
-    <p>RunPlan is watch-first: the plan is built on the iPhone, the run happens on the Apple&nbsp;Watch. In November 2026 I went through our analytics to see where people drop out. Onboarding was fine. The gap sat between the two devices, and part of it was our own interface saying something that was not true.</p>
+    <p>RunPlan is watch-first: you build the plan on the iPhone and run it on the Apple&nbsp;Watch. In November 2026 I went through our analytics to see where we lose people. Onboarding was fine, and the drop-off turned out to be in the hand-off between the two devices, partly because our own interface was telling people something that wasn&#39;t true.</p>
     <div class="stats four">
       <div class="stat"><div class="n">93%</div><div class="l">of people who open the app create a plan</div></div>
       <div class="stat"><div class="n">21%</div><div class="l">of plan creators start a workout on the watch</div></div>
@@ -73,7 +73,7 @@
         <li tabindex="0" data-tip="96% of the people who opened the app"><span>Finished onboarding</span><span class="track"><span class="bar" style="--v:96.2;--c:var(--f2)"></span></span><span class="val"><b>96%</b></span></li>
         <li tabindex="0" data-tip="96% of those who finished onboarding"><span>Created a plan</span><span class="track"><span class="bar" style="--v:92.6;--c:var(--f3)"></span></span><span class="val"><b>93%</b></span></li>
       </ol>
-      <p class="grp">On the Apple Watch <i>four in five drop out here</i></p>
+      <p class="grp">On the Apple Watch <i>four out of five drop out here</i></p>
       <ol class="funnel" start="4">
         <li tabindex="0" data-tip="21% of those who created a plan"><span>Started a workout</span><span class="track"><span class="bar" style="--v:19.8;--c:var(--f4)"></span></span><span class="val"><b>20%</b></span></li>
         <li tabindex="0" data-tip="78% of those who started one"><span>Finished a workout</span><span class="track"><span class="bar" style="--v:15.3;--c:var(--f5)"></span></span><span class="val"><b>15%</b></span></li>
@@ -81,15 +81,15 @@
       <p class="vnote">Firebase Analytics. Unique people per event in the same 90&nbsp;days, not a strict cohort, so read the bars as proportions.</p>
     </figure>
 
-    <p>Nine in ten people build a plan. Only 21% of them start a workout on the watch. In a watch-first app the run on the watch is the product, and everything I had polished sat on the healthy side of that gap.</p>
+    <p>Of the people who open the app, 93% build a plan, but only 21% of those go on to start a workout on the watch. In a watch-first app the run on the watch is the product, and everything I had polished so far was on the healthy side of that gap.</p>
   </section>
 
   <section>
     <h2>The cause</h2>
-    <p>A funnel shows where people leave, not why. In August I had added one property to our analytics: what the iPhone finds on the wrist. It has three values: RunPlan is on the watch, a watch is paired but RunPlan isn&#39;t on it, or there is no watch. Four weeks of it gave the answer.</p>
+    <p>Because funnels only show where people drop off, I had added a single property to our analytics back in August to check the user&#39;s Apple&nbsp;Watch status: RunPlan installed, watch paired without the app, or no watch. It took four weeks of data to find the bottleneck.</p>
 
     <figure class="viz">
-      <h3>What the iPhone found on the wrist</h3>
+      <h3>Apple&nbsp;Watch status</h3>
       <p class="vsub">Share of active users, 21 October – 17 November 2026</p>
       <div class="seg">
         <div tabindex="0" role="img" aria-label="RunPlan is on the watch: 55%" data-tip="55%: RunPlan is on the watch" style="--v:55.3;--c:var(--s1)">55%</div>
@@ -104,36 +104,36 @@
       <p class="vnote">Firebase Analytics. The middle group is the one a better interface can win back.</p>
     </figure>
 
-    <p>The middle group hurt the most. They own the watch, and three in four of them built a plan anyway. iOS usually installs the watch app together with the iPhone app, but sometimes it doesn&#39;t, and nothing on the phone says so. With RunPlan on the watch, 36% of people started a workout in those four weeks. Without it, 1% did.</p>
+    <p>The people in the middle group own an Apple&nbsp;Watch, and 75% of them built a plan even though RunPlan wasn&#39;t on it. While iOS typically installs the companion app automatically, sometimes it doesn&#39;t, and there&#39;s no warning on the phone. Over those four weeks, 36% of users with the watch app started a workout, compared to just 1% without it.</p>
   </section>
 
   <section>
     <h2>What the app was telling them</h2>
-    <p>Then I checked what these people saw on screen. Two things.</p>
+    <p>So I looked at what these users were actually seeing on screen, and found two problems:</p>
     <ul>
-      <li><strong>A setup prompt at launch.</strong> My co-founder built it in July: when a paired watch has no RunPlan, a sheet explains how to install it, at most once a day. Dismiss it on the way to your plan, and it appeared nowhere else.</li>
-      <li><strong>A sync button that always said yes.</strong> <em>Sync with Apple&nbsp;Watch</em> on the plan screen spun for two seconds and answered "Synced with Watch" every time, whether or not anything was there to receive the plan. Almost half of the people with a watch but no RunPlan tapped it and were told it worked.</li>
+      <li><strong>A dismissible launch prompt.</strong> My co-founder added a sheet in July explaining how to install the watch app, shown at most once a day. If you swiped it away to get to your plan, it never showed up anywhere else.</li>
+      <li><strong>A sync button that always said yes.</strong> The "Sync with Apple&nbsp;Watch" button on the plan screen spun for two seconds and returned "Synced with Watch" every single time — even when there was nothing there to receive the plan. In the middle group, 48% tapped it and were told it worked.</li>
     </ul>
-    <p>So at the one moment a runner asked the app whether the plan was on the watch, the app said yes. Nobody had designed the failure, so success was the only answer the button had.</p>
+    <p>At the one moment a runner checked if their plan made it to the watch, the app straight-up lied to them. Nobody had designed the failure state, so success was the only answer the button had.</p>
   </section>
 
   <section>
     <h2>The redesign</h2>
-    <p>The rule I set for the flow: a status message is a claim, so the app may only say what it has checked. After the spinner the button now reads the real state of the watch, and each state gets its own answer.</p>
+    <p>The rule I set for the fix was simple: a status message is a claim, so the app is only allowed to say what it actually checked. Once the spinner stops, the button now reads the real state of the watch — and each state gets its own answer.</p>
     <table class="states">
       <thead><tr><th>What the phone sees</th><th>Before</th><th>Now</th></tr></thead>
       <tbody>
         <tr><td>RunPlan is on the watch</td><td data-h="Before"><span class="ui">"Synced with Watch"</span></td><td data-h="Now"><span class="ui">"Synced with Watch"</span>, and the plan really is there.</td></tr>
-        <tr><td>Watch paired, RunPlan not on it</td><td data-h="Before"><span class="ui">"Synced with Watch"</span>, which was not true</td><td data-h="Now">A sheet titled <span class="ui">"Couldn&#39;t sync your plan"</span>: how to install RunPlan from the Watch app, with an <span class="ui">Open Watch App</span> button.</td></tr>
-        <tr><td>No watch paired</td><td data-h="Before"><span class="ui">"Synced with Watch"</span>, which was not true</td><td data-h="Now">The same sheet, saying that no Apple&nbsp;Watch is paired and how to pair one.</td></tr>
+        <tr><td>Watch paired, RunPlan not on it</td><td data-h="Before"><span class="ui">"Synced with Watch"</span>, which wasn&#39;t true</td><td data-h="Now">A sheet titled <span class="ui">"Couldn&#39;t sync your plan"</span>: how to install RunPlan from the Watch app, with an <span class="ui">"Open Watch App"</span> button.</td></tr>
+        <tr><td>No watch paired</td><td data-h="Before"><span class="ui">"Synced with Watch"</span>, which wasn&#39;t true</td><td data-h="Now">The same sheet, saying that no Apple&nbsp;Watch is paired and how to pair one.</td></tr>
         <tr><td>Can&#39;t tell yet</td><td data-h="Before"><span class="ui">"Synced with Watch"</span></td><td data-h="Now">The spinner stops and the app claims nothing.</td></tr>
       </tbody>
     </table>
 
-    <h3>One sheet, three ways in</h3>
-    <p>The setup sheet already existed. I gave it more ways in and a title that fits the moment. At launch it still says "Set up your Apple&nbsp;Watch". After a sync tap it says "Couldn&#39;t sync your plan", because that answers the question the runner has just asked.</p>
+    <h3>One sheet, three entry points</h3>
+    <p>We already had the setup sheet, so I just added more entry points and made the title context-aware. At launch, it still says "Set up your Apple&nbsp;Watch". When triggered from a sync tap, it says "Couldn&#39;t sync your plan" — because that directly answers what the runner just asked.</p>
     <div class="flow tight">
-      <div class="node"><b>Three ways in</b>The app launch, a Sync tap, or the Apple&nbsp;Watch row in Settings</div>
+      <div class="node"><b>Three entry points</b>App launch, a sync tap, or the Apple&nbsp;Watch row in Settings</div>
       <div class="arrow">&rarr;</div>
       <div class="node"><b>One sheet</b>Says what is wrong (no app or no watch) and how to fix it</div>
       <div class="arrow">&rarr;</div>
@@ -153,19 +153,19 @@
     </div>
     <p class="cap">The sheet as shipped, in the iPhone simulator. Left: the July prompt with its install steps. Right: the new title and the new no-watch message. After a sync tap with a watch that has no RunPlan, the sheet shows the install steps under the title "Couldn&#39;t sync your plan".</p>
     <ul>
-      <li><strong>It can be found later.</strong> The Apple&nbsp;Watch row in Settings now reads "App not installed" or "No watch paired" and opens the same sheet.</li>
-      <li><strong>The plan follows on its own.</strong> Before, a plan sent to a watch without RunPlan went nowhere and waited for the next edit. Now the phone sends the active plan the moment RunPlan appears on the watch.</li>
+      <li><strong>You can get back to it later.</strong> The Apple&nbsp;Watch row in Settings now reads "App not installed" or "No watch paired" and opens the same sheet.</li>
+      <li><strong>The plan syncs on its own.</strong> Before, a plan sent to a watch without RunPlan went nowhere and just waited for the next edit. Now the phone sends the active plan as soon as RunPlan shows up on the watch.</li>
     </ul>
-    <p>I designed the flow, wrote the two new messages and built it in SwiftUI. It is live in all nine languages of the app, and I tried it on an iPhone with an Apple&nbsp;Watch before it went out.</p>
+    <p>I designed the flow, wrote the two new messages and built it in SwiftUI. It&#39;s live in all nine of the app&#39;s languages, and I tested it on an iPhone with an Apple&nbsp;Watch before it shipped.</p>
   </section>
 
   <section>
     <h2>How we will know</h2>
-    <p>The fix ships with its own measurement. Two new events record every time the sheet appears and every tap on <em>Open Watch App</em>, each with where it came from (launch, sync or Settings) and why (no app or no watch). Three numbers to read once the fix has been live for four weeks:</p>
+    <p>The fix ships with its own tracking: two new events log every time the sheet appears and every tap on "Open Watch App", each with its entry point (launch, sync or Settings) and its reason (no app or no watch). Once the fix has been live for four weeks, I&#39;ll read three numbers:</p>
     <table class="states kpi">
-      <thead><tr><th>What I will read</th><th>Today</th><th>Source</th></tr></thead>
+      <thead><tr><th>What I&#39;ll read</th><th>Today</th><th>Source</th></tr></thead>
       <tbody>
-        <tr><td>People who see the sheet and tap Open Watch App</td><td data-h="Today">No baseline, the events are new</td><td data-h="Source"><code>watch_setup_shown</code> <code>watch_setup_open_tapped</code></td></tr>
+        <tr><td>People who see the sheet and tap "Open Watch App"</td><td data-h="Today">No baseline, the events are new</td><td data-h="Source"><code>watch_setup_shown</code> <code>watch_setup_open_tapped</code></td></tr>
         <tr><td>Active users with a watch but no RunPlan on it</td><td data-h="Today">22%</td><td data-h="Source">Watch state, four weeks</td></tr>
         <tr><td>Plan creators who start a workout on the watch</td><td data-h="Today">21%</td><td data-h="Source">Funnel, 90 days</td></tr>
       </tbody>
@@ -174,17 +174,17 @@
 
   <section>
     <h2>Status: no result yet</h2>
-    <p>The fix shipped on 24&nbsp;November 2026, so there is nothing to report yet. Once it has been live for four weeks I will read the three numbers above.</p>
-    <p>One question stays open: the 22% with no Apple&nbsp;Watch at all. Either we say earlier and more clearly that RunPlan needs one, or we give them a way to run from the phone. We have not decided.</p>
-    <p>The same pass through the data turned up a quieter bug. Our App&nbsp;Store rating prompt had not appeared once in 90&nbsp;days, although runners finished workouts on the watch all that time: it only counted runs it had marked complete itself, and a watch run arrives already complete. Fixed in the same release.</p>
+    <p>The fix shipped on 24&nbsp;November 2026, so there&#39;s nothing to report yet. Once it&#39;s been live for four weeks, I&#39;ll read the three numbers above.</p>
+    <p>One question is still open: what to do about the 22% with no Apple&nbsp;Watch at all. We could say earlier and more clearly that RunPlan needs one, or give them a way to run from the phone, and we haven&#39;t decided yet.</p>
+    <p>The same pass through the data also turned up a quieter bug: our App&nbsp;Store rating prompt hadn&#39;t appeared once in 90&nbsp;days, even though runners were finishing workouts on the watch the whole time. It only counted runs it had marked complete itself, while a watch run arrives already complete, and the fix for that went out in the same release.</p>
   </section>
 
   <section>
     <h2>What I learned</h2>
     <ul>
-      <li><strong>A healthy funnel can hide the product.</strong> 93% creating a plan told me onboarding worked. It said nothing about the one step everything depends on: getting onto the wrist.</li>
-      <li><strong>A success message is a claim.</strong> The button never lied on purpose. Nobody had designed what it should say when it failed. I now design the failure states before the success state.</li>
-      <li><strong>The hand-off between devices is a screen of its own.</strong> It has no canvas in Figma, so it was nobody&#39;s job. Now it is designed, worded and measured like any other screen.</li>
+      <li><strong>Healthy onboarding numbers weren&#39;t the whole funnel.</strong> The 93% who create a plan told me onboarding worked, but that number said nothing about the one step everything else depends on, which is getting RunPlan onto the watch.</li>
+      <li><strong>A success message needs a failure state too.</strong> The sync button said "Synced with Watch" even when the sync had failed, simply because nobody had designed what it should say instead, so I now work out the failure states before the success state.</li>
+      <li><strong>The hand-off between devices needs an owner.</strong> It has no canvas in Figma, so it had been nobody&#39;s job, and now it&#39;s designed, worded and measured like any other screen.</li>
     </ul>
   </section>
 

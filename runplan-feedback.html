@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=42">
+<link rel="stylesheet" href="case.css?v=44">
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
 <script src="motion.js?v=2" defer></script>
 <style>@media (max-width:600px){.tl li{grid-template-columns:1fr;row-gap:2px}}</style>
@@ -39,7 +39,7 @@
   <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
   <span class="tag">Deep dive · Users &rarr; product</span>
   <h1>From a runner&#39;s email to a release</h1>
-  <p class="sub">A focused case inside RunPlan. We have no support team: the email address in Settings reaches me. How I answer runners, what I ask back, and what their emails changed in the app.</p>
+  <p class="sub">We have no support team, so the email address in Settings goes straight to me. This is how I answer runners, what I ask them back, and what their emails have changed in the app.</p>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer &amp; Co-Founder — I answer the emails, ask the follow-up questions and build the changes in SwiftUI.</dd></div>
@@ -50,9 +50,9 @@
 
   <section>
     <h2>Overview</h2>
-    <p>RunPlan has no accounts, so the one direct line from a runner to us is the email address in Settings. Since late August runners have written in six languages: about a bug, a number that looks wrong, or something they miss. I answer every email, and I treat each one as a short interview that the runner started.</p>
+    <p>RunPlan has no user accounts, so the only direct line from a runner to us is the email address in Settings. Since late August, people have written in across six languages — flagging bugs, questioning a number that looked off, or asking for a feature they wish existed. I answer every email myself, and I treat each one like a short interview the runner started.</p>
     <div class="flow tight">
-      <div class="node"><b>Answer first</b>The fix, or a way around the problem today, in plain words</div>
+      <div class="node"><b>Answer first</b>The fix, or a workaround for today, in plain words</div>
       <div class="arrow">&rarr;</div>
       <div class="node"><b>Ask back</b>One or two questions about how they actually run</div>
       <div class="arrow">&rarr;</div>
@@ -69,7 +69,7 @@
     <h3>Workouts that recorded nothing</h3>
     <ol class="tl">
       <li><span class="when"><b>9 Oct</b></span><span>A runner writes: the workout starts on the watch, but heart rate, distance and pace stay empty. I send the usual checks for Health permissions.</span></li>
-      <li><span class="when"><b>10 Oct</b></span><span>They have checked everything and attach screenshots. Apple&#39;s own Workout app records fine on the same watch. That rules out permissions and sensors, so the problem is ours: RunPlan on watchOS&nbsp;27.</span></li>
+      <li><span class="when"><b>10 Oct</b></span><span>They&#39;ve checked everything and attach screenshots, and Apple&#39;s own Workout app records fine on the same watch. That rules out permissions and sensors, so the problem is on our side: RunPlan on watchOS&nbsp;27.</span></li>
       <li><span class="when"><b>13 Oct</b></span><span>The fix is in the code.</span></li>
       <li><span class="when"><b>14 Oct</b></span><span>The fix is on the App&nbsp;Store, and I write back.</span></li>
       <li><span class="when"><b>23 Oct</b></span><span>The runner confirms it works, and sends a list of further suggestions.</span></li>
@@ -77,21 +77,21 @@
 
     <h3>A pace 1.6 times too slow</h3>
     <ol class="tl">
-      <li><span class="when"><b>4 Nov</b></span><span>A runner who trains in miles asks why the pace in the splits doesn&#39;t match the run. It is a bug: the pace was already per mile and got converted from kilometers a second time. I fix it the same day and explain what went wrong.</span></li>
+      <li><span class="when"><b>4 Nov</b></span><span>A runner who trains in miles asks why the pace in the splits doesn&#39;t match the run. It&#39;s a bug: the pace was already per mile and got converted from kilometers a second time. I fix it the same day and explain what went wrong.</span></li>
       <li><span class="when"><b>5 Nov</b></span><span>The fix is on the App&nbsp;Store.</span></li>
     </ol>
   </section>
 
   <section>
     <h2>One question back, and what it changed</h2>
-    <p>A request tells me what a runner wants. A question back tells me how they do it today, and that usually decides the design.</p>
+    <p>A request only tells me what a runner wants, so I ask a question back to find out how they do it today, and that answer usually decides the design.</p>
     <table class="states">
       <thead><tr><th>A runner asked for</th><th>I asked back</th><th>What I learned, and what changed</th></tr></thead>
       <tbody>
-        <tr><td>Kilometers instead of miles</td><td data-h="I asked back">Where do you use miles day to day? In which units do you see your runs in other apps?</td><td data-h="What I learned, and what changed">Miles for driving, kilometers for anything sport. So the phone&#39;s region was the wrong signal. Units are now a choice in Settings, on the iPhone and the watch.</td></tr>
-        <tr><td>Heart-rate zones that fit: Zone&nbsp;2 felt too low</td><td data-h="I asked back">Nothing. I checked our math instead.</td><td data-h="What I learned, and what changed">We took 220 minus age, the roughest method there is. I wrote back: <span class="ui">"So it wasn&#39;t you &ndash; Zone&nbsp;2 really is too low."</span> Zones are now worked out from maximum and resting heart rate, on their own screen in Settings.</td></tr>
-        <tr><td>A way to adjust the zones</td><td data-h="I asked back">How are your zones set today: from maximum and resting heart rate, or as limits for each zone?</td><td data-h="What I learned, and what changed">As limits, from a lab test. So the limits can be typed in as they are, not only calculated.</td></tr>
-        <tr><td>An Apple&nbsp;Watch complication</td><td data-h="I asked back">Nothing. The request was clear.</td><td data-h="What I learned, and what changed">RunPlan on the watch face, and today&#39;s run as a card in the Smart Stack.</td></tr>
+        <tr><td>Kilometers instead of miles</td><td data-h="I asked back">Where do you use miles day to day? Which units do your other apps show your runs in?</td><td data-h="What I learned, and what changed">Miles for driving, kilometers for anything sport, so the phone&#39;s region was the wrong signal. Units are now a choice in Settings, on the iPhone and the watch.</td></tr>
+        <tr><td>Heart-rate zones that fit: Zone&nbsp;2 felt too low</td><td data-h="I asked back">Nothing — I checked our math instead.</td><td data-h="What I learned, and what changed">We were using 220 minus age, the roughest method there is. I wrote back: <span class="ui">"So it wasn&#39;t you &ndash; Zone&nbsp;2 really is too low."</span> Zones are now calculated from maximum and resting heart rate, on their own screen in Settings.</td></tr>
+        <tr><td>A way to adjust the zones</td><td data-h="I asked back">How are your zones set today: from maximum and resting heart rate, or as limits for each zone?</td><td data-h="What I learned, and what changed">As limits, from a lab test, so the limits can now be typed straight in as well as calculated.</td></tr>
+        <tr><td>An Apple&nbsp;Watch complication</td><td data-h="I asked back">Nothing, the request was clear.</td><td data-h="What I learned, and what changed">RunPlan on the watch face, and today&#39;s run as a card in the Smart Stack.</td></tr>
       </tbody>
     </table>
     <p>All four changes shipped on 24&nbsp;November.</p>
@@ -99,23 +99,23 @@
 
   <section>
     <h2>When the answer is no</h2>
-    <p>A runner with time for only two runs a week asked for a half-marathon plan to match. I said no and explained why. Our half-marathon plans start at three runs a week on purpose: with two, the long run becomes most of the running, and too much too soon is how most running injuries happen.</p>
-    <p>Then I said what works today: the beginner 5K and 10K plans are built for two runs a week. Their own idea, to start earlier and build up more slowly, goes straight at the main risk, and I told them so.</p>
+    <p>A runner with time for only two runs a week asked for a half-marathon plan to match, and I said no and explained why. Our half-marathon plans start at three runs a week on purpose: with two, the long run becomes most of the week&#39;s running, and too much too soon is how most running injuries happen.</p>
+    <p>Then I pointed them to what works today: the beginner 5K and 10K plans are built for two runs a week. Their own idea, to start earlier and build up more slowly, tackles that risk head-on, and I told them so.</p>
   </section>
 
   <section>
     <h2>The same question, three times</h2>
-    <p>Three runners asked the same thing in different words: I ran with Apple&#39;s Workout app, so why doesn&#39;t it count toward my plan? The rule is simple. Every run shows up in Activity and counts in the totals, but only a run started in RunPlan completes a planned session. Nothing in the app says so until it bites.</p>
-    <p>Three emails about one rule are not three support cases. They are one unclear spot in the interface. What to do about it is open: say the rule earlier, or offer to count an outside run as the day&#39;s session.</p>
-    <p>An email can also arrive before the data. In September a runner wrote that after a few weeks with the app they still couldn&#39;t get it onto their watch, so they couldn&#39;t start a workout. In November the analytics showed how common that was: <a class="lnk" href="runplan-watch.html">Four out of five never reach the watch &rarr;</a></p>
+    <p>Three runners asked the same thing in different words: I ran with Apple&#39;s Workout app, so why doesn&#39;t it count toward my plan? The rule itself is simple: every run shows up in Activity and counts in the totals, but only a run started in RunPlan completes a planned session. The trouble is that nothing in the app explains this until someone runs into it.</p>
+    <p>Three emails about the same rule point to one unclear spot in the interface, and what to do about it is still open: we could explain the rule earlier, or offer to count an outside run as the day&#39;s session.</p>
+    <p>Sometimes an email shows up before the data does: in September a runner wrote that after a few weeks with the app they still couldn&#39;t get it onto their watch, so they couldn&#39;t start a workout. In November the analytics showed how common that was: <a class="lnk" href="runplan-watch.html">Four out of five never reach the watch &rarr;</a></p>
   </section>
 
   <section>
     <h2>What I learned</h2>
     <ul>
-      <li><strong>An email is an interview the runner started.</strong> They cared enough to write, so one good question back gets a real answer, often within hours.</li>
-      <li><strong>Ask how they do it today.</strong> "Let me adjust my zones" could mean three different screens. The answer, limits from a lab test, picked one.</li>
-      <li><strong>A repeated question is a design finding.</strong> The third email about the same rule tells me to fix the interface, not to write a better reply.</li>
+      <li><strong>People who write in will answer a follow-up.</strong> They cared enough to email in the first place, so one good question back gets a real answer, often within hours.</li>
+      <li><strong>Ask how they do it today.</strong> "Let me adjust my zones" could have meant three different screens, and the runner&#39;s answer (limits from a lab test) picked one.</li>
+      <li><strong>A repeated question means the interface is unclear.</strong> When the third email about the same rule comes in, I take it as a sign to fix the interface instead of writing a better reply.</li>
     </ul>
   </section>
 

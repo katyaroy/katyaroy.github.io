@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=42">
+<link rel="stylesheet" href="case.css?v=44">
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
 <script src="motion.js?v=2" defer></script>
 </head>
@@ -38,7 +38,7 @@
   <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
   <span class="tag">Deep dive · Design &rarr; code</span>
   <h1>How I work — designed in Figma, shipped in SwiftUI</h1>
-  <p class="sub">A focused case inside RunPlan. Two people, no handoff: I design the product and ship my own design changes into the app with AI. Three examples of what that looks like.</p>
+  <p class="sub">We&#39;re two people with no handoff: I design the product and ship my own design changes into the app with AI. Here are three examples of what that looks like.</p>
 
   <dl class="meta">
     <div><dt>My role</dt><dd>Product Designer &amp; Co-Founder — the design, and my design changes shipped in SwiftUI.</dd></div>
@@ -49,7 +49,7 @@
 
   <section>
     <h2>Overview</h2>
-    <p>We split the work by layer. My co-founder owns everything under the hood. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship my design changes straight into the same codebase with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal).</p>
+    <p>We split the work by layer: my co-founder owns everything under the hood, and I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA. I ship my design changes straight into the same codebase with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal).</p>
     <div class="stats">
       <div class="stat"><div class="n">150+</div><div class="l">of my own commits since December&nbsp;2025</div></div>
       <div class="stat"><div class="n">110</div><div class="l">Swift files they touch</div></div>
@@ -59,7 +59,7 @@
 
   <section>
     <h2>1 · A restyle, shipped screen by screen</h2>
-    <p>When iOS&nbsp;26 arrived I restyled the app for Liquid Glass in code, one surface at a time: calendar, plans, activity, workout setup, the watch. My co-founder added the fallbacks that keep older iOS versions looking right. It shipped in April&nbsp;2026.</p>
+    <p>When iOS&nbsp;26 arrived I restyled the app for Liquid Glass in code, one surface at a time: calendar, plans, activity, workout setup, the watch. My co-founder added the fallbacks that keep older iOS versions looking right, and the restyle shipped in April&nbsp;2026.</p>
     <div class="ba">
       <figure>
         <div><span>iOS 18</span><img src="img/rp-glass-plans-18.jpg" width="591" height="1280" alt="Plans screen before the redesign: flat cards and a standard tab bar" loading="lazy"></div>
@@ -97,20 +97,20 @@
 
   <section>
     <h2>Small decisions, written down</h2>
-    <p>Most of my commits are small product decisions. Two from this autumn:</p>
+    <p>Most of my commits are small product decisions, like these two from this autumn:</p>
     <ul>
       <li>The plan header said "0 weeks to go" a week before a Sunday race. It now says "Race this week".</li>
-      <li>When our Strava connection limit was reached, the eleventh runner saw "Something went wrong" and a <em>Try again</em> that could not help. Now it says "Strava is reviewing RunPlan, check back soon".</li>
+      <li>When our Strava connection limit was reached, the eleventh runner saw "Something went wrong" and a "Try again" button that couldn&#39;t help. Now it says "Strava is reviewing RunPlan, check back soon".</li>
     </ul>
-    <p>The longest chain of such decisions is in <a class="lnk" href="runplan-voice.html">Voice Cues &rarr;</a></p>
+    <p>The longest chain of decisions like these is in <a class="lnk" href="runplan-voice.html">Voice Cues &rarr;</a></p>
   </section>
 
   <section>
     <h2>What it changes</h2>
     <ul>
-      <li><strong>Small things get done.</strong> A wrong word or a label that is off by one doesn&#39;t wait in a backlog: I notice it, I fix it, it ships with the next build.</li>
-      <li><strong>The design system can&#39;t drift quietly.</strong> It lives where the app lives, and the gallery shows where the two differ.</li>
-      <li><strong>Each of us ships our own layer.</strong> How the plan is computed is my co-founder&#39;s. How the app looks, reads and behaves is mine, and I can ship it myself.</li>
+      <li><strong>Small things get done.</strong> A wrong word or an off-by-one label doesn&#39;t wait in a backlog, because I can fix it as soon as I notice it and it ships with the next build.</li>
+      <li><strong>The design system can&#39;t drift quietly.</strong> It&#39;s in the same codebase as the app, and the gallery shows where the two differ.</li>
+      <li><strong>Each of us ships our own layer.</strong> My co-founder owns how the plan is computed, and I own how the app looks, reads and behaves, which means I can ship it myself.</li>
     </ul>
   </section>
 
