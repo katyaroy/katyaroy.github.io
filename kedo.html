@@ -16,8 +16,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=36">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css?v=42">
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="motion.js?v=2" defer></script>
 </head>
 <body>
 <main class="wrap leftfig">
@@ -25,11 +27,11 @@
   <div class="topbar">
     <a class="id" href="index.html">
       <div class="name">Ekaterina Roy</div>
-      <div class="eyebrow">Product Designer &amp; Co-Founder</div>
+      <div class="eyebrow">Product Designer</div>
     </a>
     <div class="status">
-      <div class="loc">Amsterdam, NL</div>
-      <div class="avail"><span class="dot"></span><span class="txt">Open to product design roles — contract, fractional, or founding&#8209;designer, remote</span></div>
+      <div class="loc">Amsterdam, NL <span class="sep">·</span> <span class="permit">Permanent resident, no&nbsp;visa sponsorship needed</span></div>
+      <div class="avail"><span class="dot"></span><span class="txt">Open to full&#8209;time product design roles — Amsterdam (hybrid) or&nbsp;remote for EU, UK and&nbsp;US&nbsp;teams</span></div>
     </div>
   </div>
 
@@ -116,8 +118,8 @@
       <button class="hscroll-btn prev" aria-label="Previous screens">&#8249;</button>
       <div class="hscroll-track">
         <figure><img class="zoomable" src="img/kedo-email-1.svg" alt="Documents inbox in an email-style layout — date, document name and sender columns" loading="lazy"><figcaption>The inbox — incoming documents in a familiar email-style list</figcaption></figure>
-        <figure><img class="zoomable" src="img/kedo-email-3.svg" alt="Filtering the documents list by type and status" loading="lazy"><figcaption>Filtering the list by document type and status</figcaption></figure>
-        <figure><img class="zoomable" src="img/kedo-email-4.svg" alt="Selecting documents in the list to act on them" loading="lazy"><figcaption>Selecting documents to act on them in bulk</figcaption></figure>
+        <figure><img class="zoomable" src="img/kedo-email-3.svg" alt="New document panel opened over the documents list, with an area to drag a file in or select one" loading="lazy"><figcaption>A new document starts with the file — drag it in or select it</figcaption></figure>
+        <figure><img class="zoomable" src="img/kedo-email-4.svg" alt="New document panel filled in: the uploaded file, document type, name and approval route, with Cancel and Sign and send buttons" loading="lazy"><figcaption>Then type, name and approval route — and Sign and send</figcaption></figure>
         <figure><img class="zoomable" src="img/kedo-email-2.svg" alt="Sent documents, shown in the same email-style list" loading="lazy"><figcaption>The Sent view — outgoing documents, same layout</figcaption></figure>
       </div>
       <button class="hscroll-btn next" aria-label="Next screens">&#8250;</button>
@@ -151,13 +153,21 @@
   <section>
     <h2>Validation &rarr; iteration</h2>
     <p>At MVP I ran <strong>usability testing with internal users</strong>. Sending a document tested well — but <strong>search scored poorly</strong>. So it became its own redesign track: a focused project on how people actually find documents. The test changed the product, not just confirmed it. <em>(I later broke that work out into <a href="documentsearch.html" style="color:var(--accent)">its own case study</a>.)</em></p>
+    <div class="deep" style="grid-template-columns:minmax(0,430px)">
+      <a class="dcard" href="documentsearch.html">
+        <span class="k">Deep dive · Search redesign</span>
+        <b>Document Search: a search that failed its first test</b>
+        <span class="d">One search across all documents, filters in plain sight, suggestions as you type.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+    </div>
   </section>
 
   <section>
     <h2>Outcome</h2>
     <ul>
       <li><strong>70+ companies and ~1,800 employees</strong> adopted Personnel EDI in its first five months after launch.</li>
-      <li>It shipped as a flagship product — and is still on the market today.</li>
+      <li>It shipped as a flagship product.</li>
       <li>The email mental model — plus a one-tap signature — made a complex, regulated document process clear enough for non-experts to adopt org-wide.</li>
     </ul>
   </section>

@@ -16,20 +16,22 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=36">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css?v=42">
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="motion.js?v=2" defer></script>
 </head>
 <body>
-<main class="wrap">
+<main class="wrap leftfig">
 
   <div class="topbar">
     <a class="id" href="index.html">
       <div class="name">Ekaterina Roy</div>
-      <div class="eyebrow">Product Designer &amp; Co-Founder</div>
+      <div class="eyebrow">Product Designer</div>
     </a>
     <div class="status">
-      <div class="loc">Amsterdam, NL</div>
-      <div class="avail"><span class="dot"></span><span class="txt">Open to product design roles — contract, fractional, or founding&#8209;designer, remote</span></div>
+      <div class="loc">Amsterdam, NL <span class="sep">·</span> <span class="permit">Permanent resident, no&nbsp;visa sponsorship needed</span></div>
+      <div class="avail"><span class="dot"></span><span class="txt">Open to full&#8209;time product design roles — Amsterdam (hybrid) or&nbsp;remote for EU, UK and&nbsp;US&nbsp;teams</span></div>
     </div>
   </div>
 
@@ -63,6 +65,7 @@
       <li><strong>The result: dead ends</strong> — empty result screens, and people who gave up.</li>
     </ul>
     <p>A usability test caught it early — which is exactly what a test is for.</p>
+    <figure class="wideshot"><img class="zoomable" src="img/ds-before.svg" width="1440" height="707" alt="First version of the Documents page with all filters opened: inside the Inbox tab, a search by document name, a search by sender, type, status and a date range, with a Close filters link above them" loading="lazy"><figcaption>The first version with its filters opened — a separate search in each tab, most filters hidden by default</figcaption></figure>
   </section>
 
   <section>
@@ -70,14 +73,13 @@
     <p>I rebuilt search around one idea: <strong>meet people where their memory is.</strong> A few changes did most of the work.</p>
 
     <p><strong>One search, filters in plain sight.</strong> I merged incoming and sent into a single search across every document, and brought the filters — name, sender, date — into view without an extra click.</p>
-    <figure class="fig"><img src="img/ds-search.png" alt="Redesigned document search landing" loading="lazy"><figcaption>One prominent search across all documents — no more guessing inbox vs sent</figcaption></figure>
-    <figure class="fig"><img src="img/ds-filters.png" alt="Visible search filters" loading="lazy"><figcaption>Name, sender and date filters — available without an extra click</figcaption></figure>
+    <figure class="wideshot"><img class="zoomable" src="img/ds-search.svg" width="1440" height="707" alt="Redesigned Documents page: one large search field across all documents next to the Create new document button, and type, status, employee and date filters in a row above the list" loading="lazy"><figcaption>One prominent search across all documents — no more guessing inbox vs sent</figcaption></figure>
 
     <p><strong>Search as you type.</strong> Instant suggestions surface the document before you finish typing.</p>
-    <figure class="fig"><img src="img/ds-typeahead.png" alt="Type-ahead search suggestions" loading="lazy"><figcaption>Instant suggestions as you type, with a quick path to all results</figcaption></figure>
+    <figure class="wideshot"><img class="zoomable" src="img/ds-typeahead.svg" width="1440" height="707" alt="Search field with ord typed and four suggested documents under it, each marked Inbox or Outbox, with a More results link at the bottom" loading="lazy"><figcaption>Instant suggestions as you type, with a quick path to all results</figcaption></figure>
 
     <p><strong>Show the match — and the way out.</strong> Each result highlights the query and shows a result count and the document&#39;s folder location, so you trust what you found. A prominent &quot;create a new document&quot; button turns a dead end into a next step.</p>
-    <figure class="fig"><img src="img/ds-results.png" alt="Search results with highlighted matches" loading="lazy"><figcaption>Highlighted matches, a result count, and where each document lives</figcaption></figure>
+    <figure class="wideshot"><img class="zoomable" src="img/ds-results.svg" width="1440" height="707" alt="Search results for order: four documents found, the word highlighted in every name, with a status and an Inbox or Outbox mark in each row" loading="lazy"><figcaption>Highlighted matches, a result count, and where each document lives</figcaption></figure>
   </section>
 
   <section>
@@ -96,5 +98,17 @@
   </div>
 
 </main>
+<script>
+(function(){
+  var z=[].slice.call(document.querySelectorAll('.zoomable')); if(!z.length)return;
+  var lb=document.createElement('div'); lb.className='lb';
+  var im=document.createElement('img'); im.alt=''; lb.appendChild(im);
+  document.body.appendChild(lb);
+  function close(){ lb.classList.remove('open'); im.src=''; }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  z.forEach(function(el){ el.addEventListener('click',function(){ im.src=el.getAttribute('data-full')||el.src; lb.classList.add('open'); }); });
+})();
+</script>
 </body>
 </html>

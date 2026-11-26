@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How I work — RunPlan · Ekaterina Roy</title>
+<meta name="description" content="A RunPlan deep dive: designed in Figma, shipped in SwiftUI. How a designer ships her own design changes into an iOS and watchOS app with AI." />
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ekaterina Roy — Portfolio">
+<meta property="og:title" content="How I work — RunPlan · Ekaterina Roy">
+<meta property="og:description" content="A RunPlan deep dive: designed in Figma, shipped in SwiftUI. How a designer ships her own design changes into an iOS and watchOS app with AI.">
+<meta property="og:url" content="https://katyaroy.github.io/runplan-how-i-work.html">
+<meta property="og:image" content="https://katyaroy.github.io/img/og-runplan.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css?v=42">
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="motion.js?v=2" defer></script>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="topbar">
+    <a class="id" href="index.html">
+      <div class="name">Ekaterina Roy</div>
+      <div class="eyebrow">Product Designer</div>
+    </a>
+    <div class="status">
+      <div class="loc">Amsterdam, NL <span class="sep">·</span> <span class="permit">Permanent resident, no&nbsp;visa sponsorship needed</span></div>
+      <div class="avail"><span class="dot"></span><span class="txt">Open to full&#8209;time product design roles — Amsterdam (hybrid) or&nbsp;remote for EU, UK and&nbsp;US&nbsp;teams</span></div>
+    </div>
+  </div>
+
+  <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
+  <span class="tag">Deep dive · Design &rarr; code</span>
+  <h1>How I work — designed in Figma, shipped in SwiftUI</h1>
+  <p class="sub">A focused case inside RunPlan. Two people, no handoff: I design the product and ship my own design changes into the app with AI. Three examples of what that looks like.</p>
+
+  <dl class="meta">
+    <div><dt>My role</dt><dd>Product Designer &amp; Co-Founder — the design, and my design changes shipped in SwiftUI.</dd></div>
+    <div><dt>Team</dt><dd>Two people. My co-founder owns the plan engine, HealthKit, sync and the architecture.</dd></div>
+    <div><dt>Timeline</dt><dd>December 2025 &ndash; present</dd></div>
+    <div><dt>Context</dt><dd>A focused case within <a class="lnk" href="runplan.html" style="font-weight:inherit">RunPlan &#8599;</a></dd></div>
+  </dl>
+
+  <section>
+    <h2>Overview</h2>
+    <p>We split the work by layer. My co-founder owns everything under the hood. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship my design changes straight into the same codebase with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal).</p>
+    <div class="stats">
+      <div class="stat"><div class="n">150+</div><div class="l">of my own commits since December&nbsp;2025</div></div>
+      <div class="stat"><div class="n">110</div><div class="l">Swift files they touch</div></div>
+      <div class="stat"><div class="n">11</div><div class="l">App Store releases in the first 11 months</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1 · A restyle, shipped screen by screen</h2>
+    <p>When iOS&nbsp;26 arrived I restyled the app for Liquid Glass in code, one surface at a time: calendar, plans, activity, workout setup, the watch. My co-founder added the fallbacks that keep older iOS versions looking right. It shipped in April&nbsp;2026.</p>
+    <div class="ba">
+      <figure>
+        <div><span>iOS 18</span><img src="img/rp-glass-plans-18.jpg" width="591" height="1280" alt="Plans screen before the redesign: flat cards and a standard tab bar" loading="lazy"></div>
+        <div><span>iOS 26</span><img src="img/rp-glass-plans-26.jpg" width="600" height="1304" alt="Plans screen after the redesign: tinted glass cards and a floating glass tab bar" loading="lazy"></div>
+      </figure>
+      <figure>
+        <div><span>iOS 18</span><img src="img/rp-glass-cal-18.jpg" width="589" height="1280" alt="Calendar before the redesign: a month grid with the workout in a flat sheet" loading="lazy"></div>
+        <div><span>iOS 26</span><img src="img/rp-glass-cal-26.jpg" width="600" height="1304" alt="Calendar after the redesign: a continuous calendar under a floating glass tab bar" loading="lazy"></div>
+      </figure>
+    </div>
+    <p class="cap">Plans and calendar, before and after: iOS&nbsp;18 on the left of each pair, iOS&nbsp;26 with Liquid Glass on the right.</p>
+  </section>
+
+  <section>
+    <h2>2 · A design system that lives in the code</h2>
+    <p>In July I built the design system into the codebase: type, color families, buttons, badges, cards, and a shared scaffold for sheets and popups. It comes with a hidden gallery screen in debug builds that renders every component live, in light and dark, and marks where the app still diverges from the system.</p>
+    <div class="strip board">
+      <figure class="tile"><b>Buttons</b><img src="img/rp-ds-buttons.png" width="748" height="615" alt="Primary, plan-colored, destructive and secondary buttons" loading="lazy"></figure>
+      <figure class="tile"><b>Badges and chips</b><img src="img/rp-ds-badges-1.png" width="560" height="145" style="--w:75%" alt="Workout type badges: Easy Run, Medium-Long Run, Intervals, Threshold Run" loading="lazy"><img src="img/rp-ds-badges-2.png" width="440" height="75" style="--w:59%" alt="Race Day and Rest day badges" loading="lazy"><img src="img/rp-ds-badges-3.png" width="470" height="65" style="--w:63%" alt="Streak and pace chips" loading="lazy"><img src="img/rp-ds-chips.png" width="748" height="110" alt="Glass action buttons: Move, Swap, Cancel" loading="lazy"></figure>
+      <figure class="tile"><b>Color families</b><img src="img/rp-ds-colors.png" width="770" height="810" alt="Workout color families: easy green, long cyan, progression indigo, intervals orange, threshold red, fartlek pink" loading="lazy"></figure>
+      <figure class="tile"><b>Sheets</b><img class="sheet" src="img/rp-ds-sheet.jpg" width="784" height="786" alt="Confirmation sheet: Start a new plan? with a primary and a secondary action" loading="lazy"></figure>
+    </div>
+    <p class="cap">From the in-app gallery: buttons, workout badges and chips, color families, the confirmation sheet.</p>
+  </section>
+
+  <section>
+    <h2>3 · Features built end to end</h2>
+    <ul>
+      <li><strong>Live Activity:</strong> the watch run mirrored on the Lock Screen and in the Dynamic Island, with pause and resume from the phone.</li>
+      <li><strong>Widgets:</strong> today&#39;s run on the Home Screen and as a card in the watch&#39;s Smart Stack.</li>
+      <li><strong>Progress charts:</strong> my co-founder computes the forecast and training load; I designed the screen and built the charts you can scrub, with a haptic tick on each data point.</li>
+    </ul>
+    <figure class="fig center"><img src="img/rp-live-lock.jpg" width="640" height="1391" alt="iPhone Lock Screen with the RunPlan Live Activity: elapsed time, distance, average pace, run type and a pause button" loading="lazy"><figcaption>The Live Activity on the Lock Screen: time, distance, pace, run type, and a pause button.</figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Small decisions, written down</h2>
+    <p>Most of my commits are small product decisions. Two from this autumn:</p>
+    <ul>
+      <li>The plan header said "0 weeks to go" a week before a Sunday race. It now says "Race this week".</li>
+      <li>When our Strava connection limit was reached, the eleventh runner saw "Something went wrong" and a <em>Try again</em> that could not help. Now it says "Strava is reviewing RunPlan, check back soon".</li>
+    </ul>
+    <p>The longest chain of such decisions is in <a class="lnk" href="runplan-voice.html">Voice Cues &rarr;</a></p>
+  </section>
+
+  <section>
+    <h2>What it changes</h2>
+    <ul>
+      <li><strong>Small things get done.</strong> A wrong word or a label that is off by one doesn&#39;t wait in a backlog: I notice it, I fix it, it ships with the next build.</li>
+      <li><strong>The design system can&#39;t drift quietly.</strong> It lives where the app lives, and the gallery shows where the two differ.</li>
+      <li><strong>Each of us ships our own layer.</strong> How the plan is computed is my co-founder&#39;s. How the app looks, reads and behaves is mine, and I can ship it myself.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>More from RunPlan</h2>
+    <div class="deep three">
+      <a class="dcard" href="runplan-watch.html">
+        <span class="k">Deep dive · Data &rarr; design</span>
+        <b>Four out of five never reach the watch</b>
+        <span class="d">93% create a plan, 21% start it on the watch. I found the cause in our analytics and rebuilt the hand-off.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+      <a class="dcard" href="runplan-feedback.html">
+        <span class="k">Deep dive · Users &rarr; product</span>
+        <b>From a runner&#39;s email to a release</b>
+        <span class="d">Emails in six languages, bug fixes live within a week, features built from one question back.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+      <a class="dcard" href="runplan-voice.html">
+        <span class="k">Deep dive · Interaction</span>
+        <b>Voice Cues: what the watch says, and when</b>
+        <span class="d">Spoken interval cues in nine languages, each with its own timing, tuned by ear on real runs.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <div class="cfoot">
+    <a class="crumb" href="runplan.html">&larr; Back to RunPlan</a>
+    <a href="kedo.html">Next: Personnel EDI &#8594;</a>
+  </div>
+
+</main>
+</body>
+</html>

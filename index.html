@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ekaterina Roy — Product Designer</title>
-<meta name="description" content="Product designer & founder. B2B SaaS, e-commerce, and my own iOS/watchOS app (RunPlan). End-to-end, AI-native. Amsterdam — open to remote & contract." />
+<meta name="description" content="Product designer in Amsterdam. B2B SaaS, e-commerce and my own iOS/watchOS app, RunPlan. End-to-end, shipping UI in code. Open to full-time roles: Amsterdam, or remote for EU, UK and US teams." />
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ekaterina Roy — Portfolio">
 <meta property="og:title" content="Ekaterina Roy — Product Designer">
-<meta property="og:description" content="Product designer & founder. B2B SaaS, e-commerce, and my own iOS/watchOS app (RunPlan). End-to-end, AI-native. Amsterdam — open to remote & contract.">
+<meta property="og:description" content="Product designer in Amsterdam. B2B SaaS, e-commerce and my own iOS/watchOS app, RunPlan. End-to-end, shipping UI in code. Open to full-time roles: Amsterdam, or remote for EU, UK and US teams.">
 <meta property="og:url" content="https://katyaroy.github.io/">
 <meta property="og:image" content="https://katyaroy.github.io/img/og-home.png">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FCFBF9;
@@ -26,6 +26,12 @@
     --card:#FFFFFF;
     --accent:#6E1423;
     --radius:16px;
+    /* Instrument Sans in its condensed bold cut for the lines that are read first: page titles, card titles and the big numbers. Noto Sans stays for labels and text. */
+    --display:"Instrument Sans","Noto Sans",sans-serif;
+    --stage:color-mix(in srgb,var(--accent) 8%,var(--card));
+    --on-accent:#FFFFFF;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -47,7 +53,8 @@
     max-width:980px;
     margin:0 auto;
     padding:clamp(22px,5vw,48px) clamp(20px,5vw,40px);
-    gap:clamp(18px,3.4vh,30px);
+    --gap:clamp(18px,3.4vh,30px);
+    gap:var(--gap);
   }
 
   /* top bar */
@@ -60,10 +67,10 @@
   }
   .id{display:flex;flex-direction:column;gap:6px}
   .name{font-family:'Noto Sans',sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.01em}
-  .status{display:flex;flex-direction:column;align-items:flex-end;gap:6px;max-width:540px}
-  .loc{font-size:14px;color:var(--muted)}
-  .avail{display:flex;gap:7px;align-items:center;justify-content:flex-end;font-size:13px;color:var(--muted);line-height:1.4}
-  .avail .txt{text-align:right}
+  .status{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:1 1 320px;max-width:680px}
+  .loc{font-size:14px;color:var(--muted);text-align:right}
+  .avail{font-size:13px;color:var(--muted);line-height:1.4;text-align:right;text-wrap:balance}
+  .avail .dot{display:inline-block;vertical-align:middle;margin-right:7px}
 
   /* hero */
   .eyebrow{
@@ -71,19 +78,16 @@
     text-transform:uppercase;color:var(--accent);
   }
   h1{
-    font-family:'Noto Sans',sans-serif;
-    font-size:clamp(28px,4.4vw,52px);
-    line-height:1.04;
-    letter-spacing:-0.025em;
-    font-weight:800;
-    max-width:16ch;
+    font-family:var(--display);font-stretch:80%;font-size:clamp(36px,5.8vw,66px);line-height:1.02;letter-spacing:-0.024em;font-weight:700;
+    text-wrap:balance;
   }
-  h1 .soft{color:var(--muted);font-weight:500}
+  h1 .soft{display:block;margin-top:.1em;color:var(--muted);font-weight:400}
   .about{
     margin-top:clamp(14px,2.2vh,22px);
     font-size:clamp(15px,1.55vw,18px);
     color:#3A3A42;
     max-width:60ch;
+    text-wrap:pretty;
   }
   .founder{
     display:inline-flex;align-self:flex-start;align-items:center;gap:6px;
@@ -98,11 +102,21 @@
   .founder strong{font-weight:700}
 
   /* hero + portrait */
-  .hero{display:grid;grid-template-columns:1fr auto;column-gap:clamp(24px,5vw,60px);row-gap:clamp(14px,2.2vh,22px);align-items:start;margin-top:clamp(18px,3.5vh,40px)}
-  .hero>h1{grid-column:1;grid-row:1;align-self:start}
-  .hero>.portrait{grid-column:2;grid-row:1;justify-self:end}
-  .hero>.about{grid-column:1;grid-row:2;margin-top:0}
-  .hero>.links{grid-column:2;grid-row:2;justify-self:end}
+  /* Two columns. Left: the headline with the text right under it and, in the next row, the numbers.
+     Right: one column over both rows, the portrait at its top and the links at its bottom,
+     so the last link stands on one line with the labels under the numbers. The RunPlan pill has its own row. */
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(24px,5vw,60px);align-items:start;margin-top:clamp(18px,3.5vh,40px)}
+  .lead{grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:clamp(16px,2.4vh,24px)}
+  .lead>.about{margin-top:0}
+  .side{grid-column:2;grid-row:1 / span 2;align-self:stretch;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:clamp(18px,2.6vh,26px)}
+  .hero>.stats{grid-column:1;grid-row:2;align-self:end;margin-top:var(--gap)}
+  .hero>.creds{grid-column:1 / -1;grid-row:3;margin-top:clamp(12px,1.7vh,17px)}
+  /* Just above the one-column layout the left column is narrower than the three numbers at their usual spacing.
+     There the two columns and the numbers move closer together, so the numbers stay in one row. */
+  @media (min-width:721px) and (max-width:780px){
+    .hero{column-gap:24px}
+    .hero>.stats{justify-content:space-between;column-gap:16px}
+  }
   .portrait{position:relative}
   .portrait .pic{
     position:relative;z-index:1;
@@ -130,55 +144,85 @@
     display:flex;align-items:center;gap:clamp(20px,4vw,44px);flex-wrap:wrap;
     padding-top:2px;
   }
-  .stat .n{font-family:'Noto Sans',sans-serif;font-size:clamp(17px,1.7vw,20px);font-weight:600;letter-spacing:-0.01em}
+  .stat .n{font-family:var(--display);font-stretch:85%;font-size:clamp(19px,2vw,23px);font-weight:700;letter-spacing:-0.02em;line-height:1.2}
   .stat .l{font-size:13px;color:var(--muted)}
   .creds{display:flex;flex-direction:column;gap:clamp(12px,1.7vh,17px)}
 
   /* work */
-  .work{display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px);margin-top:clamp(18px,3.5vh,38px)}
+  .work{display:flex;flex-direction:column;gap:clamp(12px,1.6vh,16px);margin-top:clamp(18px,3.5vh,38px)}
   .worklabel{
     font-size:12px;font-weight:600;letter-spacing:0.16em;
     text-transform:uppercase;color:var(--muted);
   }
-  .cases{display:flex;flex-direction:column;gap:clamp(14px,2vw,20px)}
+  /* One wide card for the newest case, the two earlier ones side by side under it.
+     The two share the row in proportion to their screens: --a1 and --a2 are width / height of the two pictures.
+     That way both screens are shown whole, at the same height, with the same margin (--m) on every side.
+     --c1 is the width of the first of the two; the picture of the wide card ends on the same line. */
+  .cases{
+    --m:clamp(14px,2.4vw,24px);--g:clamp(14px,2vw,22px);
+    --a1:calc(1440/794);--a2:calc(1400/1117);
+    --c1:calc(var(--m)*2 + (100% - var(--g) - var(--m)*4)*var(--a1)/(var(--a1) + var(--a2)));
+    display:grid;grid-template-columns:var(--c1) minmax(0,1fr);gap:var(--g);
+  }
   .case{
-    display:flex;flex-direction:row;align-items:stretch;
+    display:flex;flex-direction:column;
     background:var(--card);
-    border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);
     border-radius:clamp(28px,3vw,40px);
     overflow:hidden;
-    transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-    height:clamp(205px,25vw,250px);
+    /* no hairline: a faint ring and a soft shadow in the accent hold the card on the page */
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 6%,transparent),0 24px 46px -36px color-mix(in srgb,var(--accent) 55%,transparent);
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease);
   }
   .case:hover,.case:focus-visible{
-    transform:translateY(-3px);
-    box-shadow:0 18px 40px -16px color-mix(in srgb,var(--accent) 22%,transparent);
-    border-color:color-mix(in srgb,var(--accent) 45%,transparent);
-    outline:none;
+    transform:translateY(-4px);
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 16%,transparent),0 34px 56px -32px color-mix(in srgb,var(--accent) 60%,transparent);
   }
-  .case .media{flex:0 0 44%;background:color-mix(in srgb,var(--accent) 7%,var(--card));overflow:hidden}
+  .case:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .case .media{flex:none;position:relative;aspect-ratio:16/10;background:var(--stage);overflow:hidden}
   .case .media img{width:100%;height:100%;object-fit:cover;display:block}
-  .case .media.fit{background:#fff}
-  .case .media.fit img{object-fit:contain;object-position:top}
-  .case .body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,2.6vw,30px) clamp(24px,3.4vw,42px)}
-  .case .tag{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
-  .case h3{font-family:'Noto Sans',sans-serif;font-size:clamp(26px,3.4vw,40px);font-weight:800;margin-top:8px;letter-spacing:-0.02em;line-height:1.05}
-  .case p{font-size:clamp(14px,1.5vw,16px);line-height:1.5;color:var(--muted);margin-top:10px;max-width:42ch}
+  /* a product screenshot shown whole, as a window on a tinted stage: the stage is as tall as the picture plus the margin,
+     and a soft light sits on the stage (it follows the pointer on devices that have one) */
+  .case .media.stage{aspect-ratio:auto;padding:var(--m)}
+  .case .media.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,78%) var(--my,0%),color-mix(in srgb,var(--accent) 15%,transparent),transparent 72%)}
+  .case .media.stage img{position:relative;height:auto;border-radius:8px;box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 7%,transparent),0 16px 34px -20px rgba(26,26,30,.42)}
+  .case .body{flex:1;display:flex;flex-direction:column;padding:clamp(20px,2.4vw,28px) clamp(22px,2.6vw,30px) clamp(22px,2.6vw,28px)}
+  .case .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .case .tag{padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--accent) 7%,var(--card));font-size:11.5px;color:var(--accent);font-weight:600;letter-spacing:0.08em;line-height:1.4;text-transform:uppercase}
+  .case .no{font-size:12px;font-weight:600;letter-spacing:0.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+  .case h3{font-family:var(--display);font-stretch:80%;font-size:clamp(30px,3.8vw,42px);font-weight:700;letter-spacing:-0.024em;line-height:1;margin-top:14px}
+  .case p{font-size:clamp(15px,1.5vw,16.5px);line-height:1.5;color:var(--muted);margin-top:9px;max-width:38ch;text-wrap:pretty}
+  /* the result of the case: a number with its label under it, the same pattern as the stats in the cases */
+  .case .res{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:auto;padding-top:clamp(16px,2.2vw,22px)}
+  .case .res b{font-family:var(--display);font-stretch:82%;font-size:clamp(24px,2.5vw,28px);font-weight:700;letter-spacing:-0.018em;line-height:1.1;color:var(--accent)}
+  .case .res span{font-size:13.5px;line-height:1.4;color:var(--muted);text-wrap:balance}
   .case .btn{
-    align-self:flex-start;margin-top:clamp(16px,2vw,22px);
-    display:inline-flex;align-items:center;gap:8px;
-    padding:10px 20px;border-radius:999px;
-    background:var(--accent);color:#fff;
+    align-self:flex-start;margin-top:clamp(16px,2vw,20px);
+    display:inline-flex;align-items:center;gap:12px;
+    padding:7px 7px 7px 20px;border-radius:999px;
+    background:var(--accent);color:var(--on-accent);
     font-size:14px;font-weight:600;letter-spacing:0.01em;
-    transition:transform .18s ease,filter .18s ease;
+    transition:transform .5s var(--ease),filter .3s ease;
   }
-  .case:hover .btn{transform:translateY(-1px);filter:brightness(1.07)}
-  .case .btn:active{transform:translateY(0) scale(.98)}
+  /* the arrow sits in its own circle and turns to point ahead on hover */
+  .case .btn i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--on-accent)}
+  .case .btn i::before{content:"";width:14px;height:14px;background:var(--accent);-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;transform:rotate(-45deg);transition:transform .5s var(--ease)}
+  .case:hover .btn{filter:brightness(1.07)}
+  .case:hover .btn i::before{transform:rotate(0deg)}
+  .case .btn:active{transform:scale(.98)}
+  /* the wide card: picture on the left, as wide as the first card under it, text on the right */
+  .case.feature{grid-column:1/-1;flex-direction:row;min-height:clamp(330px,38vw,410px)}
+  .case.feature .media{flex:0 0 var(--c1);aspect-ratio:auto}
+  .case.feature .body{justify-content:center;padding:clamp(24px,3.4vw,44px)}
+  .case.feature h3{font-size:clamp(42px,6.6vw,72px)}
+  .case.feature .res{margin-top:clamp(16px,2.2vw,24px);padding-top:0}
 
   /* b&w by default, color on hover (hover devices only) */
   @media (hover:hover){
     .case .media img,.portrait .pic img{filter:grayscale(1);transition:filter .4s ease}
+    .case .media img{transition:filter .4s ease,scale .9s var(--ease),translate .9s var(--ease)}
     .case:hover .media img,.portrait:hover .pic img{filter:grayscale(0)}
+    .case:hover .media img{scale:1.04}
+    .case:hover .media.stage img{scale:1.02}
   }
 
   /* footer */
@@ -194,33 +238,45 @@
   .links{display:flex;gap:clamp(14px,2vw,22px);font-size:14px;font-weight:500}
   .links a{color:var(--muted);transition:color .15s ease;display:inline-flex;align-items:center;gap:5px}
   .links a:hover{color:var(--ink)}
-  .hero>.links{flex-direction:column;align-items:flex-end;gap:8px}
-  .hero>.links a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;display:inline;font-size:clamp(15px,1.55vw,18px)}
-  .hero>.links a:hover{color:var(--accent);opacity:.65}
+  /* The bottom edge of the links is the bottom edge of the numbers row. With the two boxes flush, the larger text of a link
+     sits higher than a 13px label by (line-height 1.5 - .776) / 2 of the size difference; .776 is ascent minus descent
+     in Noto Sans. The negative margin takes that out, so the last link stands on the baseline of the labels. */
+  .side>.links{flex-direction:column;align-items:flex-end;gap:8px;font-size:clamp(15px,1.55vw,18px);margin-bottom:calc((13px - 1em) * .362)}
+  .side>.links a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;display:inline}
+  .side>.links a:hover{color:var(--accent);opacity:.65}
 
   @media (max-width:720px){
-    .wrap{justify-content:flex-start;gap:24px}
+    .wrap{justify-content:flex-start;--gap:24px}
 
     .topbar{flex-direction:column;align-items:flex-start;gap:10px}
-    .status{width:100%;max-width:none;align-items:flex-start}
+    .status{flex:none;width:100%;max-width:none;align-items:flex-start}
+    .loc{text-align:left}
+    .loc .sep{display:none}
+    .loc .permit{display:block}
     .avail{display:block;text-align:left}
     .avail .dot{display:inline-block;vertical-align:middle;margin-right:7px}
     .avail .txt{text-align:left}
 
-    .hero{grid-template-columns:1fr;row-gap:18px}
-    .hero>.portrait{grid-column:1;grid-row:1;justify-self:start}
-    .hero>.links{grid-column:1;grid-row:2;justify-self:start;align-items:flex-start}
-    .hero>h1{grid-column:1;grid-row:3;max-width:none}
-    .hero>.about{grid-column:1;grid-row:4;max-width:none}
+    /* one column: portrait and links, then the headline and the text, the numbers, the pill */
+    .hero{grid-template-columns:minmax(0,1fr)}
+    .side{grid-column:1;grid-row:1;align-self:start;align-items:flex-start;justify-content:flex-start;gap:18px}
+    .lead{grid-row:2;margin-top:18px}
+    .hero>.stats{grid-row:3}
+    .hero>.creds{grid-column:1;grid-row:4}
+    .side>.links{align-items:flex-start;margin-bottom:0}
+    .about{max-width:none}
 
     .stats{justify-content:flex-start;width:100%}
 
-    .case{flex-direction:column;height:auto;min-height:0}
-    .case .media{flex:none;aspect-ratio:16/9}
+    .cases{grid-template-columns:minmax(0,1fr)}
+    .case.feature{flex-direction:column;min-height:0}
+    .case.feature .media{flex:none;aspect-ratio:16/10}
+    .case.feature .body{justify-content:flex-start;padding:clamp(20px,2.4vw,28px) clamp(22px,2.6vw,30px) clamp(22px,2.6vw,28px)}
+    .case.feature .res{margin-top:auto;padding-top:clamp(18px,2.4vw,26px)}
   }
   @media (prefers-color-scheme:dark){
-    :root{--bg:#121214;--ink:#F3F1EC;--muted:#9A9AA3;--line:#2A2A2E;--card:#1A1A1D;--accent:#D98792;}
-    .about{color:#C8C8CF}.now{color:#C8C8CF}.case .btn{color:#17171A}
+    :root{--bg:#121214;--ink:#F3F1EC;--muted:#9A9AA3;--line:#2A2A2E;--card:#1A1A1D;--accent:#D98792;--on-accent:#17171A;}
+    .about{color:#C8C8CF}.now{color:#C8C8CF}
   }
 
   /* smooth cross-page transition */
@@ -228,12 +284,19 @@
   @media (prefers-reduced-motion:reduce){
     ::view-transition-old(root),::view-transition-new(root){animation:none}
   }
-  /* gentle card reveal */
+  /* gentle reveal: the hero settles in on load, each card rises as it is scrolled to.
+     "translate" is used, not "transform", so the hover lift on a card keeps its own timing. */
+  @keyframes rise{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
   @media (prefers-reduced-motion:no-preference){
-    html.anim .case{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
-    html.anim .case:nth-child(2){transition-delay:.08s}
-    html.anim .case:nth-child(3){transition-delay:.16s}
-    html.anim .case.in{opacity:1;transform:none}
+    html.anim .lead>h1,html.anim .side>.portrait,html.anim .lead>.about,html.anim .side>.links,html.anim .hero>.stats,html.anim .creds{animation:rise .8s var(--ease) backwards}
+    html.anim .side>.portrait{animation-delay:.08s}
+    html.anim .lead>.about{animation-delay:.12s}
+    html.anim .side>.links{animation-delay:.18s}
+    html.anim .hero>.stats,html.anim .creds{animation-delay:.24s}
+    html.anim .case:not(.in){opacity:0}
+    html.anim .case.in{animation:rise .8s var(--ease) backwards}
+    html.anim .case.in:nth-child(2){animation-delay:.08s}
+    html.anim .case.in:nth-child(3){animation-delay:.16s}
   }
 </style>
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
@@ -244,64 +307,70 @@
     <div class="topbar">
       <div class="id">
         <div class="name">Ekaterina Roy</div>
-        <div class="eyebrow">Product Designer &amp; Co-Founder</div>
+        <div class="eyebrow">Product Designer</div>
       </div>
       <div class="status">
-        <div class="loc">Amsterdam, NL</div>
-        <div class="avail"><span class="dot"></span><span class="txt">Open to product design roles — contract, fractional, or&nbsp;founding&#8209;designer, remote</span></div>
+        <div class="loc">Amsterdam, NL <span class="sep">·</span> <span class="permit">Permanent resident, no&nbsp;visa sponsorship needed</span></div>
+        <div class="avail"><span class="dot"></span><span class="txt">Open to full&#8209;time product design roles — Amsterdam (hybrid) or&nbsp;remote for EU, UK and&nbsp;US&nbsp;teams</span></div>
       </div>
     </div>
 
     <section class="hero">
-      <h1>I design and ship products end&#8209;to&#8209;end — <span class="soft">enterprise SaaS to the App&nbsp;Store.</span></h1>
-      <div class="portrait">
-        <div class="pic"><img src="ekaterina.jpg?v=3" alt="Ekaterina Roy — portrait" /></div>
+      <div class="lead">
+        <h1>I design and ship products end&#8209;to&#8209;end&nbsp;— <span class="soft">B2B&nbsp;SaaS to the App&nbsp;Store.</span></h1>
+        <p class="about">As the sole product designer, I drove the UX for a B2B HR platform that onboarded <strong>70+ companies in 5&nbsp;months</strong>. Working on a major e-commerce platform, I designed the checkout and customer education for a <strong>subscription delivery model new to the market</strong>. Most recently, I co-founded <strong>RunPlan</strong>, a structured running planner, taking it from a raw idea to a live App&nbsp;Store product, using an <strong>AI-native workflow to ship my designs straight into code</strong>.</p>
       </div>
-      <p class="about">As the sole product designer, I drove the UX for a B2B HR platform that onboarded <strong>70+ enterprise clients in 5&nbsp;months</strong>. Working on a major e-commerce platform, I designed the core user journeys that introduced a <strong>first-to-market subscription model</strong>. Most recently, I co-founded <strong>RunPlan</strong>, a structured running planner, taking it from a raw idea to a live App&nbsp;Store product, using an <strong>AI-native workflow to ship my designs straight into code</strong>.</p>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/ekaterina-roy" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:katyaroy19@gmail.com">katyaroy19@gmail.com</a>
-        <a href="ekaterina-roy-resume.pdf?v=4" target="_blank" rel="noopener">Resume (PDF)</a>
+      <div class="side">
+        <div class="portrait">
+          <div class="pic"><img src="ekaterina.jpg?v=3" alt="Ekaterina Roy — portrait" /></div>
+        </div>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/ekaterina-roy" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:katyaroy19@gmail.com">katyaroy19@gmail.com</a>
+          <a href="ekaterina-roy-resume.pdf?v=5" target="_blank" rel="noopener">Resume (PDF)</a>
+        </div>
       </div>
-    </section>
-
-    <div class="creds">
       <div class="stats">
         <div class="stat"><div class="n">6+ years</div><div class="l">product design</div></div>
         <div class="stat"><div class="n">B2B &rarr; consumer</div><div class="l">SaaS &middot; e-commerce &middot; iOS &amp; watchOS</div></div>
         <div class="stat"><div class="n">Figma to code</div><div class="l">AI-native workflow</div></div>
       </div>
-      <a class="founder" href="https://www.runplan.app/" target="_blank" rel="noopener">Product Designer &amp; Co-Founder of <strong>RunPlan</strong> &#8599;</a>
-    </div>
+      <div class="creds">
+        <a class="founder" href="https://www.runplan.app/" target="_blank" rel="noopener"><span>Co-founder of <strong>RunPlan</strong> · 11&nbsp;App&nbsp;Store releases in its first 11&nbsp;months&nbsp;&#8599;</span></a>
+      </div>
+    </section>
 
     <div class="work">
       <div class="worklabel">Case studies</div>
       <div class="cases">
-      <a class="case" href="runplan.html">
+      <a class="case feature" href="runplan.html">
         <div class="media"><img src="img/rp-on-watch.jpg" alt="" loading="lazy"></div>
         <div class="body">
-          <span class="tag">iOS + watchOS</span>
+          <div class="top"><span class="tag">iOS + watchOS</span><span class="no" aria-hidden="true">01</span></div>
           <h3>RunPlan</h3>
-          <p>Training plans from 5K to marathon, designed watch-first — exactly what to run today, in one glance.</p>
-          <span class="btn">Read case</span>
+          <p>Training plans from 5K to marathon, designed watch-first.</p>
+          <div class="res"><b>93%</b><span>of people who open the app create a plan</span></div>
+          <span class="btn">Read case<i aria-hidden="true"></i></span>
         </div>
       </a>
       <a class="case" href="kedo.html">
-        <div class="media fit"><img src="img/kedo-hero-b.svg" alt="" loading="lazy"></div>
+        <div class="media stage"><img src="img/kedo-hero-b.svg" width="1440" height="794" alt="" loading="lazy"></div>
         <div class="body">
-          <span class="tag">B2B SaaS</span>
+          <div class="top"><span class="tag">B2B SaaS</span><span class="no" aria-hidden="true">02</span></div>
           <h3>Personnel EDI</h3>
-          <p>HR document workflows made as simple as email — 70+ enterprise clients in 5 months.</p>
-          <span class="btn">Read case</span>
+          <p>HR document workflows made as simple as email.</p>
+          <div class="res"><b>70+</b><span>companies live in the first 5&nbsp;months</span></div>
+          <span class="btn">Read case<i aria-hidden="true"></i></span>
         </div>
       </a>
       <a class="case" href="autoship.html">
-        <div class="media"><img src="img/autoship-cover.png" alt="" loading="lazy"></div>
+        <div class="media stage"><img src="img/autoship-cover.png" width="1400" height="1117" alt="" loading="lazy"></div>
         <div class="body">
-          <span class="tag">E-commerce</span>
+          <div class="top"><span class="tag">E-commerce</span><span class="no" aria-hidden="true">03</span></div>
           <h3>Autoship</h3>
-          <p>Subscription delivery, new to the market — launched without confusing customers.</p>
-          <span class="btn">Read case</span>
+          <p>Subscription delivery, new to the market.</p>
+          <div class="res"><b>7&nbsp;years</b><span>later, still on the store&#39;s homepage</span></div>
+          <span class="btn">Read case<i aria-hidden="true"></i></span>
         </div>
       </a>
     </div>
@@ -328,6 +397,20 @@
       es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
     },{threshold:0.15});
     cards.forEach(function(c){io.observe(c);});
+  })();
+  (function(){
+    // a soft light on the picture stage of a card follows the pointer
+    if(!window.matchMedia('(hover:hover)').matches)return;
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    [].forEach.call(document.querySelectorAll('.case .media.stage'),function(st){
+      var card=st.closest('.case');
+      card.addEventListener('pointermove',function(e){
+        var r=st.getBoundingClientRect();
+        st.style.setProperty('--mx',(e.clientX-r.left).toFixed(0)+'px');
+        st.style.setProperty('--my',(e.clientY-r.top).toFixed(0)+'px');
+      });
+      card.addEventListener('pointerleave',function(){st.style.removeProperty('--mx');st.style.removeProperty('--my');});
+    });
   })();
   </script>
 </body>

@@ -16,8 +16,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css?v=36">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css?v=42">
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
+<script src="motion.js?v=2" defer></script>
 </head>
 <body>
 <main class="wrap">
@@ -25,11 +27,11 @@
   <div class="topbar">
     <a class="id" href="index.html">
       <div class="name">Ekaterina Roy</div>
-      <div class="eyebrow">Product Designer &amp; Co-Founder</div>
+      <div class="eyebrow">Product Designer</div>
     </a>
     <div class="status">
-      <div class="loc">Amsterdam, NL</div>
-      <div class="avail"><span class="dot"></span><span class="txt">Open to product design roles — contract, fractional, or founding&#8209;designer, remote</span></div>
+      <div class="loc">Amsterdam, NL <span class="sep">·</span> <span class="permit">Permanent resident, no&nbsp;visa sponsorship needed</span></div>
+      <div class="avail"><span class="dot"></span><span class="txt">Open to full&#8209;time product design roles — Amsterdam (hybrid) or&nbsp;remote for EU, UK and&nbsp;US&nbsp;teams</span></div>
     </div>
   </div>
 
@@ -49,13 +51,46 @@
   <dl class="meta">
     <div><dt>My role</dt><dd>Co-Founder &amp; Product Designer — end-to-end, from research to shipping in code with AI.</dd></div>
     <div><dt>Team</dt><dd>Two people — product design (me) &amp; software engineering</dd></div>
-    <div><dt>Timeline</dt><dd>2025 &ndash; present</dd></div>
+    <div><dt>Timeline</dt><dd>2025 &ndash; present. On the App&nbsp;Store since January&nbsp;2026</dd></div>
     <div><dt>Platform</dt><dd>iOS &amp; watchOS</dd></div>
   </dl>
 
   <section>
     <h2>Overview</h2>
     <p>RunPlan is a structured running planner for Apple&nbsp;Watch — it keeps your training on your wrist and starts the right workout with a single tap. I co-founded it and design it end-to-end; my engineering co-founder builds the plan algorithms. It&#39;s live on the App&nbsp;Store and growing organically.</p>
+    <div class="stats four">
+      <div class="stat"><div class="n">11</div><div class="l">App Store releases in the first 11 months</div></div>
+      <div class="stat"><div class="n">5.5&times;</div><div class="l">more first-time installs in the last 90 days than in the 90 days before</div></div>
+      <div class="stat"><div class="n">93%</div><div class="l">of people who open the app create a plan</div></div>
+      <div class="stat"><div class="n">150+</div><div class="l">of my own commits in the SwiftUI codebase</div></div>
+    </div>
+    <p class="statnote">App Store Connect and Firebase Analytics, 90 days to mid-November 2026.</p>
+    <div class="deep">
+      <a class="dcard" href="runplan-watch.html">
+        <span class="k">Deep dive · Data &rarr; design</span>
+        <b>Four out of five never reach the watch</b>
+        <span class="d">93% create a plan, 21% start it on the watch. I found the cause in our analytics and rebuilt the hand-off.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+      <a class="dcard" href="runplan-feedback.html">
+        <span class="k">Deep dive · Users &rarr; product</span>
+        <b>From a runner&#39;s email to a release</b>
+        <span class="d">Emails in six languages, bug fixes live within a week, features built from one question back.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+      <a class="dcard" href="runplan-voice.html">
+        <span class="k">Deep dive · Interaction</span>
+        <b>Voice Cues: what the watch says, and when</b>
+        <span class="d">Spoken interval cues in nine languages, each with its own timing, tuned by ear on real runs.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+      <a class="dcard" href="runplan-how-i-work.html">
+        <span class="k">Deep dive · Design &rarr; code</span>
+        <b>How I work: designed in Figma, shipped in SwiftUI</b>
+        <span class="d">150+ commits across 110 Swift files: Liquid Glass, a design system in code, features built end to end.</span>
+        <span class="more">Read<i aria-hidden="true"></i></span>
+      </a>
+    </div>
   </section>
 
   <section>
@@ -131,14 +166,22 @@
       <li><strong>Instant state recognition:</strong> the whole screen color-codes your effort — yellow for active intervals, green for rest, white for warm-ups and cool-downs.</li>
     </ul>
     <p>The zone also reads from the marker&#39;s position, not color alone — so it works for color-blind runners too.</p>
+    <figure class="video" id="watch-video">
+      <video controls playsinline preload="none" poster="img/rp-voice-cues-poster.jpg" width="602" height="720">
+        <source src="img/rp-voice-cues.mp4" type="video/mp4">
+        <track kind="captions" src="img/rp-voice-cues.vtt" srclang="en" label="English" default>
+      </video>
+      <figcaption>An interval workout on the watch, 55&nbsp;seconds, with sound.</figcaption>
+    </figure>
 
     <h3>Design for feel</h3>
-    <p>A big frustration with standard trackers is having to break your running form to look at your wrist. So I designed the experience around <strong>haptics</strong>, not just visuals — a distinct tap when a workout starts, when an interval changes, and when you hit a milestone. The result: you know where you are in the workout without looking down.</p>
+    <p>A big frustration with standard trackers is having to break your running form to look at your wrist. So I designed the experience around <strong>haptics</strong>, not just visuals — a distinct tap when a workout starts, when an interval changes, and when you hit a milestone. The result: you know where you are in the workout without looking down. Since November&nbsp;2026 the watch also speaks: <a class="lnk" href="runplan-voice.html">Voice Cues &rarr;</a></p>
 
     <h3>Test on real runs</h3>
     <p>The simulator only tells you whether the design fits the screen. To know the UX actually works for a runner, I tested everything on a real device, on actual runs — seeing the screens and feeling the haptics on a moving wrist was the only real test.</p>
 
     <figure class="fig"><img src="img/rp-watch-test.jpg" alt="RunPlan running on two Apple Watches side by side on a run" loading="lazy"><figcaption>Testing on real runs — RunPlan on two Apple Watches at once, out on an actual run.</figcaption></figure>
+    <p><strong>Does it hold up?</strong> In the last 90&nbsp;days runners finished 84% of the workouts they started on the watch.</p>
   </section>
 
   <section>
@@ -147,20 +190,23 @@
     <p>Most ran with no plan or structure — <em>"I just run when I have time."</em></p>
     <p>Watching other runners showed me a problem I&#39;d have missed on my own. The first time someone opened the app, we asked for location and health access straight away — and I could see people hesitate. They hadn&#39;t seen any value yet, so why would they trust us with it? <strong>We changed the order:</strong> first we ask the goal — run for yourself, or train for a race — then let people build their first plan. We ask for location and health only after that, when tracking a run actually means something.</p>
     <figure class="fig uniform"><img src="img/rp-onboarding.svg?v=2" alt="Onboarding before and after — value first, permissions in context" loading="lazy"><figcaption>Onboarding, before &amp; after. I moved value to the front — pick a goal on screen&nbsp;1, get a plan by screen&nbsp;2. Permissions move later, each asked in context. Before, runners hit setup and permission screens before anything useful.</figcaption></figure>
+    <p><strong>Where it stands now:</strong> 96% of the people who open the app finish onboarding, and 93% create a plan.</p>
+    <p><strong>Since launch, runners write to us.</strong> The email address in Settings reaches me, and emails come in six languages. I answer each one and usually ask a question back. Their reports became bug fixes that were live within a week, and their requests shipped in November&nbsp;2026: a kilometers-or-miles setting, heart-rate zones set by hand, a watch-face complication. <a class="lnk" href="runplan-feedback.html">From a runner&#39;s email to a release &rarr;</a></p>
   </section>
 
   <section>
     <h2>How we ship — two people, AI-native</h2>
     <p>My co-founder owns the algorithms and heavy logic. I own the product surface — research, UX/UI, the marketing site, App&nbsp;Store, analytics and QA — and I ship design changes straight into the code with AI (Claude&nbsp;Code, Gemini and ChatGPT, from the terminal). When iOS&nbsp;26 brought Liquid Glass, I redesigned the whole app to it in code.</p>
     <p>We release about once a month and re-prioritize by impact, not a fixed roadmap — we simplified <strong>onboarding</strong> before polishing the activity view, because a smoother first run matters more than a nicer screen deep in the app. No handoff between design and code means two people ship like a bigger team.</p>
-    <p>Day to day it&#39;s a tight loop — <strong>idea &rarr; build in code &rarr; test on a real run &rarr; debug &rarr; repeat.</strong> At this size, debugging <em>is</em> part of the design work.</p>
+    <p>Day to day it&#39;s a tight loop — <strong>idea &rarr; build in code &rarr; test on a real run &rarr; debug &rarr; repeat.</strong> At this size, debugging <em>is</em> part of the design work. What that looks like in practice: <a class="lnk" href="runplan-how-i-work.html">How I work &rarr;</a></p>
     <figure class="fig uniform"><img src="img/rp-ship-flow.svg" alt="The ship loop — idea, build, test on a real run, debug, release, repeating about monthly" loading="lazy"><figcaption>A tight build&ndash;test&ndash;debug loop on real runs — and back around, about once a month.</figcaption></figure>
   </section>
 
   <section>
     <h2>Live on the App Store &amp; growing</h2>
     <p>RunPlan features structured plans ranging from 5K to a full marathon, as well as maintenance routines.</p>
-    <p>While we haven&#39;t started active marketing yet, the app is growing organically. Early signals are strong: <strong>about 9% of people who visit our App&nbsp;Store page install the app.</strong> That confirms the product positioning and store design resonate with runners. The core product is validated; our next focus is scaling through active distribution.</p>
+    <p>The app is growing organically: <strong>first-time installs in the last 90&nbsp;days were 5.5 times the 90&nbsp;days before</strong>, most of them from App&nbsp;Store search. Of the people who open the app, 93% create a plan.</p>
+    <p>The weak spot is the step onto the wrist: only one in five plan creators starts a workout on the watch. I found the cause in our analytics and reworked that hand-off. The fix shipped in November&nbsp;2026: <a class="lnk" href="runplan-watch.html">Four out of five never reach the watch &rarr;</a></p>
     <p><a href="https://apps.apple.com/us/app/run-plan-train-track/id6743841245" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">View RunPlan on the App&nbsp;Store &#8599;</a></p>
   </section>
 
@@ -176,7 +222,7 @@
 
   <section>
     <h2>What&#39;s next</h2>
-    <p>The roadmap is big: <strong>new plan types</strong> (soon), richer <strong>runner analytics and progress</strong>, and an engagement layer — <strong>streaks and a monthly-recap "stories" feature</strong> — to turn a plan into a habit people return to.</p>
+    <p>Two of the three things on the roadmap have shipped since I first wrote this: <strong>new plan types</strong> and <strong>runner analytics and progress</strong>, with a race-time forecast. Voice Cues and the run on the Lock Screen shipped in late November&nbsp;2026. Still ahead: an engagement layer — <strong>streaks and a monthly-recap "stories" feature</strong> — to turn a plan into a habit people return to.</p>
   </section>
 
   <div class="cfoot">

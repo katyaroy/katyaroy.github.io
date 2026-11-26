@@ -25,15 +25,18 @@ a{color:inherit}
 .name{font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink);transition:color .15s ease}
 .id:hover .name{color:var(--accent)}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent)}
-.status{display:flex;flex-direction:column;align-items:flex-end;gap:6px;max-width:540px}
-.loc{font-size:14px;color:var(--muted)}
-.avail{display:flex;gap:7px;align-items:center;justify-content:flex-end;font-size:13px;color:var(--muted);line-height:1.4}
-.avail .txt{text-align:right}
+.status{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:1 1 320px;max-width:680px}
+.loc{font-size:14px;color:var(--muted);text-align:right}
+.avail{font-size:13px;color:var(--muted);line-height:1.4;text-align:right;text-wrap:balance}
+.avail .dot{display:inline-block;vertical-align:middle;margin-right:7px}
 .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
 @media (max-width:720px){
   .topbar{flex-direction:column;align-items:flex-start;gap:10px}
-  .status{width:100%;max-width:none;align-items:flex-start}
+  .status{flex:none;width:100%;max-width:none;align-items:flex-start}
+  .loc{text-align:left}
+  .loc .sep{display:none}
+  .loc .permit{display:block}
   .avail{display:block;text-align:left}
   .avail .dot{display:inline-block;vertical-align:middle;margin-right:7px}
   .avail .txt{text-align:left}
@@ -190,3 +193,251 @@ em{font-style:italic;color:var(--muted)}
 .hscroll-btn.prev{left:6px}
 .hscroll-btn.next{right:6px}
 @media (max-width:680px){.hscroll{width:100%;left:auto;transform:none}.hscroll-track figure{flex:0 0 84%}.hscroll-btn{width:38px;height:38px;font-size:19px}}
+
+/* ===== additions for the RunPlan case (v37) ===== */
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;background:color-mix(in srgb,var(--accent) 8%,transparent);border-radius:5px;padding:1px 5px;white-space:nowrap}
+.statnote{font-size:12.5px;color:var(--muted);margin-top:14px}
+.stats.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 28px;max-width:860px}
+@media (max-width:600px){.stats.four{grid-template-columns:1fr 1fr;gap:18px 20px}}
+.cap{font-size:13px;color:var(--muted);line-height:1.4;text-align:center;max-width:72ch;margin:11px auto 0}
+
+/* N-up strip: one row on desktop, a snap scroller on phones */
+.strip{position:relative;left:50%;transform:translateX(-50%);width:min(96vw,1160px);display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:clamp(12px,1.8vw,24px);margin-top:24px;align-items:start}
+.strip figure{margin:0}
+.strip img{width:100%;height:auto;display:block}
+.strip.phones img{filter:drop-shadow(0 14px 24px rgba(0,0,0,.16))}
+@media (min-width:761px) and (max-width:1000px){.strip.board{grid-auto-flow:row;grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .strip{width:100vw;grid-auto-columns:60%;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 clamp(20px,5vw,40px) 30px;scroll-padding-left:clamp(20px,5vw,40px);scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip > *{scroll-snap-align:start}
+  .strip.board{grid-auto-columns:78%;padding-bottom:6px}
+  .strip + .cap{margin-top:0}
+}
+
+/* component board: crops from the in-app gallery */
+.tile{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;padding:14px 14px 16px}
+.tile b{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6E6E77;margin-bottom:12px}
+.strip.board img{width:var(--w,100%);border-radius:6px}
+.tile img + img{margin-top:12px}
+.tile img.sheet{border-radius:9%}
+
+/* before / after pairs */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vw,40px);margin-top:22px}
+.ba figure{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ba span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.ba img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line)}
+@media (max-width:600px){.ba{grid-template-columns:1fr}}
+
+/* video */
+.video{margin-top:26px}
+.video video{display:block;width:min(330px,100%);height:auto;aspect-ratio:602/720;margin:0 auto;border-radius:22px;background:#000}
+.video figcaption{font-size:13px;color:var(--muted);margin:10px auto 0;text-align:center;line-height:1.4;max-width:58ch}
+
+/* charts: colours are roles, re-stepped for dark, checked with the palette validator */
+.viz{--vs:#FFFFFF;--vi:#1A1A1E;--vi2:#4A4A52;--vm:#6E6E77;--vl:#E8E4DD;
+  --f1:#df898c;--f2:#cb666c;--f3:#b04750;--f4:#912d39;--f5:#6e1423;
+  --s1:#6E6E77;--s2:#6E1423;--s3:#BDB9B2;--s3i:#141416;
+  background:var(--vs);border:1px solid var(--vl);border-radius:18px;padding:clamp(16px,2.6vw,24px);margin-top:22px;max-width:780px}
+@media (prefers-color-scheme:dark){.viz{--vs:#1A1A1D;--vi:#F3F1EC;--vi2:#C8C8CF;--vm:#9A9AA3;--vl:#2A2A2E;
+  --f1:#823644;--f2:#9c4655;--f3:#b45a69;--f4:#c7707d;--f5:#d98792;
+  --s1:#5A5A62;--s2:#B45A69;--s3:#3A3A40;--s3i:#FFFFFF}}
+.viz h3{font-size:15.5px;letter-spacing:0;margin:0;color:var(--vi)}
+.viz .vsub{font-size:12.5px;color:var(--vm);margin:2px 0 0;max-width:none}
+.viz .vnote{font-size:12px;color:var(--vm);margin:14px 0 0;max-width:none;line-height:1.45}
+.viz .grp{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:16px 0 2px;max-width:none;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vm)}
+.viz .grp i{font-style:normal;font-weight:600;letter-spacing:0;text-transform:none;font-size:12.5px;color:var(--vi2);text-align:right}
+.funnel{list-style:none;margin:0}
+.funnel li{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) auto;align-items:center;column-gap:14px;margin:0;padding:6px 0;max-width:none;font-size:14px;line-height:1.3;color:var(--vi);border-radius:6px;outline-offset:3px;--tipx:204px}
+.funnel li::before{content:none}
+.funnel .track{height:14px;border-left:1px solid var(--vl)}
+.funnel .bar{display:block;height:100%;width:calc(var(--v)*1%);background:var(--c);border-radius:0 4px 4px 0}
+.funnel .val{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;color:var(--vm);min-width:10.5ch}
+.funnel .val b{color:var(--vi);font-weight:700;margin-right:8px}
+.funnel li:hover .bar,.funnel li:focus-visible .bar,.seg div:hover,.seg div:focus-visible{filter:brightness(1.12)}
+@media (max-width:600px){.funnel li{grid-template-columns:minmax(0,1fr) auto;row-gap:5px;--tipx:0px}.funnel .track{grid-column:1/-1;grid-row:2}}
+[data-tip]{position:relative}
+[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;z-index:5;left:var(--tipx,0px);bottom:calc(100% + 3px);width:max-content;max-width:min(300px,76vw);background:var(--vi);color:var(--vs);font-size:12.5px;font-weight:500;line-height:1.35;white-space:normal;padding:6px 10px;border-radius:8px;box-shadow:0 6px 18px -8px rgba(0,0,0,.45);pointer-events:none}
+.seg{display:flex;gap:2px;height:28px;margin-top:14px}
+.seg div{flex:var(--v) 1 0;min-width:0;display:flex;align-items:center;padding:0 9px;border-radius:4px;background:var(--c);color:#FFFFFF;font-size:12.5px;font-weight:700;outline-offset:3px}
+.seg div:last-child[data-tip]::after{left:auto;right:0}
+.legend{list-style:none;display:grid;gap:7px;margin:14px 0 0}
+.legend li{display:flex;align-items:baseline;gap:9px;margin:0;padding:0;max-width:none;font-size:13.5px;line-height:1.35;color:var(--vi)}
+.legend li::before{content:"";position:static;flex:none;width:10px;height:10px;border-radius:3px;background:var(--c);transform:translateY(1px)}
+.legend span{color:var(--vm);white-space:nowrap}
+
+/* before / now table of app states */
+.states{width:100%;max-width:860px;border-collapse:collapse;margin-top:20px;font-size:14.5px;line-height:1.45}
+.states th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 16px 9px 0;border-bottom:1px solid var(--line)}
+.states td{vertical-align:top;padding:13px 16px 13px 0;border-bottom:1px solid var(--line);color:#33333b}
+.states td:first-child{font-weight:600;color:var(--ink);width:24%}
+.states td:nth-child(2){width:27%;color:var(--muted)}
+.states .ui{font-weight:600;color:var(--ink)}
+.states td:nth-child(2) .ui{font-weight:500;color:var(--muted)}
+@media (prefers-color-scheme:dark){.states td{color:#C8C8CF}.states td:nth-child(2){color:var(--muted)}}
+@media (max-width:640px){
+  .states thead{display:none}
+  .states tr{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .states td{display:block;width:auto !important;padding:0;border:0}
+  .states td + td{margin-top:9px}
+  .states td[data-h]::before{content:attr(data-h);display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+}
+
+/* release timeline */
+.tl{list-style:none;margin-top:18px;border-left:2px solid var(--line);max-width:66ch}
+.tl li{display:grid;grid-template-columns:86px minmax(0,1fr);column-gap:16px;margin:0;padding:0 0 17px 20px;max-width:none;font-size:15.5px;line-height:1.45}
+.tl li:last-child{padding-bottom:2px}
+.tl li::before{left:-5px;top:8px;width:8px;height:8px}
+.tl .when{font-size:13px;color:var(--muted);line-height:1.5;padding-top:1px}
+.tl .when b{display:block;font-size:15.5px;line-height:1.45;color:var(--ink);font-weight:700}
+.tl li.next::before{left:-6px;top:7px;background:var(--bg);border:2px solid var(--accent)}
+
+/* ===== additions for the RunPlan sub-cases (v38) ===== */
+.lnk{color:var(--accent);text-decoration:none;font-weight:600}
+.lnk:hover{opacity:.7}
+@media (max-width:600px){.flow.tight .node{flex:0 0 auto}.flow.tight{gap:6px}}
+/* cards that lead to a sub-case */
+.deep{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;max-width:860px}
+@media (max-width:600px){.deep{grid-template-columns:1fr}}
+.deep.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:none}
+.deep.three .dcard{padding:16px 17px 15px}
+.deep.three .dcard b{font-size:16px}
+.deep.three .dcard .d{font-size:13.5px}
+@media (max-width:760px){.deep.three{grid-template-columns:1fr;gap:10px}}
+.dcard{display:flex;flex-direction:column;gap:6px;padding:18px 20px 17px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:18px;background:var(--card);color:var(--ink);text-decoration:none;transition:border-color .15s}
+.dcard:hover{border-color:var(--accent)}
+.dcard:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dcard .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.dcard b{font-size:17.5px;line-height:1.25;letter-spacing:-.01em;font-weight:700}
+.dcard .d{font-size:14.5px;line-height:1.45;color:var(--muted)}
+.dcard .more{margin-top:auto;padding-top:8px;font-size:14px;font-weight:600;color:var(--accent)}
+/* the wording of a sheet, as text */
+.wording{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;max-width:780px}
+@media (max-width:600px){.wording{grid-template-columns:1fr}}
+.wording figure{margin:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;background:var(--card);padding:16px 18px 18px}
+.wording figcaption{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.wording b{font-size:17px;line-height:1.3;letter-spacing:-.01em}
+.wording p{font-size:14.5px;line-height:1.45;margin-top:8px;max-width:none}
+.wording .btns{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.wording .btns span{font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
+.wording .btns span:first-child{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* table variants: numbers to read later, and heard / changed pairs */
+.states.kpi td:first-child{width:40%;font-weight:500}
+.states.kpi td:nth-child(2){width:25%;color:var(--ink);font-weight:600}
+.states.kpi td:nth-child(3){color:var(--muted)}
+.states.two td:first-child{width:45%;font-weight:400}
+.states.two td:nth-child(2){width:auto;color:#33333b}
+@media (prefers-color-scheme:dark){.states.two td:nth-child(2){color:#C8C8CF}}
+/* stills from the watch with what is heard under each */
+.strip.wrist{width:min(96vw,1060px)}
+.strip.wrist img{border-radius:17% / 14.5%;background:#000}
+.strip.wrist figcaption{font-size:13.5px;line-height:1.4;color:var(--ink);margin-top:10px}
+.strip.wrist figcaption span{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+/* timing diagram: seconds before an interval change, -12.5 to +2.5 */
+.timing .trow{margin-top:18px}
+.timing .trow > b{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vm)}
+.timing .trow > p{font-size:13.5px;line-height:1.4;color:var(--vi2);margin:8px 0 0;max-width:none}
+.timing .tk{position:relative;height:44px;margin-top:8px;border-bottom:1px solid var(--vl)}
+.timing .tk i{position:absolute;display:block;left:calc((var(--a) + 12.5) / 15 * 100%)}
+.timing .say,.timing .dim{width:calc((var(--b) - var(--a)) / 15 * 100%);border-radius:4px}
+.timing .say{top:5px;height:14px;background:var(--s2)}
+.timing .dim{bottom:7px;height:7px;background:var(--s1)}
+.timing .tick{top:7px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--vi)}
+.timing .go{top:0;bottom:0;width:2px;margin-left:-1px;background:var(--vi)}
+.timing .axis{position:relative;height:18px;margin-top:5px;font-size:11.5px;color:var(--vm)}
+.timing .axis span{position:absolute;left:calc((var(--a) + 12.5) / 15 * 100%);transform:translateX(-50%);white-space:nowrap}
+/* sub-case navigation: the way back at the top and in the footer; the other sub-cases stand in a .deep.three row at the end */
+.crumb{display:block;width:fit-content;margin-bottom:18px;padding:6px 15px 6px 12px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:999px;background:var(--card);font-size:13.5px;font-weight:600;line-height:1.4;color:var(--accent);text-decoration:none;transition:border-color .15s}
+.crumb:hover{border-color:var(--accent)}
+.crumb:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cfoot{align-items:center}
+.cfoot .crumb{margin-bottom:0}
+.cfoot a.crumb:hover{opacity:1}
+
+/* ===== v40: softer surfaces, pills and motion =====
+   Same palette as before. Cards lose their hairline and sit on a tint of the accent instead;
+   labels become pills; motion is switched on by the page (html.anim) and is never needed to read it. */
+:root{--soft:color-mix(in srgb,var(--accent) 6%,var(--bg));--soft-2:color-mix(in srgb,var(--accent) 12%,var(--bg));--on-accent:#FFFFFF;--ease:cubic-bezier(.2,.7,.2,1);--arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8h10M8.5 4l4 4-4 4' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){:root{--soft:color-mix(in srgb,var(--accent) 10%,var(--card));--soft-2:color-mix(in srgb,var(--accent) 18%,var(--card));--on-accent:#17171A}}
+
+/* tags and small labels */
+.tag{display:inline-block;padding:6px 13px;border-radius:999px;background:var(--soft);font-size:11.5px;letter-spacing:.12em;line-height:1.4}
+.mine{border:0;background:var(--soft-2);padding:3px 9px}
+.crumb{border:0;background:var(--soft);padding:7px 16px 7px 13px;transition:background .2s ease}
+.crumb:hover{background:var(--soft-2)}
+
+/* numbers read first */
+.stat .n{font-size:clamp(26px,3.8vw,36px);line-height:1.08}
+.stat .l{margin-top:6px}
+
+/* a link inside text: the underline draws in */
+.lnk{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;padding-bottom:2px;transition:background-size .4s var(--ease)}
+.lnk:hover{opacity:1;background-size:100% 1.5px}
+
+/* cards that lead to a sub-case */
+.deep{gap:18px}
+.dcard{position:relative;isolation:isolate;overflow:hidden;gap:9px;padding:20px 22px;border:0;border-radius:26px;background:var(--soft);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.dcard::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(280px circle at var(--mx,88%) var(--my,6%),color-mix(in srgb,var(--accent) 15%,transparent),transparent 72%);opacity:.6;transition:opacity .35s ease}
+.dcard:hover{transform:translateY(-4px);box-shadow:0 26px 44px -30px color-mix(in srgb,var(--accent) 60%,transparent)}
+.dcard:hover::before{opacity:1}
+.dcard .k{align-self:flex-start;padding:5px 11px;border-radius:999px;background:var(--card);color:var(--accent);font-size:10.5px;letter-spacing:.09em;line-height:1.5}
+.dcard b{margin-top:8px;font-size:clamp(19px,2.15vw,22px);font-weight:800;line-height:1.16;letter-spacing:-.018em}
+.dcard .d{font-size:14.5px;line-height:1.5;color:color-mix(in srgb,var(--ink) 68%,var(--soft))}
+.dcard .more{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;font-size:14px}
+.dcard .more i{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--accent);transition:transform .5s var(--ease)}
+.dcard .more i::before{content:"";width:17px;height:17px;background:var(--on-accent);-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;transform:rotate(-45deg);transition:transform .5s var(--ease)}
+.dcard:hover .more i{transform:scale(1.08)}
+.dcard:hover .more i::before{transform:rotate(0deg)}
+.deep.three{gap:14px}
+.deep.three .dcard{padding:18px;border-radius:22px}
+.deep.three .dcard b{font-size:17px}
+.deep.three .dcard .more i{width:34px;height:34px}
+.deep.three .dcard .more i::before{width:15px;height:15px}
+
+/* decision cards and flow steps: tint, no hairline */
+.dec{border:0;border-radius:24px;background:var(--soft);padding:clamp(18px,2.6vw,26px)}
+.dec.flat{border-radius:0;background:none;padding:0}
+.flow .node{border:0;background:var(--soft);border-radius:16px}
+
+/* white panels that show a piece of the product (charts, sheet wording, component tiles): a faint ring and a soft shadow instead of a hairline */
+.viz,.wording figure,.tile{border:0;box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 6%,transparent),0 24px 46px -38px color-mix(in srgb,var(--accent) 50%,transparent)}
+.viz{border-radius:24px}
+
+/* the end of a page: one bar, the way back and the way on */
+.cfoot{margin-top:clamp(52px,9vh,92px);padding:12px;border-top:0;border-radius:30px;background:var(--soft)}
+.cfoot a{display:inline-flex;align-items:center;padding:10px 17px;border-radius:999px;background:var(--card);font-size:13.5px;font-weight:600;line-height:1.35}
+.cfoot .crumb{padding:10px 17px}
+.cfoot a:hover{opacity:1}
+.cfoot a:last-child{padding:12px 22px;background:var(--accent);color:var(--on-accent);font-size:14.5px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.cfoot a:last-child:hover{transform:translateX(3px);box-shadow:0 14px 26px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
+
+/* motion */
+@keyframes rise{from{opacity:0;translate:0 22px}to{opacity:1;translate:0 0}}
+html.anim .rv:not(.in){opacity:0}
+html.anim .rv.in{animation:rise .8s var(--ease) var(--d,0ms) backwards}
+/* text never moves: titles, paragraphs, numbers, tables, charts and cards are in place from the start.
+   Only pictures rise (see motion.js), and on load only the cover picture settles in. */
+html.anim .wrap>.cover{animation:rise .9s var(--ease) .05s backwards}
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--p,0));pointer-events:none}
+html:not(.anim) .progress{display:none}
+@media print{html.anim .rv:not(.in){opacity:1}.progress{display:none}}
+
+/* two phone screenshots side by side, each under a small label; the corners follow the iPhone screen */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,300px));align-items:end;gap:clamp(18px,4vw,44px);margin-top:24px}
+.shots figure{margin:0}
+.shots figcaption{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.45;margin-bottom:10px}
+.shots img{display:block;width:100%;height:auto;border-radius:15.4% / 7.1%;box-shadow:0 0 0 1px color-mix(in srgb,var(--ink) 9%,transparent),0 26px 48px -30px color-mix(in srgb,var(--accent) 45%,transparent)}
+.shots + .cap{text-align:left;margin:14px 0 0;max-width:640px}
+@media (max-width:560px){.shots{grid-template-columns:minmax(0,300px)}}
+
+/* ===== v41: display type =====
+   Instrument Sans in its condensed bold cut for the lines that are read first: page titles, card titles and the big numbers.
+   Noto Sans stays for labels, running text and everything inside charts and product pictures. */
+:root{--display:"Instrument Sans","Noto Sans",sans-serif}
+h1{font-family:var(--display);font-stretch:80%;font-weight:700;font-size:clamp(40px,6.2vw,62px);line-height:1.02;letter-spacing:-.022em;max-width:19ch;text-wrap:balance}
+.dec h3,section>h3{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.012em;line-height:1.18;text-wrap:balance}
+.stat .n{font-family:var(--display);font-stretch:82%;font-weight:700;font-size:clamp(26px,3.8vw,36px);letter-spacing:-.02em;line-height:1.05}
+.stat .l{margin-top:8px}
+.dcard b{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:clamp(20px,2.3vw,24px);line-height:1.14;letter-spacing:-.012em;text-wrap:balance}
+.deep.three .dcard b{font-size:19px}
+p,li,.sub,.dcard .d{text-wrap:pretty}
