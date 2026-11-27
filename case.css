@@ -435,8 +435,9 @@ html:not(.anim) .progress{display:none}
    (Widths in ch grew and shrank with the font size, so a 20px lead and a 12.5px note came out different.)
    Everything else takes the full page width and stands on four columns with one gap:
    the facts under the cover, the numbers, table columns, pairs of cards and pairs of pictures. */
-/* 622.908px is 66 characters of the 16.5px body text: the width paragraphs had all along, so none of them re-flows */
-:root{--measure:622.908px;--gap:26px}
+/* 668.5px is three of the four columns with their two gaps, so the right edge of the text stands on the grid.
+   At the 16.5px body size that is about 78 characters a line; past roughly 80 a line gets hard to follow. */
+:root{--measure:668.5px;--gap:26px}
 p,li,.sub,.painsum,.todo,.tl,.dec .ln,.dec h3,section>h3,.viz,.shots + .cap{max-width:var(--measure)}
 .meta,.stats,.stats.four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap);max-width:none}
 @media (max-width:720px){.meta,.stats,.stats.four{grid-template-columns:1fr 1fr}}
@@ -491,6 +492,47 @@ h2,.meta dt,.states th,.states td[data-h]::before,.tile b,.ba span,.shots figcap
 /* three cards in a row and four flow steps in a row need room for body-size text: below 920px they stack, as on a phone */
 @media (max-width:920px){.deep.three{grid-template-columns:1fr;gap:10px}}
 @media (min-width:601px) and (max-width:920px){.flow.tight{display:flex;flex-direction:column;gap:6px}.flow.tight .node{flex:0 0 auto}.flow.tight .arrow{transform:rotate(90deg)}}
+
+/* ===== one spacing scale =====
+   Six steps, each with one job (before: twenty different gaps, some of them tied to the height of the window).
+      8  a caption under its picture, chart or diagram
+     12  inside running text: paragraph to paragraph, list item to list item, the lines of one decision;
+         the source note under the numbers
+     16  a heading to what it heads: the page title, a section label, a sub-heading
+     32  text to a picture, chart, table, cards or numbers, the same above and below; one block to the next
+     48  before a sub-heading inside a section
+     72  between sections
+   Blocks have no bottom margins: every gap is the top margin of the block that follows. */
+:root{--s-cap:8px;--s-text:12px;--s-head:16px;--s-block:32px;--s-sub:48px;--s-sec:72px}
+@media (max-width:600px){:root{--s-block:24px;--s-sub:40px;--s-sec:56px}}
+
+/* the top of the page */
+:root .wrap > .topbar{margin-bottom:var(--s-sub)}
+:root .wrap > .crumb{margin-bottom:var(--s-head)}
+/* the two pills are inline boxes: without this their line adds a pixel to the gap */
+:root .wrap > .crumb,:root .wrap > .tag{vertical-align:top}
+:root .wrap > h1,:root .wrap > .sub{margin-top:var(--s-head)}
+:root .wrap > .cover,:root .wrap > .meta{margin-top:var(--s-block);margin-bottom:0}
+:root .wrap > section,:root .wrap > .cfoot{margin-top:var(--s-sec)}
+
+/* inside a section */
+:root .wrap section > *{margin-top:var(--s-block);margin-bottom:0}
+:root .wrap section > h2{margin-top:0}
+:root .wrap section > h3,:root .wrap section > .dec{margin-top:var(--s-sub)}
+:root .wrap section > h2 + *,:root .wrap section > h3 + *,:root .wrap section > h2 + .dec{margin-top:var(--s-head)}
+:root .wrap section > :is(p:not([class]),ul,ol:not([class])) + :is(p:not([class]),ul,ol:not([class])){margin-top:var(--s-text)}
+:root .wrap section > ul > li,:root .wrap section > ol:not([class]) > li{margin-top:var(--s-text)}
+:root .wrap section > * + .statnote{margin-top:var(--s-text)}
+:root .wrap section > * + .cap,:root .wrap section > * + .flowcap{margin-top:var(--s-cap)}
+@media (max-width:760px){:root .wrap section > .strip + .cap{margin-top:0}}
+
+/* one decision: its title, then its lines */
+:root .wrap .dec > *{margin-top:var(--s-text);margin-bottom:0}
+:root .wrap .dec > h3{margin-top:0}
+:root .wrap .dec > h3 + *{margin-top:var(--s-head)}
+
+/* captions inside figures */
+.fig figcaption,.hscroll-track figcaption,.gallery3 figcaption,.gallery2 figcaption,.wideshot figcaption,.video figcaption,.strip.wrist figcaption{margin-top:var(--s-cap)}
 
 /* ===== v41: display type =====
    Instrument Sans in its condensed bold cut for the lines that are read first: page titles, card titles and the big numbers.
