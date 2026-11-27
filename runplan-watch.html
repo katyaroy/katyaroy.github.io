@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="case.css?v=45">
 <script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anim')</script>
 <script src="motion.js?v=2" defer></script>
-<style>.funnel .val{min-width:5ch}.funnel .val b{margin-right:0}</style>
 </head>
 <body>
 <main class="wrap">
@@ -52,8 +51,8 @@
     <h2>Overview</h2>
     <p>RunPlan is watch-first: you build the plan on the iPhone and run it on the Apple&nbsp;Watch. In November 2026 I went through our analytics to see where we lose people. Onboarding was fine, and the drop-off turned out to be in the hand-off between the two devices, partly because our own interface was telling people something that wasn&#39;t true.</p>
     <div class="stats four">
-      <div class="stat"><div class="n">93%</div><div class="l">of people who open the app create a plan</div></div>
-      <div class="stat"><div class="n">21%</div><div class="l">of plan creators start a workout on the watch</div></div>
+      <div class="stat"><div class="n">93%</div><div class="l">of people who open the app create a plan (966&nbsp;of&nbsp;1,043)</div></div>
+      <div class="stat"><div class="n">21%</div><div class="l">of plan creators start a workout on the watch (206&nbsp;of&nbsp;966)</div></div>
       <div class="stat"><div class="n">22%</div><div class="l">of active users have an Apple&nbsp;Watch without RunPlan on it</div></div>
       <div class="stat"><div class="n">48%</div><div class="l">of that group tapped Sync and were told it worked</div></div>
     </div>
@@ -66,17 +65,17 @@
 
     <figure class="viz">
       <h3>From first open to a finished run</h3>
-      <p class="vsub">Share of the people who opened the app, 20 August – 17 November 2026</p>
+      <p class="vsub">People, 20 August – 17 November 2026</p>
       <p class="grp">On the iPhone</p>
       <ol class="funnel">
-        <li tabindex="0" data-tip="Everyone who opened the app in these 90 days"><span>Opened the app</span><span class="track"><span class="bar" style="--v:100;--c:var(--f1)"></span></span><span class="val"><b>100%</b></span></li>
-        <li tabindex="0" data-tip="96% of the people who opened the app"><span>Finished onboarding</span><span class="track"><span class="bar" style="--v:96.2;--c:var(--f2)"></span></span><span class="val"><b>96%</b></span></li>
-        <li tabindex="0" data-tip="96% of those who finished onboarding"><span>Created a plan</span><span class="track"><span class="bar" style="--v:92.6;--c:var(--f3)"></span></span><span class="val"><b>93%</b></span></li>
+        <li tabindex="0" data-tip="Everyone who opened the app in these 90 days"><span>Opened the app</span><span class="track"><span class="bar" style="--v:100;--c:var(--f1)"></span></span><span class="val"><b>1,043</b>100%</span></li>
+        <li tabindex="0" data-tip="96% of the 1,043 who opened the app"><span>Finished onboarding</span><span class="track"><span class="bar" style="--v:96.2;--c:var(--f2)"></span></span><span class="val"><b>1,003</b>96%</span></li>
+        <li tabindex="0" data-tip="96% of the 1,003 who finished onboarding"><span>Created a plan</span><span class="track"><span class="bar" style="--v:92.6;--c:var(--f3)"></span></span><span class="val"><b>966</b>93%</span></li>
       </ol>
       <p class="grp">On the Apple Watch <i>four out of five drop out here</i></p>
       <ol class="funnel" start="4">
-        <li tabindex="0" data-tip="21% of those who created a plan"><span>Started a workout</span><span class="track"><span class="bar" style="--v:19.8;--c:var(--f4)"></span></span><span class="val"><b>20%</b></span></li>
-        <li tabindex="0" data-tip="78% of those who started one"><span>Finished a workout</span><span class="track"><span class="bar" style="--v:15.3;--c:var(--f5)"></span></span><span class="val"><b>15%</b></span></li>
+        <li tabindex="0" data-tip="21% of the 966 who created a plan"><span>Started a workout</span><span class="track"><span class="bar" style="--v:19.8;--c:var(--f4)"></span></span><span class="val"><b>206</b>20%</span></li>
+        <li tabindex="0" data-tip="78% of the 206 who started one"><span>Finished a workout</span><span class="track"><span class="bar" style="--v:15.3;--c:var(--f5)"></span></span><span class="val"><b>160</b>15%</span></li>
       </ol>
       <p class="vnote">Firebase Analytics. Unique people per event in the same 90&nbsp;days, not a strict cohort, so read the bars as proportions.</p>
     </figure>
@@ -167,7 +166,7 @@
       <tbody>
         <tr><td>People who see the sheet and tap "Open Watch App"</td><td data-h="Today">No baseline, the events are new</td><td data-h="Source"><code>watch_setup_shown</code> <code>watch_setup_open_tapped</code></td></tr>
         <tr><td>Active users with a watch but no RunPlan on it</td><td data-h="Today">22%</td><td data-h="Source">Watch state, four weeks</td></tr>
-        <tr><td>Plan creators who start a workout on the watch</td><td data-h="Today">21%</td><td data-h="Source">Funnel, 90 days</td></tr>
+        <tr><td>Plan creators who start a workout on the watch</td><td data-h="Today">21%, 206 of 966</td><td data-h="Source">Funnel, 90 days</td></tr>
       </tbody>
     </table>
   </section>
